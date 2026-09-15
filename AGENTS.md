@@ -4,11 +4,18 @@
 - Build Yuri Toshio Tomikawa's public portfolio to land an operations manager role; creative operations is relevant but must not limit positioning.
 - Highlight substantial AI experience through concrete workflows, decisions, and outcomes. The portfolio itself should demonstrate these capabilities; new showcase project ideas are welcome.
 - Repository: https://github.com/toshiotomikawa/toshiotomikawa.github.io.git
-- Planning stage: target role established; market, content, design, and stack remain undecided. No site implemented or deployment verified.
+- Target market: LATAM remote operations management. Language, content, design, and stack remain undecided. No site implemented or deployment verified.
 - Resume reviewed through Google Drive: Portuguese, English, and TubeScience variants. Background includes international studio operations, teaching, community moderation, and products built using coding agents. Target positioning comes from the user's current direction, not a resume variant.
 - Authenticated GitHub access can read private projects. Assess candidates by operational problem, personal contribution, workflow, and demonstrated outcome; documentation alone does not establish current runtime success or business impact.
 - Private-project review is authorized for planning, not blanket publication. Keep private source, client information, resume contact details, and NDA-covered work out of public artifacts unless approved for publication. Public case studies can use approved summaries and synthetic demos without opening repositories.
-- Next discovery question: which hiring market should the portfolio target?
+- Next discovery question: which languages should the portfolio support?
+
+## Showcase discovery
+- Prioritize business usefulness and operational ownership; AI is an enabling skill. The portfolio itself should serve as a proof of concept. Demo format remains undecided.
+- User-reported candidates: MapaFinanceiro is used by a consorcio team and recalculates as information changes; Togurumi serves a small amigurumi business with a working Google Sheets API; Grok MCP Bridge connects regular ChatGPT Chat to Grok Build running on the user's machine; ZenPocket explores repurposing old rooted Android phones as useful nodes and is still early-stage.
+- Other candidates: ZenBot, CodexBoard, 2A3A, and Ronto Props. Selection and public case-study content are not finalized; do not invent adoption, savings, revenue, or performance metrics.
+- Local projects live under `C:\Users\Zen\Desktop\Coding`; Togurumi's folder is `TogurumiWeb`, and MapaFinanceiro's checkout is `MapaFinanceiro\main`.
+- Local and remote documentation can differ: Grok MCP Bridge's local README describes broader capabilities than its remote README. Verify the relevant version before making claims; review has not tested current runtime behavior.
 
 ## Collaboration
 - Maximize information density. Use the fewest words that preserve meaning; omit repetition, filler, and unnecessary narration.
