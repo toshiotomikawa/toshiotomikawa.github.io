@@ -9,7 +9,7 @@
 - Authenticated GitHub access can read private projects. Assess candidates by operational problem, personal contribution, workflow, and demonstrated outcome; documentation alone does not establish current runtime success or business impact.
 - Private-project review is authorized for planning, not blanket publication. Keep private source, client information, resume contact details, and NDA-covered work out of public artifacts unless approved for publication. Public case studies can use approved summaries and synthetic demos without opening repositories.
 - Discovery remains in progress; gather representative examples and available work samples rather than demanding exhaustive responsibility or approval lists.
-- Delivery plan: `PLAN.md`. Planning checkpoint complete; implementation has not started. Next phase on user instruction to continue: Phase 1 (content and evidence).
+- Delivery plan: `PLAN.md`, audited into four phases: content/evidence, working prototype, complete tested release candidate, publication. Implementation has not started. Next phase on user instruction to continue: Phase 1 (content and evidence).
 
 ## Professional experience (user-reported)
 - Michael Ghelfi Studios responsibilities extended beyond editorial management: video editing and publishing, WordPress and plugins, external tools, and social media.
@@ -35,7 +35,10 @@
 - Ask one question at a time.
 - Avoid exhaustive recall requests; the user's past role had many overlapping responsibilities. Build the account incrementally from concrete examples and artifacts.
 - Establish requirements with the user before implementing the portfolio.
-- Work in the phases defined in PLAN.md. Complete routine tasks within a phase without repeated permission prompts, then stop at its natural checkpoint. A user instruction to continue authorizes the next phase only; Phase 5 is the explicit publication stage.
+- Work in the phases defined in PLAN.md. Complete routine tasks within a phase without repeated permission prompts, then stop at its natural checkpoint. A user instruction to continue authorizes the next phase only; Phase 4 is the explicit publication stage.
+- Lead with operations ownership: MGS operations (Biosphere as an example) and MapaFinanceiro are the core cases; one supporting AI/business case is optional. Missing quantitative metrics do not block truthful qualitative case studies. Keep discovery bounded; no exhaustive role inventory or repository audit.
+- Locale precedence: explicit language URL, saved manual choice at neutral entry, primary browser locale (`pt`/`pt-*` selects Portuguese), then English fallback. Preserve the equivalent page when switching. Browser settings are the available proxy for system language; content and language links must remain usable without storage/JavaScript.
+- Private review notes belong outside the repository at `C:\Users\Zen\Desktop\Coding\Portfolio-review`; they are not included in repository backups. All pushed branches and history are public. Inspect staged diffs and consolidate work into focused milestone commits.
 - Check whether pushes deploy the site before pushing site-bearing changes. Keep unapproved private evidence/drafts outside this public repository and previews unpublished until the launch checkpoint.
 - Keep this file tracked and public. Include only shareable project guidance.
 - Update this file at natural checkpoints: accepted decisions, scope changes, completed milestones, or handoffs. Replace stale facts; avoid a running conversation log. No update needed after every turn.
