@@ -4,22 +4,30 @@
 - Build Yuri Toshio Tomikawa's public portfolio to land an operations manager role; creative operations is relevant but must not limit positioning.
 - Highlight substantial AI experience through concrete workflows, decisions, and outcomes. The portfolio itself should demonstrate these capabilities; new showcase project ideas are welcome.
 - Repository: https://github.com/toshiotomikawa/toshiotomikawa.github.io.git
-- Target market: LATAM remote operations management. Language, content, design, and stack remain undecided. No site implemented or deployment verified.
+- Target market: LATAM remote operations management. Portfolio languages: English and Portuguese. Do not imply Spanish proficiency. Content, design, and stack remain undecided. No site implemented or deployment verified.
 - Resume reviewed through Google Drive: Portuguese, English, and TubeScience variants. Background includes international studio operations, teaching, community moderation, and products built using coding agents. Target positioning comes from the user's current direction, not a resume variant.
 - Authenticated GitHub access can read private projects. Assess candidates by operational problem, personal contribution, workflow, and demonstrated outcome; documentation alone does not establish current runtime success or business impact.
 - Private-project review is authorized for planning, not blanket publication. Keep private source, client information, resume contact details, and NDA-covered work out of public artifacts unless approved for publication. Public case studies can use approved summaries and synthetic demos without opening repositories.
-- Next discovery question: which languages should the portfolio support?
+- Discovery remains in progress; gather representative examples and available work samples rather than demanding exhaustive responsibility or approval lists.
+
+## Professional experience (user-reported)
+- Michael Ghelfi Studios responsibilities extended beyond editorial management: video editing and publishing, WordPress and plugins, external tools, and social media.
+- Managed a small team of writers through review, feedback, quality control, and standardization. Do not infer hiring, budgets, direct-report count, or formal performance-management authority.
+- Could decide editorial themes, video selection for publication, A/B testing, playlist creation, generative-AI artwork, and blocks for structured interactive playlists combining SFX, ambiances, and songs. Approval boundaries are not comprehensively mapped; do not claim unrestricted authority.
+- Describe this as broad operations ownership supported by specific examples, without inventing outcomes or reducing the role to editorial work.
 
 ## Showcase discovery
 - Prioritize business usefulness and operational ownership; AI is an enabling skill. The portfolio itself should serve as a proof of concept. Demo format remains undecided.
 - User-reported candidates: MapaFinanceiro is used by a consorcio team and recalculates as information changes; Togurumi serves a small amigurumi business with a working Google Sheets API; Grok MCP Bridge connects regular ChatGPT Chat to Grok Build running on the user's machine; ZenPocket explores repurposing old rooted Android phones as useful nodes and is still early-stage.
 - Other candidates: ZenBot, CodexBoard, 2A3A, and Ronto Props. Selection and public case-study content are not finalized; do not invent adoption, savings, revenue, or performance metrics.
+- MapaFinanceiro context from the user: replaces confusing, fiddly client-facing spreadsheets with intuitive, real-time explanations of amounts and timeframes in consorcio scenarios. It is a basic practical tool; keep claims proportionate. A separate agent report was requested via a supplied prompt and remains pending here.
 - Local projects live under `C:\Users\Zen\Desktop\Coding`; Togurumi's folder is `TogurumiWeb`, and MapaFinanceiro's checkout is `MapaFinanceiro\main`.
 - Local and remote documentation can differ: Grok MCP Bridge's local README describes broader capabilities than its remote README. Verify the relevant version before making claims; review has not tested current runtime behavior.
 
 ## Collaboration
 - Maximize information density. Use the fewest words that preserve meaning; omit repetition, filler, and unnecessary narration.
 - Ask one question at a time.
+- Avoid exhaustive recall requests; the user's past role had many overlapping responsibilities. Build the account incrementally from concrete examples and artifacts.
 - Establish requirements with the user before implementing the portfolio.
 - Keep this file tracked and public. Include only shareable project guidance.
 - Update this file at natural checkpoints: accepted decisions, scope changes, completed milestones, or handoffs. Replace stale facts; avoid a running conversation log. No update needed after every turn.
