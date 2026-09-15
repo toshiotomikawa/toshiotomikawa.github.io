@@ -9,7 +9,9 @@
 - Authenticated GitHub access can read private projects. Assess candidates by operational problem, personal contribution, workflow, and demonstrated outcome; documentation alone does not establish current runtime success or business impact.
 - Private-project review is authorized for planning, not blanket publication. Keep private source, client information, resume contact details, and NDA-covered work out of public artifacts unless approved for publication. Public case studies can use approved summaries and synthetic demos without opening repositories.
 - Discovery remains in progress; gather representative examples and available work samples rather than demanding exhaustive responsibility or approval lists.
-- Delivery plan: `PLAN.md`, audited into four phases: content/evidence, working prototype, complete tested release candidate, publication. Implementation has not started. Next phase on user instruction to continue: Phase 1 (content and evidence).
+- Delivery plan: `PLAN.md`, audited into four phases: content/evidence, working prototype, complete tested release candidate, publication. Phase 1 drafts/evidence delivered on 2026-09-15 and await review; implementation has not started. Next phase on user instruction to continue: Phase 2 (working prototype). Content corrections alone do not authorize advancing.
+- Phase 1 review packet: `C:\Users\Zen\Desktop\Coding\Portfolio-review\REVIEW.md`, `CONTENT.en.md`, `EVIDENCE.md`, and `LOCAL-SOURCE-HASHES.txt`. Draft headline: "Operations management, with practical AI." / "Gestão de operações com uso prático de IA." Core cases are MGS operations and MapaFinanceiro; Grok MCP Bridge is the proposed supporting case. Review material has not been pushed or included in repository backups.
+- Publication details pending: public contact email, separate portfolio resume, and any rehosted MGS media. Default proposal uses public video links, synthetic Mapa screenshots, and an original Grok diagram. Do not block independent prototype work on optional media or missing metrics.
 
 ## Professional experience (user-reported)
 - Michael Ghelfi Studios responsibilities extended beyond editorial management: video editing and publishing, WordPress and plugins, external tools, and social media.
@@ -18,7 +20,7 @@
 - Describe this as broad operations ownership supported by specific examples, without inventing outcomes or reducing the role to editorial work.
 - Biosphere is a concrete MGS work sample: user independently created the visual concept, generated illustrations with AI, edited the thumbnail, assembled the full album video from supplied music, and published the work. Credit the composer for music; do not imply composition by the user.
 - User applied a metallic gold treatment to the studio's commissioned black-and-white logo; credit this as visual adaptation, not original logo design.
-- User-provided YouTube screenshot showed 936K views on the Biosphere album video. This is an undated screenshot observation, not a current metric or proof that the user's contribution caused the views. Verify and date any public reach claim before publication.
+- Biosphere public video verified on 2026-09-15: https://www.youtube.com/watch?v=sYcOqTKv7B0 ; expanded description showed 936,714 views, release date 2024-05-25, and composer Filip Melvan. Credit reach to the finished work, not solely the user's contribution. Date any metric and refresh or omit it before launch.
 
 ## Showcase discovery
 - Prioritize business usefulness and operational ownership; AI is an enabling skill. The portfolio itself should serve as a proof of concept. Demo format remains undecided.
@@ -27,6 +29,7 @@
 - MapaFinanceiro context from the user: replaces confusing, fiddly client-facing spreadsheets with intuitive, real-time explanations of amounts and timeframes in consorcio scenarios. It is a basic practical tool; keep claims proportionate.
 - MapaFinanceiro agent report received from the user: read-only review at `93721da`, reportedly equal to `origin/main`. It describes a static browser-side simulator with linked inputs, charts, comparison tables, FAQs, modality presets, and explicit assumptions/estimate warnings. These are supplied report findings, not runtime tests performed in this portfolio session.
 - Case-study angle: clearer client conversations and less manual explanation through interactive scenarios. Team adoption is user-reported; conversion gains, time savings, and usage counts are unmeasured. Report did not establish current production liveness or independently validate financial accuracy. Avoid reproducing illustrative calculations as validated advice or guarantees.
+- Phase 1 verified https://mapadabella.vercel.app/ rendering and one synthetic timeframe change (3 to 5 years) updating the target explanation. This adds narrow runtime evidence to the supplied report, not full application QA or financial validation.
 - Local projects live under `C:\Users\Zen\Desktop\Coding`; Togurumi's folder is `TogurumiWeb`, and MapaFinanceiro's checkout is `MapaFinanceiro\main`.
 - Local and remote documentation can differ: Grok MCP Bridge's local README describes broader capabilities than its remote README. Verify the relevant version before making claims; review has not tested current runtime behavior.
 

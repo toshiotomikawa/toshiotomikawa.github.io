@@ -75,5 +75,9 @@ Deliverable: live portfolio URL, deployment verification, and maintenance handof
 Stop: first version complete. Further projects or features become separate work.
 
 ## Current checkpoint
-- Plan audited: four checkpoints, operations-first positioning, bounded evidence gathering, explicit locale behavior, and testable release criteria. No implementation started.
-- Next authorized step on continue: Phase 1.
+- Phase 1 drafted and verified on 2026-09-15; awaiting user content review. No portfolio implementation started.
+- Review packet: `C:\Users\Zen\Desktop\Coding\Portfolio-review\REVIEW.md`; English homepage and three case-study drafts in `CONTENT.en.md`; evidence/assets and hiring comparison in `EVIDENCE.md`; local source hashes in `LOCAL-SOURCE-HASHES.txt`. These remain outside the public repository and its backups.
+- Core cases: MGS operations and MapaFinanceiro. Proposed supporting case: Grok MCP Bridge, explicitly labeled a personal local project. Headline proposal: "Operations management, with practical AI." / "Gestão de operações com uso prático de IA."
+- Verified public Biosphere work link and Mapa page rendering with one synthetic-input recalculation. Reviewed three current LATAM operations/automation-adjacent listings. No exhaustive audit, financial validation, live Grok call, resume edit, or deployment performed.
+- Public contact address and final resume/media choices remain unresolved; they do not block independent prototype work. Link-first MGS evidence avoids depending on rehosted artwork.
+- Next phase on user instruction to continue: Phase 2, working visual prototype. Requested content revisions stay in Phase 1 unless advancement is also authorized.
