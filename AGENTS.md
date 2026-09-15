@@ -1,10 +1,14 @@
 # Project guidance
 
 ## Goal and state
-- Build Toshio Tomikawa's public portfolio to land a job.
+- Build Yuri Toshio Tomikawa's public portfolio to land an operations manager role; creative operations is relevant but must not limit positioning.
+- Highlight substantial AI experience through concrete workflows, decisions, and outcomes. The portfolio itself should demonstrate these capabilities; new showcase project ideas are welcome.
 - Repository: https://github.com/toshiotomikawa/toshiotomikawa.github.io.git
-- Planning stage: target role, audience, content, design, and stack remain undecided. No site implemented or deployment verified.
-- Next discovery question: which role is the portfolio targeting?
+- Planning stage: target role established; market, content, design, and stack remain undecided. No site implemented or deployment verified.
+- Resume reviewed through Google Drive: Portuguese, English, and TubeScience variants. Background includes international studio operations, teaching, community moderation, and products built using coding agents. Target positioning comes from the user's current direction, not a resume variant.
+- Authenticated GitHub access can read private projects. Assess candidates by operational problem, personal contribution, workflow, and demonstrated outcome; documentation alone does not establish current runtime success or business impact.
+- Private-project review is authorized for planning, not blanket publication. Keep private source, client information, resume contact details, and NDA-covered work out of public artifacts unless approved for publication. Public case studies can use approved summaries and synthetic demos without opening repositories.
+- Next discovery question: which hiring market should the portfolio target?
 
 ## Collaboration
 - Maximize information density. Use the fewest words that preserve meaning; omit repetition, filler, and unnecessary narration.
