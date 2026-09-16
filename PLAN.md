@@ -75,7 +75,7 @@ Deliverable: live portfolio URL, deployment verification, and maintenance handof
 Stop: first version complete. Further projects or features become separate work.
 
 ## Current checkpoint
-- Phase 1 drafted and verified on 2026-09-15. User directed use of authenticated Claude Design for UI; Phase 2 Claude visual prototype is ready for user review; local implementation and full verification remain pending.
+- Phase 1 drafted and verified on 2026-09-15. User directed use of authenticated Claude Design for UI; Initial Phase 2 visual direction rejected on 2026-09-16 as too similar to Anthropic. Claude generated a revised minimal, modern, professional prototype. Desktop/mobile appearance and EN/PT case navigation checked; awaiting user visual review. Local implementation and full verification remain pending.
 - Review packet: `C:\Users\Zen\Desktop\Coding\Portfolio-review\REVIEW.md`; English homepage and three case-study drafts in `CONTENT.en.md`; evidence/assets and hiring comparison in `EVIDENCE.md`; local source hashes in `LOCAL-SOURCE-HASHES.txt`. These remain outside the public repository and its backups.
 - Core cases: MGS operations and MapaFinanceiro. Proposed supporting case: Grok MCP Bridge, explicitly labeled a personal local project. Headline proposal: "Operations management, with practical AI." / "Gestão de operações com uso prático de IA."
 - Verified public Biosphere work link and Mapa page rendering with one synthetic-input recalculation. Reviewed three current LATAM operations/automation-adjacent listings. No exhaustive audit, financial validation, live Grok call, resume edit, or deployment performed.
