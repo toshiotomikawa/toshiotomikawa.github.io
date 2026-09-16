@@ -4,12 +4,12 @@
 - Build Yuri Toshio Tomikawa's public portfolio to land an operations manager role; creative operations is relevant but must not limit positioning.
 - Highlight substantial AI experience through concrete workflows, decisions, and outcomes. The portfolio itself should demonstrate these capabilities; new showcase project ideas are welcome.
 - Repository: https://github.com/toshiotomikawa/toshiotomikawa.github.io.git
-- Target market: LATAM remote operations management. Portfolio languages: English and Portuguese; auto-detect system/browser language, use Portuguese for Portuguese locales and English otherwise. Do not imply Spanish proficiency. Design direction: restrained and professional. Content, detailed design, and stack remain undecided. No site implemented or deployment verified.
+- Target market: LATAM remote operations management. Portfolio languages: English and Portuguese; auto-detect system/browser language, use Portuguese for Portuguese locales and English otherwise. Do not imply Spanish proficiency. Design direction: restrained and professional. User requires Claude Design for UI; Codex supplies the brief, reviews the output, and integrates the accepted design. No portfolio site implementation delivered yet.
 - Resume reviewed through Google Drive: Portuguese, English, and TubeScience variants. Background includes international studio operations, teaching, community moderation, and products built using coding agents. Target positioning comes from the user's current direction, not a resume variant.
 - Authenticated GitHub access can read private projects. Assess candidates by operational problem, personal contribution, workflow, and demonstrated outcome; documentation alone does not establish current runtime success or business impact.
 - Private-project review is authorized for planning, not blanket publication. Keep private source, client information, resume contact details, and NDA-covered work out of public artifacts unless approved for publication. Public case studies can use approved summaries and synthetic demos without opening repositories.
 - Discovery remains in progress; gather representative examples and available work samples rather than demanding exhaustive responsibility or approval lists.
-- Delivery plan: `PLAN.md`, audited into four phases: content/evidence, working prototype, complete tested release candidate, publication. Phase 1 drafts/evidence delivered on 2026-09-15 and await review; implementation has not started. Next phase on user instruction to continue: Phase 2 (working prototype). Content corrections alone do not authorize advancing.
+- Delivery plan: `PLAN.md`, audited into four phases: content/evidence, working prototype, complete tested release candidate, publication. Phase 1 drafts/evidence delivered on 2026-09-15. User authorized Claude Design UI work; Phase 2 prototype is in progress. Stop for visual review before Phase 3.
 - Phase 1 review packet: `C:\Users\Zen\Desktop\Coding\Portfolio-review\REVIEW.md`, `CONTENT.en.md`, `EVIDENCE.md`, and `LOCAL-SOURCE-HASHES.txt`. Draft headline: "Operations management, with practical AI." / "Gestão de operações com uso prático de IA." Core cases are MGS operations and MapaFinanceiro; Grok MCP Bridge is the proposed supporting case. Review material has not been pushed or included in repository backups.
 - Publication details pending: public contact email, separate portfolio resume, and any rehosted MGS media. Default proposal uses public video links, synthetic Mapa screenshots, and an original Grok diagram. Do not block independent prototype work on optional media or missing metrics.
 
@@ -60,3 +60,7 @@
 - Inspect individual key names, presence, or metadata only; never dump environment or secret maps. Use indirect consumption, write-only updates, and redacted wrappers.
 - Verify secret updates through metadata or behavior without reading values back.
 - If plaintext unexpectedly appears, stop that inspection path; do not reproduce, persist, or reuse it. Report affected key names only and fix the exposure mechanism before continuing.
+
+## Claude Design handoff
+- Project: https://claude.ai/design/p/5e5efd6b-f73c-4ce4-baac-cab1fdf8a15d . Brief submitted on 2026-09-15 for bilingual homepage and complete MGS case study; generation in progress, not yet reviewed or exported.
+- GitHub Pages verified on 2026-09-15: legacy deployment from main at repository root. Site-bearing pushes to main may publish; keep prototype changes local or on a non-deploying branch until Phase 4.
