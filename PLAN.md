@@ -14,7 +14,7 @@ Help LATAM remote employers assess Yuri Toshio Tomikawa for operations managemen
 ## Execution contract
 - This is the audited plan. No portfolio implementation starts until the user continues.
 - Each user instruction to continue authorizes the next phase. Complete its routine work and verification autonomously, then stop at its checkpoint.
-- Do not pause between individual tasks. Ask only for missing information that materially blocks the phase, one question at a time; continue independent work when possible.
+- Bundle each design revision with verification, documentation, commit, and backups as one checkpoint; complete the handoff before another substantial pass. Do not pause between individual tasks. Ask only for missing information that materially blocks the phase, one question at a time; continue independent work when possible.
 - Revisions requested at a checkpoint stay in that phase unless the user also authorizes advancing.
 - At each checkpoint: deliver concrete reviewable artifacts, summarize completion and gaps concisely, update AGENTS.md and this plan, create focused commits for publishable changes, and refresh/verify both full backups. Avoid intermediate WIP commits; inspect staged paths and diffs before committing. Do not rewrite existing published history without a specific reason and authorization.
 - This repository is public, including every pushed branch and commit. Ordinary copy based on already approved public facts does not need separate permission per edit. Keep private evidence, unapproved personal/client details, and restricted source/assets outside it; resolve any remaining publication choices together at the content checkpoint. Never copy entire private repositories into the portfolio. Approval for an excerpt does not authorize its underlying source.
@@ -75,7 +75,7 @@ Deliverable: live portfolio URL, deployment verification, and maintenance handof
 Stop: first version complete. Further projects or features become separate work.
 
 ## Current checkpoint
-- Phase 1 drafted and verified on 2026-09-15. User directed use of authenticated Claude Design for UI; Initial Phase 2 visual direction rejected on 2026-09-16 as too similar to Anthropic. Claude generated a revised minimal, modern, professional prototype. Desktop/mobile appearance and EN/PT case navigation checked; awaiting user visual review. Local implementation and full verification remain pending.
+- Phase 1 drafted and verified on 2026-09-15. Phase 2 third Claude direction is ready for visual review: dark, typographic, asymmetric, with restrained orange markers. User rejected the beige/serif and plain white versions. Current direction is not approved; local implementation and full verification remain pending.
 - Review packet: `C:\Users\Zen\Desktop\Coding\Portfolio-review\REVIEW.md`; English homepage and three case-study drafts in `CONTENT.en.md`; evidence/assets and hiring comparison in `EVIDENCE.md`; local source hashes in `LOCAL-SOURCE-HASHES.txt`. These remain outside the public repository and its backups.
 - Core cases: MGS operations and MapaFinanceiro. Proposed supporting case: Grok MCP Bridge, explicitly labeled a personal local project. Headline proposal: "Operations management, with practical AI." / "Gestão de operações com uso prático de IA."
 - Verified public Biosphere work link and Mapa page rendering with one synthetic-input recalculation. Reviewed three current LATAM operations/automation-adjacent listings. No exhaustive audit, financial validation, live Grok call, resume edit, or deployment performed.
