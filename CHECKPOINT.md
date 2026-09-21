@@ -46,3 +46,10 @@ No deployment or private-source publication. Pages rechecked: legacy `main`/root
 `dist/` carries `noindex` during prototype work; remove only for the approved release.
 View count remains dated 2026-09-15; refresh or omit before launch. No MGS media rehosted.
 Public email and resume remain unresolved; private review notes stay outside this repo.
+
+## Repository / backup handoff
+
+Prototype commit `b59328c` pushed to `codex/working-prototype`; `main` remains
+`757a9d9`. No site deployment. Full G: backup passed SHA-256 comparisons and Git
+integrity. W: is currently unmounted: its backup refresh is pending, not verified.
+Reconnect W: before the next backup pass; do not substitute another destination.
