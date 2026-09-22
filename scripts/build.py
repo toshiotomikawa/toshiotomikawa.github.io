@@ -158,7 +158,7 @@ def document(c, locale, case_key=None, neutral=False, is_404=False):
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
+  {"<meta name=\"robots\" content=\"noindex\">" if is_404 else "<meta name=\"robots\" content=\"index, follow\">"}
   <title>{e(title)} — Yuri Toshio Tomikawa</title>
   <meta name="description" content="{e(description)}">
   <link rel="canonical" href="{page_url}">
