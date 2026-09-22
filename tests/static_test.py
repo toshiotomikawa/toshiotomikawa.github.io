@@ -105,10 +105,52 @@ class StaticPrototype(unittest.TestCase):
         self.assertTrue(dist_html_files)
         for path in content_files + dist_html_files:
             text = path.read_text(encoding='utf-8')
-            self.assertNotIn('\u2014', text, f'Em dash (—) found in {path}')
+            self.assertNotIn('\u2014', text, f'Em dash (-) found in {path}')
             self.assertNotIn('&mdash;', text, f'&mdash; found in {path}')
             self.assertNotIn('&#8212;', text, f'&#8212; found in {path}')
+
+    def test_watermark_removal_hygiene(self):
+        """Ensure all content, styles, scripts, and HTML are free of invisible Unicode and space homoglyphs."""
+        import sys
+        sys.path.insert(0, str(ROOT))
+        from scripts.clean_text import audit_text
+        files = list((ROOT / 'content').glob('*.json')) + list(DIST.rglob('*.html')) + [
+            ROOT / 'assets/site.css',
+            ROOT / 'assets/preferences.js'
+        ]
+        self.assertTrue(files)
+        for path in files:
+            findings = audit_text(path.read_text(encoding='utf-8'))
+            self.assertEqual(len(findings), 0, f'Watermarks/invisible Unicode found in {path}: {findings}')
+
+    def test_humanizer_tell_hygiene(self):
+        """Ensure content prose avoids AI formulas, staged contrasts, and corporate buzzwords."""
+        forbidden_patterns = [
+            r'\brather than\b',
+            r'\binstead of\b',
+            r'\bnot just\b',
+            r'\bnot only\b',
+            r'\bat its core\b',
+            r'\bthe real question\b',
+            r'\bdelve\b',
+            r'\btestament\b',
+            r'\btapestry\b',
+            r'\bbeacon\b',
+            r'\bgame-changing\b',
+            r'\bseamless\b',
+            r'\bfurthermore\b',
+            r'\bmoreover\b',
+            r'\bem vez de\b',
+            r'\bnão apenas\b',
+        ]
+        content_files = list((ROOT / 'content').glob('*.json'))
+        for path in content_files:
+            text = path.read_text(encoding='utf-8').lower()
+            for pattern in forbidden_patterns:
+                match = re.search(pattern, text)
+                self.assertIsNone(match, f'Humanizer tell "{pattern}" found in {path}: {match}')
 
 
 if __name__ == '__main__':
     unittest.main()
+

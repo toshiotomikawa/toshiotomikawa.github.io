@@ -2,7 +2,7 @@
   "lang": "en",
   "title": "Operations management, with practical AI.",
   "eyebrow": "Operations management · remote, LATAM-eligible",
-  "intro": "I coordinate people, workflows, and tools to keep work moving, and I build practical tools and AI workflows by directing coding agents.",
+  "intro": "I coordinate teams and daily operations to keep work moving, and I build internal tools by directing coding agents.",
   "nav": [
     ["work", "work"],
     ["background", "background"],
@@ -32,24 +32,24 @@
       ],
       "skills": ["editorial review", "quality standards", "video publishing", "web operations"],
       "labels": ["01 context", "02 responsibility", "03 decisions", "04 sample release", "05 also"],
-      "context": "Michael Ghelfi Studios produces RPG music and soundscapes with a small international team working remotely in English. As Studio Manager, I connected the studio's pipeline across editorial review, video post-production, multi-channel publishing, and website operations for three weekly public releases plus regular Patreon deliverables.",
+      "context": "Michael Ghelfi Studios produces tabletop audio with an international remote team. As Studio Manager, I ran daily operations across editorial review, video production, publishing schedules, and website maintenance for three weekly releases and Patreon.",
       "items": [
-        ["writers", "Managed a small team of writers through review, continuous feedback, quality control, and editorial standardization."],
+        ["writers", "Reviewed writer submissions, gave editorial feedback, and kept scripts consistent across releases."],
         ["video", "Edited and published the studio's YouTube releases and Patreon packages."],
         ["website", "Administered the WordPress site, managed plugins, and maintained custom mu-plugins."],
-        ["tools", "Coordinated external automation tools, publishing pipelines, and studio social channels."]
+        ["tools", "Handled publishing automations, scheduling pipelines, and studio social announcements."]
       ],
-      "decisions": "Determined editorial themes, video publishing selection, thumbnail A/B testing, structured ambiance/SFX playlists, and generative-AI artwork concepts.",
+      "decisions": "Decided editorial themes, release schedules, thumbnail A/B tests, audio playlists, and generative image concepts.",
       "sampleTitle": "Biosphere: full album video",
       "steps": [
-        "Developed the visual concept independently",
-        "Generated the illustrations with AI",
-        "Edited and color-balanced the thumbnail",
-        "Assembled the full album video from supplied music",
-        "Published and distributed the release"
+        "Planned the visual concept",
+        "Generated the artwork using AI tools",
+        "Edited and color-corrected the thumbnail",
+        "Assembled the full album video from the composer's audio tracks",
+        "Scheduled and published the final release"
       ],
       "credit": "Music composed by Filip Melvan.",
-      "reach": "The published video recorded 936,714 views as of 15 September 2026, representing the reach of the complete release, including the composer's music and the studio's distribution.",
+      "reach": "The release reached 936,714 views on YouTube (verified September 2026), reflecting the combined impact of the music, visual packaging, and studio distribution.",
       "linkUrl": "https://www.youtube.com/watch?v=sYcOqTKv7B0",
       "linkLabel": "watch Biosphere on YouTube",
       "also": "I adapted the studio's commissioned black-and-white mark with a metallic-gold treatment for featured releases. The original mark was designed by another creator.",
@@ -67,27 +67,27 @@
       ],
       "skills": ["product design", "agent direction", "client communication", "reactive modeling"],
       "labels": ["01 context", "02 contribution", "03 workflow shift", "04 simulation structure", "05 boundaries"],
-      "context": "A consórcio sales team previously relied on complex spreadsheets during consultations with prospective clients. Clients found formulas difficult to follow in conversation, and testing different timeframes or down payments required tedious manual adjustments.",
+      "context": "A consórcio sales team used complex spreadsheets during client calls. Prospective buyers struggled to follow the raw numbers, and testing different terms or down payments required manual recalculation on the fly.",
       "items": [
-        ["inputs", "Real-time interactive inputs for income, target property value, available down payment, and target timeframe."],
-        ["projections", "Dynamic comparison between property appreciation (7.0% p.a.) and investment returns (6.2% p.a.) over 30 years."],
-        ["consorcio", "Detailed bidding strategy simulation: quota raffle, fixed bid (44 installments), limited bid (88 installments), and free bid."],
-        ["comparison", "Side-by-side comparative matrix contrasting pure savings, traditional bank mortgages, and consórcio bidding."]
+        ["inputs", "Live inputs for monthly income, property goal, down payment, and target timeframe."],
+        ["projections", "Compares expected property inflation (7% per year) against investment yields (6.2% per year) over 30 years."],
+        ["consorcio", "Simulates four bidding routes: regular raffle, fixed bid (44 installments), limited bid (88 installments), and free bid."],
+        ["comparison", "Side-by-side comparison of direct savings, bank mortgages, and consórcio installments."]
       ],
-      "decisions": "Focused the experience on clear conversations rather than raw calculation tables: changing the target timeframe immediately updates the required contribution and scenario narrative.",
-      "sampleTitle": "Reactive multi-scenario architecture",
+      "decisions": "Built for quick explanations during sales calls: adjusting the target timeframe immediately updates the monthly target and scenario summary.",
+      "sampleTitle": "Interactive scenario model",
       "steps": [
-        "Starting Position: Captures income, property goal, and available capital",
-        "The Cost of Waiting: Visualizes property inflation outpacing regular savings",
-        "Target Timing: Dynamically calculates monthly savings needed for 3 vs 5 years",
-        "Bidding Mechanics: Simulates out-of-pocket vs embedded bids (up to 50% deduction)",
-        "Decision Matrix: Transparent comparison with mortgage interest and terms"
+        "Enters income, target property price, and starting capital",
+        "Shows how property price inflation outpaces standard bank savings",
+        "Calculates the monthly savings needed for a 3-year versus 5-year target",
+        "Compares cash bids against embedded bids using up to 50% of the credit line",
+        "Presents a clear comparison against standard mortgage interest and total term costs"
       ],
-      "credit": "Built for active use by a consórcio consultation team.",
-      "reach": "Deployed live on Vercel; eliminates spreadsheet friction during client intake without requiring backend infrastructure.",
+      "credit": "Built for daily use by a consórcio sales team.",
+      "reach": "Hosted on Vercel as a client-side app, letting sales reps test numbers live during calls without server maintenance.",
       "linkUrl": "https://mapadabella.vercel.app/",
       "linkLabel": "explore Mapa da Bella live application",
-      "also": "All simulation outputs reflect stated assumptions. They serve as explanatory sales tools, not formal credit approvals, guarantees, or financial advice.",
+      "also": "All numbers reflect user-entered assumptions. The tool supports sales conversations and does not provide credit approval, guarantees, or regulated financial advice.",
       "back": "back to work"
     }
   },
@@ -96,23 +96,23 @@
     "title": "Connecting AI tools with clear controls",
     "summary": "Grok MCP Bridge: a personal local integration connecting ChatGPT Chat to Grok Build, with task tracking and separately reviewed changes.",
     "points": [
-      "Separates AI execution from change adoption through distinct consultation and review phases.",
-      "Maintains persistent task IDs for multi-step tasks instead of fragile single-prompt sessions.",
-      "Requires explicit human review of generated git patches and test runs before applying modifications."
+      "Separates code generation from project changes, keeping each step in a distinct review queue.",
+      "Uses persistent task IDs to track multi-step work across terminal sessions.",
+      "Requires manual inspection of git diffs and test results before applying any edits."
     ],
-    "status": "Personal local project on Windows 11; demonstrates controlled AI tool delegation."
+    "status": "Personal project running locally on Windows 11 to test controlled workflows with coding agents."
   },
   "background": "Background",
-  "backgroundText": "Four years leading operations, editorial standards, publishing, and website maintenance in a fully remote international team, followed by edtech teaching and AI product development.",
+  "backgroundText": "Four years managing operations, editorial quality, and publishing schedules in an international remote studio, followed by ESL teaching and building software with coding agents.",
   "experience": [
     ["Aug 2021 - Dec 2025", "Studio Manager", "Michael Ghelfi Studios · remote (English)"],
     ["May 2026 - present", "English Teacher (ESL)", "Aliança América Idiomas · remote"],
     ["Sep 2025 - present", "Official Community Moderator", "Epic Games · Discord Brasil & Portugal"]
   ],
   "availability": "Availability",
-  "availabilityText": "Available for remote operations management roles with international or LATAM-hiring companies. Based in Brazil (UTC-3), fully bilingual in English (professional fluency) and Portuguese (native).",
+  "availabilityText": "Available for remote operations management roles with international teams. Based in Brazil (UTC-3), fluent in English and native in Portuguese.",
   "contact": "Contact",
-  "contactText": "Interested in discussing an operations management role or practical AI workflows? Reach out directly:",
+  "contactText": "Interested in discussing an operations role or practical AI workflows? Reach out by email:",
   "email": "toshiotomikawa@gmail.com",
   "emailLabel": "Send an email",
   "githubUrl": "https://github.com/toshiotomikawa",

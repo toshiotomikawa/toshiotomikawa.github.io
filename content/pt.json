@@ -2,7 +2,7 @@
   "lang": "pt-BR",
   "title": "Gestão de operações com uso prático de IA.",
   "eyebrow": "Gestão de operações · remoto, elegível na América Latina",
-  "intro": "Coordeno pessoas, fluxos de trabalho e ferramentas para manter o trabalho andando, além de construir ferramentas práticas e fluxos com IA dirigindo agentes de programação.",
+  "intro": "Coordeno equipes e rotinas diárias para manter as entregas em dia, e construo ferramentas internas orientando agentes de programação.",
   "nav": [
     ["work", "trabalhos"],
     ["background", "trajetória"],
@@ -32,27 +32,27 @@
       ],
       "skills": ["revisão editorial", "padrões de qualidade", "publicação de vídeos", "operação do site"],
       "labels": ["01 contexto", "02 responsabilidades", "03 decisões", "04 lançamento", "05 também"],
-      "context": "A Michael Ghelfi Studios produz músicas e paisagens sonoras para RPG com uma equipe internacional pequena trabalhando remotamente em inglês. Como Studio Manager, conectei a esteira de revisão editorial, pós-produção em vídeo, publicação multicanal e operação do site para sustentar três lançamentos públicos por semana e entregas regulares no Patreon.",
+      "context": "A Michael Ghelfi Studios produz áudio para RPG com uma equipe remota internacional. Como Studio Manager, conduzi as operações de rotina cobrindo revisão editorial, produção de vídeo, calendário de publicação e manutenção do site, com três lançamentos semanais e entregas no Patreon.",
       "items": [
-        ["redação", "Gerenciei uma equipe pequena com revisão, feedback contínuo, controle de qualidade e padronização editorial."],
+        ["redação", "Revisei roteiros, dei feedback editorial e mantive a consistência dos textos da equipe de redatores."],
         ["vídeo", "Editei e publiquei os lançamentos em vídeo do estúdio no YouTube e pacotes do Patreon."],
         ["site", "Administrei o site em WordPress, plugins e a manutenção de mu-plugins customizados."],
-        ["ferramentas", "Coordenei ferramentas externas de automação, fluxos de entrega e redes sociais do estúdio."]
+        ["ferramentas", "Organizei automações de publicação, esteiras de agendamento e avisos nas redes do estúdio."]
       ],
-      "decisions": "Defini temas editoriais, seleção de vídeos para publicação, testes A/B de miniaturas, listas temáticas de ambianças/efeitos sonoros e concepção de arte gerada por IA.",
+      "decisions": "Defini temas editoriais, cronograma de publicação, testes A/B de miniaturas, listas temáticas de áudio e conceitos de imagens geradas por IA.",
       "sampleTitle": "Biosphere: vídeo do álbum completo",
       "steps": [
-        "Desenvolvi o conceito visual de forma independente",
-        "Gerei as ilustrações com IA",
-        "Editei e ajustei a miniatura (thumbnail)",
-        "Montei o vídeo do álbum completo a partir da música fornecida",
-        "Publiquei e distribuí o lançamento"
+        "Planejei o conceito visual de forma independente",
+        "Gerei as ilustrações com ferramentas de IA",
+        "Editei e corrigi as cores da miniatura (thumbnail)",
+        "Montei o vídeo do álbum completo a partir das faixas do compositor",
+        "Agendei e publiquei o lançamento final"
       ],
       "credit": "Música composta por Filip Melvan.",
-      "reach": "O vídeo publicado registrou 936.714 visualizações em 15 de setembro de 2026, representando o alcance do lançamento completo, somando a música e a distribuição do estúdio.",
+      "reach": "O lançamento alcançou 936.714 visualizações no YouTube (verificado em setembro de 2026), somando a música, a embalagem visual e a distribuição do estúdio.",
       "linkUrl": "https://www.youtube.com/watch?v=sYcOqTKv7B0",
       "linkLabel": "assistir a Biosphere no YouTube",
-      "also": "Apliquei um acabamento dourado metálico ao logotipo encomendado pelo estúdio para lançamentos especiais. A marca original foi criada por outra pessoa.",
+      "also": "Apliquei um acabamento dourado metálico ao logotipo do estúdio em lançamentos especiais. A marca original foi desenhada por outro profissional.",
       "back": "voltar aos trabalhos"
     },
     "mapa": {
@@ -67,27 +67,27 @@
       ],
       "skills": ["design de produto", "direção de agentes", "comunicação com cliente", "modelagem reativa"],
       "labels": ["01 contexto", "02 contribuição", "03 mudança no fluxo", "04 estrutura da simulação", "05 limites"],
-      "context": "Uma equipe de vendas de consórcio utilizava planilhas complexas diretamente durante o atendimento a potenciais clientes. O formato era difícil de interpretar em conversa ao vivo, e testar prazos ou entradas exigia ajustes manuais lentos.",
+      "context": "A equipe comercial de consórcio usava planilhas densas durante as ligações de vendas. Os clientes tinham dificuldade para acompanhar os números na hora, e simular prazos ou entradas diferentes exigia recálculos manuais demorados.",
       "items": [
-        ["entradas", "Controles interativos em tempo real para renda, valor do imóvel, entrada disponível e prazo desejado."],
-        ["projeções", "Comparativo dinâmico entre valorização imobiliária (7,0% a.a.) e rentabilidade financeira (6,2% a.a.) em até 30 anos."],
-        ["consórcio", "Simulação detalhada de modalidades de lance: sorteio sem lance, lance fixo (44 parcelas), limitado (88 parcelas) e livre."],
-        ["comparativo", "Quadro comparativo lado a lado confrontando poupança à vista, financiamento imobiliário e consórcio."]
+        ["entradas", "Controles diretos para renda mensal, valor do imóvel, entrada disponível e prazo desejado."],
+        ["projeções", "Compara a valorização imobiliária estimada (7% ao ano) com o rendimento de investimentos (6,2% ao ano) em até 30 anos."],
+        ["consórcio", "Simula quatro caminhos: sorteio comum, lance fixo (44 parcelas), limitado (88 parcelas) e lance livre."],
+        ["comparativo", "Comparação lado a lado entre poupança direta, financiamento bancário e parcelas de consórcio."]
       ],
-      "decisions": "Foquei a experiência na clareza do diálogo em vez de tabelas brutas: mudar o prazo recalcula instantaneamente o aporte necessário e o texto explicativo.",
-      "sampleTitle": "Arquitetura reativa multi-cenário",
+      "decisions": "Desenhado para dar agilidade à conversa de vendas: mudar o prazo recalcula na hora o valor mensal e o resumo do cenário.",
+      "sampleTitle": "Fluxo interativo da simulação",
       "steps": [
-        "Ponto de Partida: Captura renda, objetivo do imóvel e recursos disponíveis",
-        "O Custo de Esperar: Demonstra a inflação imobiliária superando a poupança",
-        "Prazo Alvo: Recalcula na hora a economia mensal necessária para 3 vs 5 anos",
-        "Mecânica de Lance: Simula lance do bolso vs embutido (desconto de até 50% do crédito)",
-        "Matriz Comparativa: Confronto objetivo com juros e prazos do financiamento bancário"
+        "Recebe a renda, o valor do imóvel desejado e o capital inicial",
+        "Mostra o aumento dos preços dos imóveis superando a poupança tradicional",
+        "Calcula a reserva mensal necessária para prazos de 3 ou 5 anos",
+        "Compara lances com recursos próprios e lances embutidos de até 50% da carta",
+        "Apresenta um comparativo direto com juros e prazos do financiamento bancário"
       ],
-      "credit": "Desenvolvido para uso ativo por equipe de consultoria de consórcio.",
-      "reach": "Publicado na Vercel; elimina o atrito das planilhas durante o atendimento sem demandar infraestrutura de backend.",
+      "credit": "Criado para o uso diário de uma equipe de vendas de consórcio.",
+      "reach": "Hospedado na Vercel como aplicação cliente, permitindo que a equipe simule valores ao vivo nas chamadas sem depender de servidor.",
       "linkUrl": "https://mapadabella.vercel.app/",
       "linkLabel": "explorar o aplicativo Mapa da Bella",
-      "also": "Todas as projeções refletem as premissas indicadas. Servem como ferramenta explicativa de apoio comercial, não como aprovação de crédito, garantia de contemplação ou consultoria financeira regulada.",
+      "also": "Os números seguem as premissas preenchidas na tela. O simulador serve de apoio ao diálogo comercial e não constitui aprovação de crédito, garantia de contemplação nem consultoria financeira regulada.",
       "back": "voltar aos trabalhos"
     }
   },
@@ -96,23 +96,23 @@
     "title": "Conectar ferramentas de IA com controles claros",
     "summary": "Grok MCP Bridge: integração local e pessoal que conecta o ChatGPT Chat ao Grok Build, com acompanhamento de tarefas e mudanças revisadas separadamente.",
     "points": [
-      "Separa a execução por IA da aplicação de mudanças por meio de fases distintas de consulta e revisão.",
-      "Mantém identificadores estáveis para tarefas com múltiplas etapas em vez de depender de uma única requisição aberta.",
-      "Exige revisão humana explícita dos patches do git gerados e testes antes de confirmar modificações no projeto."
+      "Separa a geração de código das alterações no projeto, mantendo cada etapa em uma fila de revisão própria.",
+      "Usa identificadores estáveis para acompanhar tarefas de várias etapas entre sessões de terminal.",
+      "Exige conferência manual dos diffs do git e dos testes antes de aplicar qualquer alteração."
     ],
-    "status": "Projeto local e pessoal em Windows 11; demonstra delegação estruturada de tarefas para IA."
+    "status": "Projeto pessoal rodando localmente no Windows 11 para testar fluxos controlados com agentes de código."
   },
   "background": "Trajetória",
-  "backgroundText": "Quatro anos liderando operações, padrões editoriais, publicação e suporte web em um time remoto internacional, somados à experiência docente em edtech e desenvolvimento de produtos com IA.",
+  "backgroundText": "Quatro anos gerenciando operações, qualidade editorial e calendário de publicação em estúdio remoto internacional, além de aulas de inglês e criação de ferramentas com agentes de código.",
   "experience": [
     ["ago 2021 - dez 2025", "Studio Manager", "Michael Ghelfi Studios · remoto (inglês)"],
     ["mai 2026 - presente", "Professor de inglês (ESL)", "Aliança América Idiomas · remoto"],
     ["set 2025 - presente", "Moderador oficial de comunidade", "Epic Games · Discord Brasil & Portugal"]
   ],
   "availability": "Disponibilidade",
-  "availabilityText": "Disponível para posições de gestão de operações em empresas remotas com contratação internacional ou na América Latina. Residente no Brasil (UTC-3), com fluência profissional em inglês e português nativo.",
+  "availabilityText": "Disponível para posições de gestão de operações em equipes remotas internacionais. Residente no Brasil (UTC-3), com inglês fluente e português nativo.",
   "contact": "Contato",
-  "contactText": "Quer conversar sobre oportunidades de gestão de operações ou fluxos práticos com IA? Entre em contato:",
+  "contactText": "Quer conversar sobre posições em operações ou fluxos práticos com IA? Entre em contato por e-mail:",
   "email": "toshiotomikawa@gmail.com",
   "emailLabel": "Enviar e-mail",
   "githubUrl": "https://github.com/toshiotomikawa",

@@ -9,8 +9,9 @@
 node_modules/
 dist/
 build/
-coverage/
 *.log
+__pycache__/
+*.pyc
 
 # Operating system files
 .DS_Store
