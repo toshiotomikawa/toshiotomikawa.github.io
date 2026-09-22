@@ -58,9 +58,9 @@
     "mapa": {
       "eyebrow": "Caso 02 / Simulador Financeiro",
       "title": "Transformando planilhas de clientes em uma explicação interativa",
-      "summary": "MapaFinanceiro — simulador web interativo construído com agentes de código, usado por uma equipe de consórcio para substituir planilhas complexas.",
+      "summary": "Mapa da Bella — simulador web interativo construído com agentes de código, usado por uma equipe de consórcio para substituir planilhas complexas.",
       "meta": [
-        ["produto", "MapaFinanceiro / Mapa da Bella"],
+        ["produto", "Mapa da Bella"],
         ["função", "Criação de produto e fluxo com IA"],
         ["contexto", "consultas comerciais de consórcio"],
         ["tecnologia", "web estática, estado reativo"]

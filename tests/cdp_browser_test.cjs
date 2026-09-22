@@ -23,6 +23,7 @@ class CDPClient {
     this.ws = new WebSocket(wsUrl);
     this.id = 0;
     this.callbacks = new Map();
+    this.eventListeners = new Map();
   }
 
   async init() {
@@ -36,8 +37,24 @@ class CDPClient {
           this.callbacks.delete(res.id);
           if (res.error) reject(new Error(res.error.message));
           else resolve(res.result);
+        } else if (res.method && this.eventListeners.has(res.method)) {
+          const listeners = this.eventListeners.get(res.method);
+          listeners.forEach(fn => fn(res.params));
         }
       };
+    });
+  }
+
+  once(event) {
+    return new Promise(resolve => {
+      if (!this.eventListeners.has(event)) {
+        this.eventListeners.set(event, new Set());
+      }
+      const cb = (params) => {
+        this.eventListeners.get(event).delete(cb);
+        resolve(params);
+      };
+      this.eventListeners.get(event).add(cb);
     });
   }
 
@@ -67,8 +84,10 @@ class CDPClient {
   }
 
   async navigate(url) {
+    const loadPromise = this.once('Page.loadEventFired');
     await this.send('Page.navigate', { url });
-    await sleep(250);
+    await loadPromise;
+    await sleep(100);
   }
 
   close() {
@@ -207,7 +226,7 @@ async function run() {
     await cdp.navigate(`${BASE}${ptLink}`);
     const heading = await cdp.evaluate(`document.querySelector('h1').innerText`);
     if (!heading.includes('Transformando planilhas')) {
-      throw new Error(`Expected Portuguese heading for MapaFinanceiro, got ${heading}`);
+      throw new Error(`Expected Portuguese heading for Mapa da Bella, got ${heading}`);
     }
     console.log('✓ Cross-locale case navigation verified:', { ptLink, heading });
 

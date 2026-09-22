@@ -36,9 +36,9 @@ def home(c, locale):
         <div><h3>{e(mgs['title'])}</h3><p class="feature-text">{e(mgs['summary'])}</p>{arrow(c['read'], f'/{locale}/work/mgs/')}</div>
       </div></article>'''
 
-    # Case 02: MapaFinanceiro
+    # Case 02: Mapa da Bella
     mapa_card = f'''<article class="featured"><div class="feature-grid">
-        <div><span class="node" aria-hidden="true"></span><p class="mono dim">02 / 2026</p><p class="studio">MapaFinanceiro</p><p class="skills mono">{'<br>'.join(map(e, mapa['skills']))}</p></div>
+        <div><span class="node" aria-hidden="true"></span><p class="mono dim">02 / 2026</p><p class="studio">Mapa da Bella</p><p class="skills mono">{'<br>'.join(map(e, mapa['skills']))}</p></div>
         <div><h3>{e(mapa['title'])}</h3><p class="feature-text">{e(mapa['summary'])}</p>{arrow(c['read'], f'/{locale}/work/mapa/')}</div>
       </div></article>'''
 
@@ -229,7 +229,7 @@ def build():
     (OUT / '404.html').write_text(document(contents['en'], 'en', is_404=True), encoding='utf-8')
 
     (OUT / '.nojekyll').touch()
-    print('Built homepage, MGS case, MapaFinanceiro case, and 404 in EN/PT with neutral entry.')
+    print('Built homepage, MGS case, Mapa da Bella case, and 404 in EN/PT with neutral entry.')
 
 
 if __name__ == '__main__':

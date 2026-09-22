@@ -9,7 +9,7 @@ Branch: `main` (tracked at `origin/main`).
 - Deployed the complete bilingual portfolio to GitHub Pages:
   - Homepage in English (`/en/`) and Portuguese (`/pt/`) with automatic language detection and neutral entry (`/`).
   - Core Case Study 01: Michael Ghelfi Studios operations (`/en/work/mgs/`, `/pt/work/mgs/`).
-  - Core Case Study 02: MapaFinanceiro interactive simulator (`/en/work/mapa/`, `/pt/work/mapa/`).
+  - Core Case Study 02: Mapa da Bella interactive simulator (`/en/work/mapa/`, `/pt/work/mapa/`; repository `MapaFinanceiro`).
   - Supporting project: Grok MCP Bridge architecture card.
   - Background, Availability, Contact (`mailto:toshiotomikawa@gmail.com` and GitHub), and Resume qualifications summary.
   - Custom 404 error page (`/404.html`) with bilingual return navigation.

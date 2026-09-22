@@ -58,9 +58,9 @@
     "mapa": {
       "eyebrow": "Case 02 / Financial Simulator",
       "title": "Turning client-facing spreadsheets into an interactive explanation",
-      "summary": "MapaFinanceiro — an interactive web simulator built with coding agents, used by a consórcio sales team to replace confusing spreadsheets.",
+      "summary": "Mapa da Bella — an interactive web simulator built with coding agents, used by a consórcio sales team to replace confusing spreadsheets.",
       "meta": [
-        ["product", "MapaFinanceiro / Mapa da Bella"],
+        ["product", "Mapa da Bella"],
         ["role", "Product & AI Workflow Builder"],
         ["context", "consórcio sales consultations"],
         ["stack", "static web, reactive state"]
