@@ -1,4 +1,4 @@
-# Yuri Toshio Tomikawa — portfolio
+# Yuri Toshio Tomikawa: Portfolio
 
 English/Portuguese portfolio for LATAM remote operations-management roles.
 

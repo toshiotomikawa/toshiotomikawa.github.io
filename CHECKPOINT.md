@@ -1,4 +1,4 @@
-# Phase 4 — Published and verified
+# Phase 4: Published and verified
 
 Completed 2026-09-21. Yuri Toshio Tomikawa's bilingual portfolio is live on GitHub Pages.
 Live URL: https://toshiotomikawa.github.io/

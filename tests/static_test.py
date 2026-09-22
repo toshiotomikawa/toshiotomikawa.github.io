@@ -98,6 +98,17 @@ class StaticPrototype(unittest.TestCase):
             self.assertIn('class="skip-link"', content)
             self.assertIn('id="main"', content)
 
+    def test_no_em_dashes(self):
+        content_files = list((ROOT / 'content').glob('*.json'))
+        dist_html_files = list(DIST.rglob('*.html'))
+        self.assertTrue(content_files)
+        self.assertTrue(dist_html_files)
+        for path in content_files + dist_html_files:
+            text = path.read_text(encoding='utf-8')
+            self.assertNotIn('\u2014', text, f'Em dash (—) found in {path}')
+            self.assertNotIn('&mdash;', text, f'&mdash; found in {path}')
+            self.assertNotIn('&#8212;', text, f'&#8212; found in {path}')
+
 
 if __name__ == '__main__':
     unittest.main()

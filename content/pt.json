@@ -2,7 +2,7 @@
   "lang": "pt-BR",
   "title": "Gestão de operações com uso prático de IA.",
   "eyebrow": "Gestão de operações · remoto, elegível na América Latina",
-  "intro": "Coordeno pessoas, fluxos de trabalho e ferramentas para manter o trabalho andando — e construo ferramentas práticas e fluxos com IA dirigindo agentes de programação.",
+  "intro": "Coordeno pessoas, fluxos de trabalho e ferramentas para manter o trabalho andando, além de construir ferramentas práticas e fluxos com IA dirigindo agentes de programação.",
   "nav": [
     ["work", "trabalhos"],
     ["background", "trajetória"],
@@ -26,7 +26,7 @@
       "summary": "Quatro anos coordenando a revisão e a publicação em um estúdio internacional, com três lançamentos semanais e o Patreon.",
       "meta": [
         ["cargo", "Studio Manager"],
-        ["período", "ago 2021 — dez 2025"],
+        ["período", "ago 2021 - dez 2025"],
         ["estúdio", "música e paisagens sonoras"],
         ["idioma", "inglês, time internacional"]
       ],
@@ -40,7 +40,7 @@
         ["ferramentas", "Coordenei ferramentas externas de automação, fluxos de entrega e redes sociais do estúdio."]
       ],
       "decisions": "Defini temas editoriais, seleção de vídeos para publicação, testes A/B de miniaturas, listas temáticas de ambianças/efeitos sonoros e concepção de arte gerada por IA.",
-      "sampleTitle": "Biosphere — vídeo do álbum completo",
+      "sampleTitle": "Biosphere: vídeo do álbum completo",
       "steps": [
         "Desenvolvi o conceito visual de forma independente",
         "Gerei as ilustrações com IA",
@@ -49,7 +49,7 @@
         "Publiquei e distribuí o lançamento"
       ],
       "credit": "Música composta por Filip Melvan.",
-      "reach": "O vídeo publicado registrou 936.714 visualizações em 15 de setembro de 2026 — alcance do lançamento completo, somando a música e a distribuição do estúdio.",
+      "reach": "O vídeo publicado registrou 936.714 visualizações em 15 de setembro de 2026, representando o alcance do lançamento completo, somando a música e a distribuição do estúdio.",
       "linkUrl": "https://www.youtube.com/watch?v=sYcOqTKv7B0",
       "linkLabel": "assistir a Biosphere no YouTube",
       "also": "Apliquei um acabamento dourado metálico ao logotipo encomendado pelo estúdio para lançamentos especiais. A marca original foi criada por outra pessoa.",
@@ -58,7 +58,7 @@
     "mapa": {
       "eyebrow": "Caso 02 / Simulador Financeiro",
       "title": "Transformando planilhas de clientes em uma explicação interativa",
-      "summary": "Mapa da Bella — simulador web interativo construído com agentes de código, usado por uma equipe de consórcio para substituir planilhas complexas.",
+      "summary": "Mapa da Bella: simulador web interativo construído com agentes de código, usado por uma equipe de consórcio para substituir planilhas complexas.",
       "meta": [
         ["produto", "Mapa da Bella"],
         ["função", "Criação de produto e fluxo com IA"],
@@ -94,7 +94,7 @@
   "supporting": {
     "eyebrow": "03 / integração",
     "title": "Conectar ferramentas de IA com controles claros",
-    "summary": "Grok MCP Bridge — integração local e pessoal que conecta o ChatGPT Chat ao Grok Build, com acompanhamento de tarefas e mudanças revisadas separadamente.",
+    "summary": "Grok MCP Bridge: integração local e pessoal que conecta o ChatGPT Chat ao Grok Build, com acompanhamento de tarefas e mudanças revisadas separadamente.",
     "points": [
       "Separa a execução por IA da aplicação de mudanças por meio de fases distintas de consulta e revisão.",
       "Mantém identificadores estáveis para tarefas com múltiplas etapas em vez de depender de uma única requisição aberta.",
@@ -105,9 +105,9 @@
   "background": "Trajetória",
   "backgroundText": "Quatro anos liderando operações, padrões editoriais, publicação e suporte web em um time remoto internacional, somados à experiência docente em edtech e desenvolvimento de produtos com IA.",
   "experience": [
-    ["ago 2021 — dez 2025", "Studio Manager", "Michael Ghelfi Studios · remoto (inglês)"],
-    ["mai 2026 — presente", "Professor de inglês (ESL)", "Aliança América Idiomas · remoto"],
-    ["set 2025 — presente", "Moderador oficial de comunidade", "Epic Games · Discord Brasil & Portugal"]
+    ["ago 2021 - dez 2025", "Studio Manager", "Michael Ghelfi Studios · remoto (inglês)"],
+    ["mai 2026 - presente", "Professor de inglês (ESL)", "Aliança América Idiomas · remoto"],
+    ["set 2025 - presente", "Moderador oficial de comunidade", "Epic Games · Discord Brasil & Portugal"]
   ],
   "availability": "Disponibilidade",
   "availabilityText": "Disponível para posições de gestão de operações em empresas remotas com contratação internacional ou na América Latina. Residente no Brasil (UTC-3), com fluência profissional em inglês e português nativo.",

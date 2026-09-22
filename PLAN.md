@@ -23,7 +23,7 @@ Help LATAM remote employers assess Yuri Toshio Tomikawa for operations managemen
 - Keep private review notes in `C:\Users\Zen\Desktop\Coding\Portfolio-review`, outside the repository. Record the notes location and checkpoint status without private content in AGENTS.md. Repository backups do not cover that separate directory; report that distinction, and do not copy private notes to the shared backup destinations automatically.
 - Check current GitHub Pages configuration before pushing site-bearing files: a push can deploy automatically. Until launch is authorized, keep previews local or use a branch verified not to publish. Documentation pushes are distinct from launch approval.
 
-## Phase 1 — Content and evidence
+## Phase 1: Content and evidence
 Work:
 - Consolidate existing answers and the supplied MapaFinanceiro report; ask only about consequential gaps. Review up to three representative, current LATAM-eligible operations vacancies to test positioning, not to invent qualifications or turn this into a broad job search. Keep employer requirements separate from demonstrated experience.
 - Limit repository research to the selected candidates and material claims. Reuse the supplied report, verify public work links, and distinguish documented features from demonstrated behavior. No exhaustive code audit, paid model calls, device changes, production mutations, or implementation work in other projects.
@@ -35,7 +35,7 @@ Deliverable: homepage/case-study drafts, section outline, and a compact evidence
 
 Stop: user reviews positioning, claims, selected projects, and proposed public material. The content checkpoint is complete when each core case has a clear responsibility, concrete work sample, and supportable outcome or deliverable; optional gaps are omitted or deferred. No visual build yet.
 
-## Phase 2 — Working visual prototype
+## Phase 2: Working visual prototype
 Work:
 - Confirm the default static architecture, route scheme, and unpublished preview method; inspect Pages settings before any site-bearing push. Establish maintainable page/content structure and shared visual styles.
 - Build the homepage and one representative case study with approved content, desktop/mobile layouts, and genuine navigation.
@@ -47,7 +47,7 @@ Deliverable: local browser preview and screenshots showing the actual design, no
 
 Stop: user reviews layout, hierarchy, tone, and interaction before the design spreads across the site. The prototype must show the operations positioning, a complete example case, and working language/navigation behavior at desktop and mobile sizes.
 
-## Phase 3 — Complete, validate, and prepare launch
+## Phase 3: Complete, validate, and prepare launch
 Work:
 - Apply the accepted design to all selected case studies, experience, resume, and contact sections.
 - Complete and proofread English/Portuguese content; preserve factual equivalence and attribution.
@@ -66,7 +66,7 @@ Deliverable: complete tested release candidate in both languages, concise verifi
 
 Stop: user reviews the complete tested site. Apply requested revisions and repeat only affected checks within this phase. State plainly that the next continue authorizes publication of the reviewed version in Phase 4; do not infer launch approval from a request for revisions.
 
-## Phase 4 — Publish and verify
+## Phase 4: Publish and verify
 Work:
 - Publish the reviewed release to GitHub Pages; configure the required deployment workflow/settings as needed.
 - Verify the live URL, HTTPS, assets, navigation, direct links, both languages, resume/contact, and mobile layout. Mark deployment complete only after actual live verification; a successful push is not enough. If hosting is blocked, leave the tested candidate and name the blocker without expanding into unrelated infrastructure work.

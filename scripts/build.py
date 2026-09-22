@@ -32,7 +32,7 @@ def home(c, locale):
 
     # Case 01: MGS
     mgs_card = f'''<article class="featured"><div class="feature-grid">
-        <div><span class="node" aria-hidden="true"></span><p class="mono dim">01 / 2021—2025</p><p class="studio">Michael Ghelfi Studios</p><p class="skills mono">{'<br>'.join(map(e, mgs['skills']))}</p></div>
+        <div><span class="node" aria-hidden="true"></span><p class="mono dim">01 / 2021-2025</p><p class="studio">Michael Ghelfi Studios</p><p class="skills mono">{'<br>'.join(map(e, mgs['skills']))}</p></div>
         <div><h3>{e(mgs['title'])}</h3><p class="feature-text">{e(mgs['summary'])}</p>{arrow(c['read'], f'/{locale}/work/mgs/')}</div>
       </div></article>'''
 
@@ -159,7 +159,7 @@ def document(c, locale, case_key=None, neutral=False, is_404=False):
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {"<meta name=\"robots\" content=\"noindex\">" if is_404 else "<meta name=\"robots\" content=\"index, follow\">"}
-  <title>{e(title)} — Yuri Toshio Tomikawa</title>
+  <title>{e(title)} | Yuri Toshio Tomikawa</title>
   <meta name="description" content="{e(description)}">
   <link rel="canonical" href="{page_url}">
   <meta property="og:site_name" content="Yuri Toshio Tomikawa">

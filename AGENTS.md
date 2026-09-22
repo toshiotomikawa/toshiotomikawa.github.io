@@ -36,6 +36,7 @@
 ## Collaboration
 - Maximize information density. Use the fewest words that preserve meaning; omit repetition, filler, and unnecessary narration.
 - Ask one question at a time.
+- Punctuation and typography rule: Do not use em dashes (—, &mdash;, &#8212;, or \u2014) in any copy, content files, templates, scripts, or project documentation. Use colons, commas, periods, or standard hyphens (-) instead. This is a permanent project constraint for all current and future texts.
 - Theme contract: default System; resolve system dark preference to Dark, otherwise Light, including unavailable detection. Compact symbol-only button cycles System -> Light -> Dark -> System, with localized accessible name/tooltip, visible focus, and remembered manual preference. Follow live system changes only in System. Theme persists independently across locale/page navigation. Invalid/unavailable storage must not break rendering.
 - Group each reviewable revision with its verification, documentation, focused commit, and verified backups into one natural checkpoint. Save an exact handoff before starting another substantial pass; avoid task-by-task approval stops. Rate-limit interruptions cannot be guaranteed away.
 - Avoid exhaustive recall requests; the user's past role had many overlapping responsibilities. Build the account incrementally from concrete examples and artifacts.
