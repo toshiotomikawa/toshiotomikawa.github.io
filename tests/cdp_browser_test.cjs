@@ -87,6 +87,11 @@ class CDPClient {
     const loadPromise = this.once('Page.loadEventFired');
     await this.send('Page.navigate', { url });
     await loadPromise;
+    for (let i = 0; i < 40; i++) {
+      const ready = await this.evaluate(`location.href !== 'about:blank' && document.readyState === 'complete'`);
+      if (ready) break;
+      await sleep(100);
+    }
     await sleep(100);
   }
 
