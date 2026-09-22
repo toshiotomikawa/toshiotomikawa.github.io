@@ -3,38 +3,124 @@
   "title": "Gestão de operações com uso prático de IA.",
   "eyebrow": "Gestão de operações · remoto, elegível na América Latina",
   "intro": "Coordeno pessoas, fluxos de trabalho e ferramentas para manter o trabalho andando — e construo ferramentas práticas e fluxos com IA dirigindo agentes de programação.",
-  "nav": ["trabalhos", "trajetória", "disponibilidade"],
+  "nav": [
+    ["work", "trabalhos"],
+    ["background", "trajetória"],
+    ["availability", "disponibilidade"],
+    ["contact", "contato"]
+  ],
   "navLabel": "Seções",
   "languageLabel": "Idioma",
   "skip": "Pular para o conteúdo",
-  "meta": [["local", "Brasil"], ["idiomas", "inglês fluente / português nativo"], ["buscando", "remoto, América Latina"]],
-  "selected": "Trabalhos selecionados",
-  "skills": ["revisão editorial", "padrões de qualidade", "publicação de vídeos", "operação do site"],
-  "feature": "Manter a produção recorrente em movimento",
-  "featureText": "Quatro anos cuidando da revisão e da publicação em um estúdio internacional pequeno, com três lançamentos por semana e o Patreon.",
-  "read": "ler o estudo de caso",
-  "secondary": [
-    ["02 / ferramenta", "Tornar os cenários do cliente mais fáceis de explicar", "MapaFinanceiro — uma ferramenta interativa simples usada por uma equipe de consórcio no lugar de planilhas confusas para o cliente."],
-    ["03 / integração", "Conectar ferramentas de IA com controles claros", "Grok MCP Bridge — integração local e pessoal que conecta o ChatGPT Chat ao Grok Build, com acompanhamento de tarefas e mudanças revisadas separadamente."]
+  "meta": [
+    ["local", "Brasil (UTC-3)"],
+    ["idiomas", "inglês fluente / português nativo"],
+    ["buscando", "gestão de operações remota"]
   ],
+  "selected": "Trabalhos selecionados",
+  "read": "ler o estudo de caso",
+  "cases": {
+    "mgs": {
+      "eyebrow": "Caso 01 / Michael Ghelfi Studios",
+      "title": "Manter a produção recorrente em movimento em um estúdio remoto",
+      "summary": "Quatro anos coordenando a revisão e a publicação em um estúdio internacional, com três lançamentos semanais e o Patreon.",
+      "meta": [
+        ["cargo", "Studio Manager"],
+        ["período", "ago 2021 — dez 2025"],
+        ["estúdio", "música e paisagens sonoras"],
+        ["idioma", "inglês, time internacional"]
+      ],
+      "skills": ["revisão editorial", "padrões de qualidade", "publicação de vídeos", "operação do site"],
+      "labels": ["01 contexto", "02 responsabilidades", "03 decisões", "04 lançamento", "05 também"],
+      "context": "A Michael Ghelfi Studios produz músicas e paisagens sonoras para RPG com uma equipe internacional pequena trabalhando remotamente em inglês. Como Studio Manager, conectei a esteira de revisão editorial, pós-produção em vídeo, publicação multicanal e operação do site para sustentar três lançamentos públicos por semana e entregas regulares no Patreon.",
+      "items": [
+        ["redação", "Gerenciei uma equipe pequena com revisão, feedback contínuo, controle de qualidade e padronização editorial."],
+        ["vídeo", "Editei e publiquei os lançamentos em vídeo do estúdio no YouTube e pacotes do Patreon."],
+        ["site", "Administrei o site em WordPress, plugins e a manutenção de mu-plugins customizados."],
+        ["ferramentas", "Coordenei ferramentas externas de automação, fluxos de entrega e redes sociais do estúdio."]
+      ],
+      "decisions": "Defini temas editoriais, seleção de vídeos para publicação, testes A/B de miniaturas, listas temáticas de ambianças/efeitos sonoros e concepção de arte gerada por IA.",
+      "sampleTitle": "Biosphere — vídeo do álbum completo",
+      "steps": [
+        "Desenvolvi o conceito visual de forma independente",
+        "Gerei as ilustrações com IA",
+        "Editei e ajustei a miniatura (thumbnail)",
+        "Montei o vídeo do álbum completo a partir da música fornecida",
+        "Publiquei e distribuí o lançamento"
+      ],
+      "credit": "Música composta por Filip Melvan.",
+      "reach": "O vídeo publicado registrou 936.714 visualizações em 15 de setembro de 2026 — alcance do lançamento completo, somando a música e a distribuição do estúdio.",
+      "linkUrl": "https://www.youtube.com/watch?v=sYcOqTKv7B0",
+      "linkLabel": "assistir a Biosphere no YouTube",
+      "also": "Apliquei um acabamento dourado metálico ao logotipo encomendado pelo estúdio para lançamentos especiais. A marca original foi criada por outra pessoa.",
+      "back": "voltar aos trabalhos"
+    },
+    "mapa": {
+      "eyebrow": "Caso 02 / Simulador Financeiro",
+      "title": "Transformando planilhas de clientes em uma explicação interativa",
+      "summary": "MapaFinanceiro — simulador web interativo construído com agentes de código, usado por uma equipe de consórcio para substituir planilhas complexas.",
+      "meta": [
+        ["produto", "MapaFinanceiro / Mapa da Bella"],
+        ["função", "Criação de produto e fluxo com IA"],
+        ["contexto", "consultas comerciais de consórcio"],
+        ["tecnologia", "web estática, estado reativo"]
+      ],
+      "skills": ["design de produto", "direção de agentes", "comunicação com cliente", "modelagem reativa"],
+      "labels": ["01 contexto", "02 contribuição", "03 mudança no fluxo", "04 estrutura da simulação", "05 limites"],
+      "context": "Uma equipe de vendas de consórcio utilizava planilhas complexas diretamente durante o atendimento a potenciais clientes. O formato era difícil de interpretar em conversa ao vivo, e testar prazos ou entradas exigia ajustes manuais lentos.",
+      "items": [
+        ["entradas", "Controles interativos em tempo real para renda, valor do imóvel, entrada disponível e prazo desejado."],
+        ["projeções", "Comparativo dinâmico entre valorização imobiliária (7,0% a.a.) e rentabilidade financeira (6,2% a.a.) em até 30 anos."],
+        ["consórcio", "Simulação detalhada de modalidades de lance: sorteio sem lance, lance fixo (44 parcelas), limitado (88 parcelas) e livre."],
+        ["comparativo", "Quadro comparativo lado a lado confrontando poupança à vista, financiamento imobiliário e consórcio."]
+      ],
+      "decisions": "Foquei a experiência na clareza do diálogo em vez de tabelas brutas: mudar o prazo recalcula instantaneamente o aporte necessário e o texto explicativo.",
+      "sampleTitle": "Arquitetura reativa multi-cenário",
+      "steps": [
+        "Ponto de Partida: Captura renda, objetivo do imóvel e recursos disponíveis",
+        "O Custo de Esperar: Demonstra a inflação imobiliária superando a poupança",
+        "Prazo Alvo: Recalcula na hora a economia mensal necessária para 3 vs 5 anos",
+        "Mecânica de Lance: Simula lance do bolso vs embutido (desconto de até 50% do crédito)",
+        "Matriz Comparativa: Confronto objetivo com juros e prazos do financiamento bancário"
+      ],
+      "credit": "Desenvolvido para uso ativo por equipe de consultoria de consórcio.",
+      "reach": "Publicado na Vercel; elimina o atrito das planilhas durante o atendimento sem demandar infraestrutura de backend.",
+      "linkUrl": "https://mapadabella.vercel.app/",
+      "linkLabel": "explorar o aplicativo Mapa da Bella",
+      "also": "Todas as projeções refletem as premissas indicadas. Servem como ferramenta explicativa de apoio comercial, não como aprovação de crédito, garantia de contemplação ou consultoria financeira regulada.",
+      "back": "voltar aos trabalhos"
+    }
+  },
+  "supporting": {
+    "eyebrow": "03 / integração",
+    "title": "Conectar ferramentas de IA com controles claros",
+    "summary": "Grok MCP Bridge — integração local e pessoal que conecta o ChatGPT Chat ao Grok Build, com acompanhamento de tarefas e mudanças revisadas separadamente.",
+    "points": [
+      "Separa a execução por IA da aplicação de mudanças por meio de fases distintas de consulta e revisão.",
+      "Mantém identificadores estáveis para tarefas com múltiplas etapas em vez de depender de uma única requisição aberta.",
+      "Exige revisão humana explícita dos patches do git gerados e testes antes de confirmar modificações no projeto."
+    ],
+    "status": "Projeto local e pessoal em Windows 11; demonstra delegação estruturada de tarefas para IA."
+  },
   "background": "Trajetória",
-  "backgroundText": "Por quatro anos na Michael Ghelfi Studios, atuei em produção, padrões editoriais, publicação e operação do site em um time remoto internacional.",
-  "experience": [["ago 2021 — dez 2025", "Studio Manager", "Michael Ghelfi Studios · remoto"], ["mai 2026 — presente", "Professor de inglês", "Aliança América Idiomas"]],
+  "backgroundText": "Quatro anos liderando operações, padrões editoriais, publicação e suporte web em um time remoto internacional, somados à experiência docente em edtech e desenvolvimento de produtos com IA.",
+  "experience": [
+    ["ago 2021 — dez 2025", "Studio Manager", "Michael Ghelfi Studios · remoto (inglês)"],
+    ["mai 2026 — presente", "Professor de inglês (ESL)", "Aliança América Idiomas · remoto"],
+    ["set 2025 — presente", "Moderador oficial de comunidade", "Epic Games · Discord Brasil & Portugal"]
+  ],
   "availability": "Disponibilidade",
-  "availabilityText": "Aberto a vagas de gestão de operações em equipes que contratam profissionais remotos na América Latina. Moro no Brasil e trabalhei em inglês no dia a dia com um time remoto internacional por quatro anos.",
-  "caseEyebrow": "Caso 01 / Michael Ghelfi Studios",
-  "caseTitle": "Manter a produção recorrente em movimento em um estúdio remoto",
-  "caseMeta": [["cargo", "Studio Manager"], ["período", "ago 2021 — dez 2025"], ["estúdio", "música e paisagens sonoras"], ["idioma", "inglês, time internacional"]],
-  "labels": ["01 contexto", "02 responsabilidades", "03 decisões", "04 lançamento", "05 também"],
-  "context": "A Michael Ghelfi Studios é um estúdio de música e paisagens sonoras, com um time internacional pequeno trabalhando remotamente em inglês. Como Studio Manager, dei suporte a três lançamentos por semana, além da publicação para o Patreon.",
-  "responsibilities": [["redação", "Gerenciei uma equipe pequena com revisão, feedback, controle de qualidade e padronização."], ["vídeo", "Editei e publiquei os vídeos do estúdio, incluindo os lançamentos no Patreon."], ["site", "Mantive o site em WordPress e seus plugins."], ["ferramentas", "Cuidei das ferramentas externas e das redes sociais do estúdio."]],
-  "decisions": "Temas editoriais, seleção de vídeos, testes A/B, playlists e arte gerada por IA.",
-  "sample": "Biosphere — vídeo do álbum completo",
-  "steps": ["Desenvolvi o conceito visual de forma independente", "Gerei as ilustrações com IA", "Editei a thumbnail", "Montei o vídeo do álbum completo a partir da música fornecida", "Publiquei o lançamento"],
-  "credit": "Música composta por Filip Melvan.",
-  "reach": "O vídeo publicado registrou 936.714 visualizações em 15 de setembro de 2026 — um número do lançamento como um todo, incluindo a música e a distribuição do estúdio.",
-  "watch": "assistir a Biosphere no YouTube",
-  "also": "Apliquei um efeito metálico dourado ao logotipo em preto e branco encomendado pelo estúdio. A marca original foi criada por outra pessoa.",
-  "back": "voltar aos trabalhos",
+  "availabilityText": "Disponível para posições de gestão de operações em empresas remotas com contratação internacional ou na América Latina. Residente no Brasil (UTC-3), com fluência profissional em inglês e português nativo.",
+  "contact": "Contato",
+  "contactText": "Quer conversar sobre oportunidades de gestão de operações ou fluxos práticos com IA? Entre em contato:",
+  "email": "toshiotomikawa@gmail.com",
+  "emailLabel": "Enviar e-mail",
+  "githubUrl": "https://github.com/toshiotomikawa",
+  "githubLabel": "Perfil no GitHub",
+  "resumeTitle": "Currículo e Qualificações",
+  "resumeSummary": "Gestão de operações · Coordenação de equipes · Fluxos com agentes de código · Padronização de processos · WordPress e Operações Web · Bilíngue EN/PT.",
+  "resumeLinks": [
+    ["Solicitar / Visualizar CV (PT)", "mailto:toshiotomikawa@gmail.com?subject=Contato%20Portfolio%20-%20Curriculo"]
+  ],
   "themeLabel": "Tema: sistema. Mudar para claro."
 }

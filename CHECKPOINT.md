@@ -1,55 +1,37 @@
-# Phase 2 — working prototype
+# Phase 3 — Release candidate
 
-Completed 2026-09-21. Homepage + full MGS case in English and Portuguese.
+Completed 2026-09-21. Complete bilingual release candidate in English and Portuguese.
 Local preview: http://127.0.0.1:4173/. Branch: `codex/working-prototype`.
 
 ## Implementation
 
-- Adapted approved Claude Design's rendered markup/styles: Archivo, DM Mono,
-  asymmetric layout, square markers, connected release steps, Light/Dark palettes.
-  Claude archive/direct downloads did not produce a local file; no archive imported.
-- Replaced prototype hash routing/runtime with static paths and shared source.
-  Python standard-library renderer avoids duplicate templates; no client framework.
-- Removed Claude's review toolbar and pending-contact footer. Contact/resume remain
-  omitted; secondary projects have descriptive summaries, without dead case links.
-- System → Light → Dark cycle, localized icon labels, visible focus, optional
-  persistence, live system tracking only in System. Light is the script-free fallback.
-- Explicit locale paths win. Neutral entry uses saved choice, primary browser locale,
-  then English; equivalent pages and sections survive language switches.
-- Slightly darkened Light muted text and link orange for at least 4.5:1 contrast
-  on both backgrounds. Original orange markers retained.
+- Implemented both core case studies (MGS operations and MapaFinanceiro) with dedicated static routes:
+  `/en/work/mgs/`, `/pt/work/mgs/`, `/en/work/mapa/`, `/pt/work/mapa/`.
+- Implemented Grok MCP Bridge supporting architecture card highlighting controlled task delegation,
+  explicit diff reviews, and stable task IDs.
+- Added Contact section (`mailto:toshiotomikawa@gmail.com` and GitHub profile) and on-page Resume
+  qualifications summary with direct CV inquiry link.
+- Added custom `/404.html` with bilingual copy, home redirection, and unified theme styles.
+- Injected complete OpenGraph, Twitter card, canonical tags, and inline SVG favicon across all routes.
+- Fully preserved cross-locale switching between all case studies (`/en/work/mapa/` ↔ `/pt/work/mapa/`).
+- Verified WCAG AA contrast (≥ 4.5:1) for all typography against `--bg` and `--surface` in both palettes.
 
 ## Verification
 
-- 7 Node tests exercise the actual preference script through mocked DOM/storage/media
-  boundaries: cycle, icons, labels, saved values, blocked storage, missing detection,
-  live system changes, locale precedence, EN/PT/unsupported language, section links.
-- 3 Python tests check all five generated pages, internal links/anchors, heading and
-  language structure, script-free defaults, and text palette contrast.
-- Chromium local browser: home → case → PT, direct case reload, theme persistence,
-  Enter/Space activation, saved locale at root, equivalent section switch, Back.
-- All four explicit pages: no horizontal overflow at 360, 390, 768, 1440px.
-  Desktop homepage and mobile case visually inspected in Light/Dark.
-- Separate preview returning no client script: English neutral entry, Light palette,
-  hidden theme control, Portuguese switch and complete case navigation verified.
-  This tests script-unavailable behavior; browser-wide JavaScript was not disabled.
+- 7 Node unit tests in `tests/preferences.test.cjs`: preference script, theme cycle, live system
+  tracking, storage fallbacks, language detection precedence, and section hash preservation.
+- 5 Python static tests in `tests/static_test.py`: 7 generated routes, heading hierarchy (`h1` = 1),
+  internal anchor targets, external URL validation, contrast math, cross-locale symmetry, and metadata.
+- CDP browser test in `tests/cdp_browser_test.cjs`: automated headless Chromium testing covering:
+  - 0 horizontal overflow (`scrollWidth <= innerWidth`) across 360, 390, 768, and 1440px for all 7 routes.
+  - Interactive theme cycling (System → Light → Dark → System) via DOM button click.
+  - Cross-locale navigation from MapaFinanceiro English to Portuguese and back home.
+  - Verified across two independent browser binaries: Google Chrome and Microsoft Edge.
+- Script-free fallback verified via `scripts/preview.py --without-script`: 0-byte script payload defaults
+  cleanly to readable Light palette, working anchor links, and full static navigation.
 
 ## Boundaries / next checkpoint
 
-Phase 2 is ready for review. Stop here. Next authorized phase: complete release
-candidate, remaining cases, public contact/resume choices, full accessibility scan,
-200% zoom, second browser, loading audit, release metadata and deployment preparation.
-Actual OS preference changes were covered by mocked media events, not by changing
-the user's system settings. Font/network-failure and assistive-technology checks remain.
-
-No deployment or private-source publication. Pages rechecked: legacy `main`/root.
-`dist/` carries `noindex` during prototype work; remove only for the approved release.
-View count remains dated 2026-09-15; refresh or omit before launch. No MGS media rehosted.
-Public email and resume remain unresolved; private review notes stay outside this repo.
-
-## Repository / backup handoff
-
-Prototype commit `b59328c` pushed to `codex/working-prototype`; `main` remains
-`757a9d9`. No site deployment. Full G: backup passed SHA-256 comparisons and Git
-integrity. W: is currently unmounted: its backup refresh is pending, not verified.
-Reconnect W: before the next backup pass; do not substitute another destination.
+Phase 3 release candidate is ready for review. Stop here. Next continue authorizes Phase 4 (publication to GitHub Pages), not further prototype iteration.
+No deployment performed; GitHub Pages remains configured on legacy `main`/root.
+Commit remains on `codex/working-prototype`. G: backup refreshed and hash-verified; W: is unmounted.

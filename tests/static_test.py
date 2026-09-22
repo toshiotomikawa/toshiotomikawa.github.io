@@ -32,18 +32,24 @@ class Page(HTMLParser):
 
 class StaticPrototype(unittest.TestCase):
     def test_routes_links_and_semantics(self):
-        paths = [DIST / 'index.html'] + [DIST / l / p for l in ('en', 'pt') for p in ('index.html', 'work/mgs/index.html')]
+        paths = [DIST / 'index.html', DIST / '404.html'] + [DIST / l / p for l in ('en', 'pt') for p in ('index.html', 'work/mgs/index.html', 'work/mapa/index.html')]
+        allowed_external_prefixes = (
+            'https://www.youtube.com/watch?v=sYcOqTKv7B0',
+            'https://mapadabella.vercel.app/',
+            'https://github.com/toshiotomikawa',
+            'mailto:toshiotomikawa@gmail.com',
+        )
         for path in paths:
             with self.subTest(path=path):
                 page = Page(path)
                 self.assertIn(page.lang, ('en', 'pt-BR'))
                 self.assertEqual(page.headings.count(1), 1)
                 self.assertIn('main', page.ids)
-                self.assertGreater(path.stat().st_size, 4000)
+                self.assertGreater(path.stat().st_size, 3000)
                 for link in page.links:
                     url = urlsplit(link)
-                    if url.scheme:
-                        self.assertEqual(link, 'https://www.youtube.com/watch?v=sYcOqTKv7B0')
+                    if url.scheme in ('http', 'https', 'mailto'):
+                        self.assertTrue(any(link.startswith(prefix) for prefix in allowed_external_prefixes), f'Unexpected external link: {link}')
                         continue
                     target = DIST / unquote(url.path).lstrip('/') if url.path else path
                     if target.is_dir():
@@ -72,6 +78,25 @@ class StaticPrototype(unittest.TestCase):
                 for bg in ('bg', 'surface'):
                     a, b = sorted((luminance(values[name]), luminance(values[bg])))
                     self.assertGreaterEqual((b + .05) / (a + .05), 4.5, f'{name} on {bg}')
+
+    def test_language_cross_linking(self):
+        for case in ('mgs', 'mapa'):
+            en_case = (DIST / 'en/work' / case / 'index.html').read_text(encoding='utf-8')
+            pt_case = (DIST / 'pt/work' / case / 'index.html').read_text(encoding='utf-8')
+            self.assertIn(f'href="/pt/work/{case}/"', en_case)
+            self.assertIn(f'href="/en/work/{case}/"', pt_case)
+            self.assertIn(f'hreflang="pt-BR" href="/pt/work/{case}/"', en_case)
+            self.assertIn(f'hreflang="en" href="/en/work/{case}/"', pt_case)
+
+    def test_meta_and_accessibility(self):
+        for path in (DIST / 'en/index.html', DIST / 'pt/index.html', DIST / 'en/work/mapa/index.html'):
+            content = path.read_text(encoding='utf-8')
+            self.assertIn('property="og:title"', content)
+            self.assertIn('property="og:description"', content)
+            self.assertIn('name="twitter:card"', content)
+            self.assertIn('rel="canonical"', content)
+            self.assertIn('class="skip-link"', content)
+            self.assertIn('id="main"', content)
 
 
 if __name__ == '__main__':

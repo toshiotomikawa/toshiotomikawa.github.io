@@ -1,4 +1,4 @@
-"""Render the two-language prototype using only the Python standard library."""
+"""Render the complete bilingual release candidate using only the Python standard library."""
 import json
 import shutil
 from html import escape
@@ -6,6 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dist"
+BASE_URL = "https://toshiotomikawa.github.io"
 
 
 def e(value):
@@ -18,14 +19,46 @@ def pairs(items, cls):
     ) + '</dl>'
 
 
-def arrow(label, href, back=False):
-    glyph = '<span aria-hidden="true">←</span>' if back else '<span aria-hidden="true">→</span>'
-    return f'<a class="arrow" href="{href}">{glyph if back else ""}{e(label)}{glyph if not back else ""}</a>'
+def arrow(label, href, back=False, external=False):
+    glyph = '<span aria-hidden="true">←</span>' if back else ('<span aria-hidden="true">↗</span>' if external else '<span aria-hidden="true">→</span>')
+    rel = ' rel="noopener noreferrer" target="_blank"' if external else ''
+    return f'<a class="arrow" href="{href}"{rel}>{glyph if back else ""}{e(label)}{(" " + glyph) if not back else ""}</a>'
 
 
 def home(c, locale):
-    secondary = ''.join(f'<article><span class="node" aria-hidden="true"></span><p class="mono dim">{e(k)}</p><h3>{e(t)}</h3><p>{e(p)}</p></article>' for k, t, p in c['secondary'])
+    mgs = c['cases']['mgs']
+    mapa = c['cases']['mapa']
+    sup = c['supporting']
+
+    # Case 01: MGS
+    mgs_card = f'''<article class="featured"><div class="feature-grid">
+        <div><span class="node" aria-hidden="true"></span><p class="mono dim">01 / 2021—2025</p><p class="studio">Michael Ghelfi Studios</p><p class="skills mono">{'<br>'.join(map(e, mgs['skills']))}</p></div>
+        <div><h3>{e(mgs['title'])}</h3><p class="feature-text">{e(mgs['summary'])}</p>{arrow(c['read'], f'/{locale}/work/mgs/')}</div>
+      </div></article>'''
+
+    # Case 02: MapaFinanceiro
+    mapa_card = f'''<article class="featured"><div class="feature-grid">
+        <div><span class="node" aria-hidden="true"></span><p class="mono dim">02 / 2026</p><p class="studio">MapaFinanceiro</p><p class="skills mono">{'<br>'.join(map(e, mapa['skills']))}</p></div>
+        <div><h3>{e(mapa['title'])}</h3><p class="feature-text">{e(mapa['summary'])}</p>{arrow(c['read'], f'/{locale}/work/mapa/')}</div>
+      </div></article>'''
+
+    # Supporting Case: Grok MCP Bridge
+    points = ''.join(f'<li>{e(pt)}</li>' for pt in sup['points'])
+    grok_card = f'''<article class="supporting-feature">
+        <div class="supporting-header">
+          <span class="node" aria-hidden="true"></span>
+          <p class="mono dim">{e(sup['eyebrow'])}</p>
+          <h3>{e(sup['title'])}</h3>
+          <p class="feature-text">{e(sup['summary'])}</p>
+        </div>
+        <ul class="supporting-points">{points}</ul>
+        <p class="supporting-status mono dim">{e(sup['status'])}</p>
+      </article>'''
+
     experience = ''.join(f'<li><p class="date mono"><span class="node" aria-hidden="true"></span>{e(date)}</p><div><h3>{e(role)}</h3><p>{e(org)}</p></div></li>' for date, role, org in c['experience'])
+
+    resume_links = ''.join(f'{arrow(label, url)}' for label, url in c['resumeLinks'])
+
     return f'''
     <section class="hero">
       <p class="eyebrow mono">{e(c['eyebrow'])}</p>
@@ -34,37 +67,92 @@ def home(c, locale):
     </section>
     <section class="work" id="work">
       <div class="section-heading mono"><h2>{e(c['selected'])}</h2><span>03</span></div>
-      <article class="featured"><div class="feature-grid">
-        <div><span class="node" aria-hidden="true"></span><p class="mono dim">01 / 2021—2025</p><p class="studio">Michael Ghelfi Studios</p><p class="skills mono">{'<br>'.join(map(e, c['skills']))}</p></div>
-        <div><h3>{e(c['feature'])}</h3><p class="feature-text">{e(c['featureText'])}</p>{arrow(c['read'], f'/{locale}/work/mgs/')}</div>
-      </div></article>
-      <div class="secondary">{secondary}</div>
+      {mgs_card}
+      {mapa_card}
+      {grok_card}
     </section>
     <section class="background" id="background"><div class="split">
       <h2 class="label">{e(c['background'])}</h2><div><p class="lead">{e(c['backgroundText'])}</p><ul class="experience">{experience}</ul></div>
     </div></section>
-    <section class="availability" id="availability"><div class="split"><h2 class="label">{e(c['availability'])}</h2><p class="body-copy">{e(c['availabilityText'])}</p></div></section>'''
+    <section class="availability" id="availability"><div class="split">
+      <h2 class="label">{e(c['availability'])}</h2><p class="body-copy">{e(c['availabilityText'])}</p>
+    </div></section>
+    <section class="contact" id="contact"><div class="split">
+      <h2 class="label">{e(c['contact'])}</h2>
+      <div>
+        <p class="lead">{e(c['contactText'])}</p>
+        <div class="contact-actions">
+          {arrow(c['email'], f"mailto:{c['email']}")}
+          {arrow(c['githubLabel'], c['githubUrl'], external=True)}
+        </div>
+        <div class="resume-box">
+          <p class="mono dim">{e(c['resumeTitle'])}</p>
+          <p class="resume-summary">{e(c['resumeSummary'])}</p>
+          <div class="resume-actions">{resume_links}</div>
+        </div>
+      </div>
+    </div></section>'''
 
 
-def case(c, locale):
-    steps = ''.join(f'<li><span class="node" aria-hidden="true"></span><span class="step-number mono" aria-hidden="true">{i:02}</span><p>{e(step)}</p></li>' for i, step in enumerate(c['steps'], 1))
+def case(c, case_data, locale):
+    steps = ''.join(f'<li><span class="node" aria-hidden="true"></span><span class="step-number mono" aria-hidden="true">{i:02}</span><p>{e(step)}</p></li>' for i, step in enumerate(case_data['steps'], 1))
     def section(i, body, cls=''):
-        return f'<section class="case-section {cls}"><div class="case-split"><h2 class="label">{e(c["labels"][i])}</h2><div>{body}</div></div></section>'
+        return f'<section class="case-section {cls}"><div class="case-split"><h2 class="label">{e(case_data["labels"][i])}</h2><div>{body}</div></div></section>'
     return f'''<article>
-      <div class="case-hero">{arrow(c['nav'][0], f'/{locale}/#work', True)}<p class="case-eyebrow mono">{e(c['caseEyebrow'])}</p><h1>{e(c['caseTitle'])}</h1>{pairs(c['caseMeta'], 'case-meta mono')}</div>
-      {section(0, f'<p class="lead">{e(c["context"])}</p>')}
-      {section(1, pairs(c['responsibilities'], 'responsibilities'))}
-      {section(2, f'<p class="body-copy">{e(c["decisions"])}</p>')}
-      {section(3, f'<h3 class="sample-title">{e(c["sample"])}</h3><ol class="steps">{steps}</ol><div class="credits"><p>{e(c["credit"])}</p><p>{e(c["reach"])}</p><p><a class="mono" href="https://www.youtube.com/watch?v=sYcOqTKv7B0">{e(c["watch"])} <span aria-hidden="true">↗</span></a></p></div>', 'sample')}
-      {section(4, f'<p class="also-copy">{e(c["also"])}</p>' + arrow(c['back'], f'/{locale}/#work', True), 'last')}
+      <div class="case-hero">{arrow(c['nav'][0][1], f'/{locale}/#work', True)}<p class="case-eyebrow mono">{e(case_data['eyebrow'])}</p><h1>{e(case_data['title'])}</h1>{pairs(case_data['meta'], 'case-meta mono')}</div>
+      {section(0, f'<p class="lead">{e(case_data["context"])}</p>')}
+      {section(1, pairs(case_data['items'], 'responsibilities'))}
+      {section(2, f'<p class="body-copy">{e(case_data["decisions"])}</p>')}
+      {section(3, f'<h3 class="sample-title">{e(case_data["sampleTitle"])}</h3><ol class="steps">{steps}</ol><div class="credits"><p>{e(case_data["credit"])}</p><p>{e(case_data["reach"])}</p><p>{arrow(case_data["linkLabel"], case_data["linkUrl"], external=True)}</p></div>', 'sample')}
+      {section(4, f'<p class="also-copy">{e(case_data["also"])}</p>' + arrow(case_data['back'], f'/{locale}/#work', True), 'last')}
     </article>'''
 
 
-def document(c, locale, is_case=False, neutral=False):
-    suffix = 'work/mgs/' if is_case else ''
-    title = c['caseTitle'] if is_case else c['title']
-    nav = ''.join(f'<a href="/{locale}/#{anchor}">{e(label)}</a>' for anchor, label in zip(['work', 'background', 'availability'], c['nav']))
+def not_found(c, locale='en'):
+    is_pt = locale == 'pt'
+    title = 'Página não encontrada' if is_pt else 'Page not found'
+    message = 'O endereço solicitado não existe ou foi alterado.' if is_pt else 'The requested URL does not exist or has moved.'
+    home_label = 'Voltar ao início' if is_pt else 'Back to home'
+    return f'''
+    <section class="case-hero">
+      <p class="case-eyebrow mono">404 / Error</p>
+      <h1>{e(title)}</h1>
+      <p class="lead">{e(message)}</p>
+      <div style="margin-top: 28px;">
+        {arrow(home_label, f'/{locale}/', back=True)}
+      </div>
+    </section>'''
+
+
+def document(c, locale, case_key=None, neutral=False, is_404=False):
+    suffix = f'work/{case_key}/' if case_key else ''
+    is_case = case_key is not None
+
+    if is_404:
+        title = 'Page not found / Página não encontrada'
+        description = 'The requested page could not be found. / A página solicitada não pôde ser encontrada.'
+    elif is_case:
+        case_data = c['cases'][case_key]
+        title = case_data['title']
+        description = case_data['context'][:155]
+    else:
+        title = c['title']
+        description = c['intro'][:155]
+
+    nav = ''.join(f'<a href="/{locale}/#{anchor}">{e(label)}</a>' for anchor, label in c['nav'])
     languages = ''.join(f'<a data-locale="{key}" href="/{key}/{suffix}" lang="{lang}" hreflang="{lang}" {"aria-current=\"page\"" if key == locale else ""}>{key.upper()}</a>' for key, lang in [('en', 'en'), ('pt', 'pt-BR')])
+
+    page_url = f"{BASE_URL}/{locale}/{suffix}"
+    og_locale = "pt_BR" if locale == "pt" else "en_US"
+    og_locale_alt = "en_US" if locale == "pt" else "pt_BR"
+
+    if is_404:
+        body_content = not_found(c, locale)
+    elif is_case:
+        body_content = case(c, c['cases'][case_key], locale)
+    else:
+        body_content = home(c, locale)
+
     return f'''<!doctype html>
 <html lang="{c['lang']}" data-entry="{'neutral' if neutral else 'explicit'}">
 <head>
@@ -72,7 +160,19 @@ def document(c, locale, is_case=False, neutral=False):
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <title>{e(title)} — Yuri Toshio Tomikawa</title>
-  <meta name="description" content="{e(c['context'] if is_case else c['intro'])}">
+  <meta name="description" content="{e(description)}">
+  <link rel="canonical" href="{page_url}">
+  <meta property="og:site_name" content="Yuri Toshio Tomikawa">
+  <meta property="og:title" content="{e(title)}">
+  <meta property="og:description" content="{e(description)}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{page_url}">
+  <meta property="og:locale" content="{og_locale}">
+  <meta property="og:locale:alternate" content="{og_locale_alt}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{e(title)}">
+  <meta name="twitter:description" content="{e(description)}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23d94e1f%22/></svg>">
   <script src="/assets/preferences.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&amp;family=DM+Mono:wght@400;500&amp;display=swap">
   <link rel="stylesheet" href="/assets/site.css">
@@ -92,7 +192,7 @@ def document(c, locale, is_case=False, neutral=False):
       <svg data-icon="dark" aria-hidden="true" viewBox="0 0 16 16" hidden><path d="M13.2 9.9A5.8 5.8 0 0 1 6.1 2.8a5.8 5.8 0 1 0 7.1 7.1z"/></svg>
     </button></div></div>
   </header>
-  <main id="main" tabindex="-1">{case(c, locale) if is_case else home(c, locale)}</main>
+  <main id="main" tabindex="-1">{body_content}</main>
   <footer>Yuri Toshio Tomikawa</footer>
 </div>
 </body>
@@ -103,16 +203,33 @@ def document(c, locale, is_case=False, neutral=False):
 def build():
     OUT.mkdir(exist_ok=True)
     shutil.copytree(ROOT / 'assets', OUT / 'assets', dirs_exist_ok=True)
+
+    contents = {}
     for locale in ['en', 'pt']:
-        c = json.loads((ROOT / 'content' / f'{locale}.json').read_text(encoding='utf-8'))
-        for is_case in [False, True]:
-            path = OUT / locale / ('work/mgs' if is_case else '')
-            path.mkdir(parents=True, exist_ok=True)
-            (path / 'index.html').write_text(document(c, locale, is_case), encoding='utf-8')
-        if locale == 'en':
-            (OUT / 'index.html').write_text(document(c, locale, neutral=True), encoding='utf-8')
+        contents[locale] = json.loads((ROOT / 'content' / f'{locale}.json').read_text(encoding='utf-8'))
+
+    # Build locale homepages and case studies
+    for locale in ['en', 'pt']:
+        c = contents[locale]
+        # Homepage
+        home_path = OUT / locale
+        home_path.mkdir(parents=True, exist_ok=True)
+        (home_path / 'index.html').write_text(document(c, locale), encoding='utf-8')
+
+        # Case studies: mgs and mapa
+        for case_key in ['mgs', 'mapa']:
+            case_path = OUT / locale / 'work' / case_key
+            case_path.mkdir(parents=True, exist_ok=True)
+            (case_path / 'index.html').write_text(document(c, locale, case_key=case_key), encoding='utf-8')
+
+    # Root neutral-entry fallback
+    (OUT / 'index.html').write_text(document(contents['en'], 'en', neutral=True), encoding='utf-8')
+
+    # 404 missing-page document
+    (OUT / '404.html').write_text(document(contents['en'], 'en', is_404=True), encoding='utf-8')
+
     (OUT / '.nojekyll').touch()
-    print('Built homepage + MGS in EN/PT, with an English neutral-entry fallback.')
+    print('Built homepage, MGS case, MapaFinanceiro case, and 404 in EN/PT with neutral entry.')
 
 
 if __name__ == '__main__':

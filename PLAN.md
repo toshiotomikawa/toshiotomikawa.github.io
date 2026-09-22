@@ -14,7 +14,7 @@ Help LATAM remote employers assess Yuri Toshio Tomikawa for operations managemen
 - Theme: System by default, Light fallback. Symbol-only control cycles System -> Light -> Dark; remember manual choice and preserve it across pages/languages. Follow live system changes only in System. Verify both palettes and accessible control labeling.
 
 ## Execution contract
-- This is the audited plan. Phases 1 and 2 have been authorized and completed; continue only at the next agreed checkpoint.
+- This is the audited plan. Phases 1, 2, and 3 have been authorized and completed; continue only at the next agreed checkpoint (Phase 4: Publication).
 - Each user instruction to continue authorizes the next phase. Complete its routine work and verification autonomously, then stop at its checkpoint.
 - Bundle each design revision with verification, documentation, commit, and backups as one checkpoint; complete the handoff before another substantial pass. Do not pause between individual tasks. Ask only for missing information that materially blocks the phase, one question at a time; continue independent work when possible.
 - Revisions requested at a checkpoint stay in that phase unless the user also authorizes advancing.
@@ -77,9 +77,8 @@ Deliverable: live portfolio URL, deployment verification, and maintenance handof
 Stop: first version complete. Further projects or features become separate work.
 
 ## Current checkpoint
-- Phase 1 drafted and verified on 2026-09-15. Phase 2 completed locally on 2026-09-21: approved Claude typography/composition, both palettes, EN/PT homepage and complete MGS case, real routes and functional preferences. See CHECKPOINT.md for validation and remaining release checks. Stop for review; next continue authorizes Phase 3, not publication.
+- Phase 1 drafted and verified on 2026-09-15. Phase 2 prototype completed on 2026-09-21. Phase 3 release candidate completed on 2026-09-21: full bilingual candidate with homepage, MGS case, MapaFinanceiro case, supporting Grok card, contact, resume, and 404 handling. Passed 12 automated checks, responsive validation in Chrome and Edge, and script-free fallback. See CHECKPOINT.md for full details. Stop for review; next continue authorizes Phase 4 publication.
 - Review packet: `C:\Users\Zen\Desktop\Coding\Portfolio-review\REVIEW.md`; English homepage and three case-study drafts in `CONTENT.en.md`; evidence/assets and hiring comparison in `EVIDENCE.md`; local source hashes in `LOCAL-SOURCE-HASHES.txt`. These remain outside the public repository and its backups.
-- Core cases: MGS operations and MapaFinanceiro. Proposed supporting case: Grok MCP Bridge, explicitly labeled a personal local project. Headline proposal: "Operations management, with practical AI." / "Gestão de operações com uso prático de IA."
-- Verified public Biosphere work link and Mapa page rendering with one synthetic-input recalculation. Reviewed three current LATAM operations/automation-adjacent listings. No exhaustive audit, financial validation, live Grok call, resume edit, or deployment performed.
-- Public contact address and final resume/media choices remain unresolved; they do not block independent prototype work. Link-first MGS evidence avoids depending on rehosted artwork.
-- Current artifact: local static prototype on codex/working-prototype, preview at http://127.0.0.1:4173/. Source: content/*.json, shared assets, scripts/build.py (Python standard library; avoids duplicate templates without a runtime framework). Checks cover preference edge cases, static routes/links, contrast, responsive layouts and script-unavailable content/navigation. Complete accessibility, second-engine and release audits remain Phase 3. Claude design remains private. GitHub Pages rechecked on 2026-09-21: main/root; prototype branch is not the deployment source.
+- Core cases: MGS operations and MapaFinanceiro with full dedicated static routes. Supporting case: Grok MCP Bridge architecture card. Headline: "Operations management, with practical AI." / "Gestão de operações com uso prático de IA."
+- Verified public Biosphere work link, live Mapa application, and Edge/Chrome browser rendering across 360, 390, 768, and 1440px.
+- Current artifact: static release candidate on `codex/working-prototype`, preview at http://127.0.0.1:4173/. GitHub Pages rechecked on 2026-09-21: legacy main/root; prototype branch is not the deployment source.

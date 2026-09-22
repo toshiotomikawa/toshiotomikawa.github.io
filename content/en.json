@@ -3,38 +3,124 @@
   "title": "Operations management, with practical AI.",
   "eyebrow": "Operations management · remote, LATAM-eligible",
   "intro": "I coordinate people, workflows, and tools to keep work moving — and I build practical tools and AI workflows by directing coding agents.",
-  "nav": ["work", "background", "availability"],
+  "nav": [
+    ["work", "work"],
+    ["background", "background"],
+    ["availability", "availability"],
+    ["contact", "contact"]
+  ],
   "navLabel": "Sections",
   "languageLabel": "Language",
   "skip": "Skip to content",
-  "meta": [["based", "Brazil"], ["languages", "EN fluent / PT native"], ["seeking", "remote, LATAM-eligible"]],
-  "selected": "Selected work",
-  "skills": ["editorial review", "quality standards", "video publishing", "web operations"],
-  "feature": "Keeping recurring production moving",
-  "featureText": "Four years running review and publishing for a small international studio releasing three times a week, plus Patreon.",
-  "read": "read the case",
-  "secondary": [
-    ["02 / tool", "Making client scenarios easier to explain", "MapaFinanceiro — a basic interactive tool used by a consórcio team instead of confusing client-facing spreadsheets."],
-    ["03 / integration", "Connecting AI tools with clear controls", "Grok MCP Bridge — a personal local integration connecting ChatGPT Chat to Grok Build, with task tracking and separately reviewed changes."]
+  "meta": [
+    ["based", "Brazil (UTC-3)"],
+    ["languages", "EN fluent / PT native"],
+    ["seeking", "remote operations management"]
   ],
+  "selected": "Selected work",
+  "read": "read the case",
+  "cases": {
+    "mgs": {
+      "eyebrow": "Case 01 / Michael Ghelfi Studios",
+      "title": "Keeping recurring production moving across a remote studio",
+      "summary": "Four years coordinating recurring review and publishing for an international studio releasing three times a week, plus Patreon.",
+      "meta": [
+        ["role", "Studio Manager"],
+        ["period", "Aug 2021 — Dec 2025"],
+        ["studio", "music and soundscapes"],
+        ["language", "English, international team"]
+      ],
+      "skills": ["editorial review", "quality standards", "video publishing", "web operations"],
+      "labels": ["01 context", "02 responsibility", "03 decisions", "04 sample release", "05 also"],
+      "context": "Michael Ghelfi Studios produces RPG music and soundscapes with a small international team working remotely in English. As Studio Manager, I connected the studio's pipeline across editorial review, video post-production, multi-channel publishing, and website operations for three weekly public releases plus regular Patreon deliverables.",
+      "items": [
+        ["writers", "Managed a small team of writers through review, continuous feedback, quality control, and editorial standardization."],
+        ["video", "Edited and published the studio's YouTube releases and Patreon packages."],
+        ["website", "Administered the WordPress site, managed plugins, and maintained custom mu-plugins."],
+        ["tools", "Coordinated external automation tools, publishing pipelines, and studio social channels."]
+      ],
+      "decisions": "Determined editorial themes, video publishing selection, thumbnail A/B testing, structured ambiance/SFX playlists, and generative-AI artwork concepts.",
+      "sampleTitle": "Biosphere — full album video",
+      "steps": [
+        "Developed the visual concept independently",
+        "Generated the illustrations with AI",
+        "Edited and color-balanced the thumbnail",
+        "Assembled the full album video from supplied music",
+        "Published and distributed the release"
+      ],
+      "credit": "Music composed by Filip Melvan.",
+      "reach": "The published video recorded 936,714 views as of 15 September 2026 — reach of the complete release, including the composer's music and the studio's distribution.",
+      "linkUrl": "https://www.youtube.com/watch?v=sYcOqTKv7B0",
+      "linkLabel": "watch Biosphere on YouTube",
+      "also": "I adapted the studio's commissioned black-and-white mark with a metallic-gold treatment for featured releases. The original mark was designed by another creator.",
+      "back": "back to work"
+    },
+    "mapa": {
+      "eyebrow": "Case 02 / Financial Simulator",
+      "title": "Turning client-facing spreadsheets into an interactive explanation",
+      "summary": "MapaFinanceiro — an interactive web simulator built with coding agents, used by a consórcio sales team to replace confusing spreadsheets.",
+      "meta": [
+        ["product", "MapaFinanceiro / Mapa da Bella"],
+        ["role", "Product & AI Workflow Builder"],
+        ["context", "consórcio sales consultations"],
+        ["stack", "static web, reactive state"]
+      ],
+      "skills": ["product design", "agent direction", "client communication", "reactive modeling"],
+      "labels": ["01 context", "02 contribution", "03 workflow shift", "04 simulation structure", "05 boundaries"],
+      "context": "A consórcio sales team previously relied on complex spreadsheets during consultations with prospective clients. Clients found formulas difficult to follow in conversation, and testing different timeframes or down payments required tedious manual adjustments.",
+      "items": [
+        ["inputs", "Real-time interactive inputs for income, target property value, available down payment, and target timeframe."],
+        ["projections", "Dynamic comparison between property appreciation (7.0% p.a.) and investment returns (6.2% p.a.) over 30 years."],
+        ["consorcio", "Detailed bidding strategy simulation: quota raffle, fixed bid (44 installments), limited bid (88 installments), and free bid."],
+        ["comparison", "Side-by-side comparative matrix contrasting pure savings, traditional bank mortgages, and consórcio bidding."]
+      ],
+      "decisions": "Focused the experience on clear conversations rather than raw calculation tables: changing the target timeframe immediately updates the required contribution and scenario narrative.",
+      "sampleTitle": "Reactive multi-scenario architecture",
+      "steps": [
+        "Starting Position: Captures income, property goal, and available capital",
+        "The Cost of Waiting: Visualizes property inflation outpacing regular savings",
+        "Target Timing: Dynamically calculates monthly savings needed for 3 vs 5 years",
+        "Bidding Mechanics: Simulates out-of-pocket vs embedded bids (up to 50% deduction)",
+        "Decision Matrix: Transparent comparison with mortgage interest and terms"
+      ],
+      "credit": "Built for active use by a consórcio consultation team.",
+      "reach": "Deployed live on Vercel; eliminates spreadsheet friction during client intake without requiring backend infrastructure.",
+      "linkUrl": "https://mapadabella.vercel.app/",
+      "linkLabel": "explore Mapa da Bella live application",
+      "also": "All simulation outputs reflect stated assumptions. They serve as explanatory sales tools, not formal credit approvals, guarantees, or financial advice.",
+      "back": "back to work"
+    }
+  },
+  "supporting": {
+    "eyebrow": "03 / integration",
+    "title": "Connecting AI tools with clear controls",
+    "summary": "Grok MCP Bridge — a personal local integration connecting ChatGPT Chat to Grok Build, with task tracking and separately reviewed changes.",
+    "points": [
+      "Separates AI execution from change adoption through distinct consultation and review phases.",
+      "Maintains persistent task IDs for multi-step tasks instead of fragile single-prompt sessions.",
+      "Requires explicit human review of generated git patches and test runs before applying modifications."
+    ],
+    "status": "Personal local project on Windows 11; demonstrates controlled AI tool delegation."
+  },
   "background": "Background",
-  "backgroundText": "For four years at Michael Ghelfi Studios, I worked across production, editorial standards, publishing, and website operations in an international remote team.",
-  "experience": [["Aug 2021 — Dec 2025", "Studio Manager", "Michael Ghelfi Studios · remote"], ["May 2026 — present", "English Teacher", "Aliança América Idiomas"]],
+  "backgroundText": "Four years leading operations, editorial standards, publishing, and website maintenance in a fully remote international team, followed by edtech teaching and AI product development.",
+  "experience": [
+    ["Aug 2021 — Dec 2025", "Studio Manager", "Michael Ghelfi Studios · remote (English)"],
+    ["May 2026 — present", "English Teacher (ESL)", "Aliança América Idiomas · remote"],
+    ["Sep 2025 — present", "Official Community Moderator", "Epic Games · Discord Brasil & Portugal"]
+  ],
   "availability": "Availability",
-  "availabilityText": "Open to operations management roles on teams hiring remote candidates in Latin America. I am based in Brazil and worked day to day in English with an international remote team for four years.",
-  "caseEyebrow": "Case 01 / Michael Ghelfi Studios",
-  "caseTitle": "Keeping recurring production moving across a remote studio",
-  "caseMeta": [["role", "Studio Manager"], ["period", "Aug 2021 — Dec 2025"], ["studio", "music and soundscapes"], ["language", "English, international team"]],
-  "labels": ["01 context", "02 responsibility", "03 decisions", "04 sample release", "05 also"],
-  "context": "Michael Ghelfi Studios is a music and soundscapes studio with a small international team working remotely in English. As Studio Manager I supported three releases per week, plus publishing for Patreon.",
-  "responsibilities": [["writers", "Managed a small team through review, feedback, quality control, and standardization."], ["video", "Edited and published the studio's videos, including Patreon releases."], ["website", "Maintained the WordPress site and its plugins."], ["tools", "Handled external tools and the studio's social media."]],
-  "decisions": "Editorial themes, video selection, A/B testing, playlists, and AI-generated artwork.",
-  "sample": "Biosphere — full album video",
-  "steps": ["Developed the visual concept independently", "Generated the illustrations with AI", "Edited the thumbnail", "Assembled the full album video from the supplied music", "Published the release"],
-  "credit": "Music composed by Filip Melvan.",
-  "reach": "The published video recorded 936,714 views as of 15 September 2026 — a figure for the whole release, including the music and the studio's distribution.",
-  "watch": "watch Biosphere on YouTube",
-  "also": "I applied a metallic-gold effect to the studio's commissioned black-and-white logo. The original mark was designed by someone else.",
-  "back": "back to work",
+  "availabilityText": "Available for remote operations management roles with international or LATAM-hiring companies. Based in Brazil (UTC-3), fully bilingual in English (professional fluency) and Portuguese (native).",
+  "contact": "Contact",
+  "contactText": "Interested in discussing an operations management role or practical AI workflows? Reach out directly:",
+  "email": "toshiotomikawa@gmail.com",
+  "emailLabel": "Send an email",
+  "githubUrl": "https://github.com/toshiotomikawa",
+  "githubLabel": "GitHub profile",
+  "resumeTitle": "Resume & Qualifications",
+  "resumeSummary": "Operations management · Team coordination · AI coding agent workflows · Process standardization · WordPress & Web Operations · Bilingual EN/PT.",
+  "resumeLinks": [
+    ["Download / View CV (EN)", "mailto:toshiotomikawa@gmail.com?subject=Portfolio%20Inquiry%20-%20Resume%20Request"]
+  ],
   "themeLabel": "Theme: system. Switch to light."
 }

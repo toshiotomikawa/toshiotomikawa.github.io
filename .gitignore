@@ -16,3 +16,6 @@ coverage/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Local transcripts and working notes
+astra-conversation.md
