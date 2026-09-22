@@ -174,7 +174,7 @@ def document(c, locale, case_key=None, neutral=False, is_404=False):
   <meta name="twitter:description" content="{e(description)}">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23bc002d%22/></svg>">
   <script src="/assets/preferences.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&amp;family=DM+Mono:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap">
   <link rel="stylesheet" href="/assets/site.css">
   <link rel="alternate" hreflang="en" href="/en/{suffix}">
   <link rel="alternate" hreflang="pt-BR" href="/pt/{suffix}">

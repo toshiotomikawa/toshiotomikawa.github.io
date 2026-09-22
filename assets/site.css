@@ -13,14 +13,14 @@
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: Archivo, ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: Geist, ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 a { color: var(--accent); text-underline-offset: .25em; }
 a:hover { color: var(--accent-hover); }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 button { font: inherit; }
 p, h1, h2, h3, dl, dd { margin: 0; }
 .page { width: 100%; max-width: 1180px; margin-inline: auto; container-type: inline-size; }
-.mono, .label, footer { font-family: "DM Mono", ui-monospace, monospace; font-size: 12px; font-weight: 400; }
+.mono, .label, footer { font-family: "Geist Mono", ui-monospace, monospace; font-size: 12px; font-weight: 400; }
 .dim, .label { color: var(--dim); }
 .node { display: block; width: 7px; height: 7px; background: var(--node); flex: 0 0 auto; }
 .skip-link { position: absolute; top: 8px; left: 8px; padding: 12px; background: var(--bg); z-index: 10; transform: translateY(-200%); }
@@ -62,7 +62,7 @@ p, h1, h2, h3, dl, dd { margin: 0; }
 .feature-grid > div:last-child { max-width: 50ch; }
 .feature-grid h3 { margin-bottom: 14px; font-stretch: 112%; font-weight: 600; font-size: clamp(22px, 3.4cqi, 36px); line-height: 1.08; letter-spacing: -.022em; }
 .feature-text { margin-bottom: clamp(18px, 2.4cqi, 26px); font-size: clamp(15px, 1.7cqi, 17px); line-height: 1.55; color: var(--muted); }
-.arrow { display: inline-flex; align-items: center; gap: 10px; font-family: "DM Mono", ui-monospace, monospace; font-size: 12.5px; text-decoration: none; border-bottom: 1px solid var(--accent); padding-block: 5px; transition: gap .18s; }
+.arrow { display: inline-flex; align-items: center; gap: 10px; font-family: "Geist Mono", ui-monospace, monospace; font-size: 12.5px; text-decoration: none; border-bottom: 1px solid var(--accent); padding-block: 5px; transition: gap .18s; }
 .arrow:hover { gap: 16px; }
 .supporting-feature { border-top: 1px solid var(--rule); background: var(--bg); padding: clamp(24px, 3.6cqi, 44px) clamp(18px, 2.6cqi, 36px); margin-top: 1px; display: grid; grid-template-columns: minmax(170px, .5fr) minmax(0, 1.35fr); gap: clamp(20px, 3cqi, 44px); }
 .supporting-header .node { margin: -10px 0 16px; }
@@ -104,7 +104,7 @@ p, h1, h2, h3, dl, dd { margin: 0; }
 .case-split { display: grid; grid-template-columns: minmax(140px, .3fr) minmax(0, 1fr); gap: clamp(14px, 2.4cqi, 44px); }
 .responsibilities { display: grid; gap: 1px; background: var(--rule); max-width: 62ch; }
 .responsibilities div { background: var(--bg); display: grid; grid-template-columns: minmax(90px, .24fr) minmax(0, 1fr); gap: 4px clamp(14px, 2.4cqi, 30px); padding: 14px 0 16px; }
-.responsibilities dt { font-family: "DM Mono", ui-monospace, monospace; font-size: 12px; }
+.responsibilities dt { font-family: "Geist Mono", ui-monospace, monospace; font-size: 12px; }
 .responsibilities dd { font-size: 15px; line-height: 1.5; color: var(--muted); }
 .sample { background: var(--surface); padding-block: clamp(28px, 4.4cqi, 56px); }
 .sample-title { margin-bottom: clamp(22px, 3.4cqi, 34px); max-width: 24ch; font-stretch: 114%; font-weight: 600; font-size: clamp(22px, 3.2cqi, 34px); line-height: 1.08; letter-spacing: -.022em; }

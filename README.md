@@ -29,7 +29,7 @@ Open http://127.0.0.1:4173/. Explicit routes: `/en/`, `/pt/`,
 - `tests/`: preference-contract, route, static-content, and palette checks.
 
 The small build script shares markup across languages and pages without shipping
-a framework. Google Fonts supplies Archivo and DM Mono; system fonts are the fallback.
+a framework. Google Fonts supplies Geist and Geist Mono; system fonts are the fallback.
 
 ## Verification
 
