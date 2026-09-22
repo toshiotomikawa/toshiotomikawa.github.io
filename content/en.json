@@ -6,6 +6,7 @@
   "nav": [
     ["work", "work"],
     ["background", "background"],
+    ["faq", "faq"],
     ["availability", "availability"],
     ["contact", "contact"]
   ],
@@ -108,6 +109,13 @@
     ["Aug 2021 - Dec 2025", "Studio Manager", "Michael Ghelfi Studios · remote (English)"],
     ["May 2026 - present", "English Teacher (ESL)", "Aliança América Idiomas · remote"],
     ["Sep 2025 - present", "Official Community Moderator", "Epic Games · Discord Brasil & Portugal"]
+  ],
+  "faq": "FAQ",
+  "faqItems": [
+    {
+      "q": "What agentic tools do you use?",
+      "a": "I have experience with Antigravity, Claude Code, Codex, Grok Build, and OpenCode."
+    }
   ],
   "availability": "Availability",
   "availabilityText": "Available for remote operations management roles with international teams. Based in Brazil (UTC-3), fluent in English and native in Portuguese.",

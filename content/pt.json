@@ -6,6 +6,7 @@
   "nav": [
     ["work", "trabalhos"],
     ["background", "trajetória"],
+    ["faq", "faq"],
     ["availability", "disponibilidade"],
     ["contact", "contato"]
   ],
@@ -108,6 +109,13 @@
     ["ago 2021 - dez 2025", "Studio Manager", "Michael Ghelfi Studios · remoto (inglês)"],
     ["mai 2026 - presente", "Professor de inglês (ESL)", "Aliança América Idiomas · remoto"],
     ["set 2025 - presente", "Moderador oficial de comunidade", "Epic Games · Discord Brasil & Portugal"]
+  ],
+  "faq": "Perguntas frequentes",
+  "faqItems": [
+    {
+      "q": "Quais ferramentas de agentes você utiliza?",
+      "a": "Tenho experiência com Antigravity, Claude Code, Codex, Grok Build e OpenCode."
+    }
   ],
   "availability": "Disponibilidade",
   "availabilityText": "Disponível para posições de gestão de operações em equipes remotas internacionais. Residente no Brasil (UTC-3), com inglês fluente e português nativo.",

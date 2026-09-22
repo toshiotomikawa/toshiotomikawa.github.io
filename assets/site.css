@@ -91,6 +91,19 @@ p, h1, h2, h3, dl, dd { margin: 0; }
 .experience li:first-child .node { background: var(--mark); }
 .experience h3 { margin-bottom: 4px; font-stretch: 110%; font-weight: 600; font-size: var(--text-lg); }
 .experience div p { font-size: var(--text-base); line-height: 1.6; color: var(--muted); }
+.faq { padding: clamp(40px, 6.4cqi, 80px) clamp(18px, 4cqi, 54px) 0; }
+.faq-list { max-width: 62ch; display: grid; gap: 0; border-top: 1px solid var(--rule); }
+.faq-item { border-bottom: 1px solid var(--rule); }
+.faq-question { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; cursor: pointer; list-style: none; font-size: var(--text-lg); font-weight: 500; color: var(--ink); line-height: 1.4; transition: color .16s; }
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::marker { display: none; content: ""; }
+.faq-question:hover { color: var(--accent); }
+.faq-question:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.faq-icon { font-family: "Geist Mono", ui-monospace, monospace; font-size: var(--text-xs); color: var(--dim); display: grid; place-items: center; width: 20px; height: 20px; flex-shrink: 0; transition: transform .18s, color .16s; }
+.faq-question:hover .faq-icon { color: var(--accent); }
+details[open] .faq-icon { transform: rotate(45deg); color: var(--mark); }
+.faq-answer { padding: 0 0 20px; font-size: var(--text-base); line-height: 1.6; color: var(--muted); }
+.faq-answer p { margin: 0; }
 .availability { padding: clamp(40px, 6.4cqi, 80px) clamp(18px, 4cqi, 54px) 0; }
 .contact { padding: clamp(40px, 6.4cqi, 80px) clamp(18px, 4cqi, 54px) clamp(46px, 7cqi, 86px); }
 .contact-actions { display: flex; flex-wrap: wrap; gap: 14px clamp(18px, 3cqi, 32px); margin: 24px 0 32px; }

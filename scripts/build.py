@@ -59,6 +59,18 @@ def home(c, locale):
 
     resume_links = ''.join(f'{arrow(label, url)}' for label, url in c['resumeLinks'])
 
+    faq_items = ''.join(
+        f'''<details class="faq-item">
+          <summary class="faq-question"><span>{e(item['q'])}</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+          <div class="faq-answer"><p>{e(item['a'])}</p></div>
+        </details>'''
+        for item in c.get('faqItems', [])
+    )
+    faq_section = f'''<section class="faq" id="faq"><div class="split">
+      <h2 class="label">{e(c['faq'])}</h2>
+      <div class="faq-list">{faq_items}</div>
+    </div></section>''' if faq_items else ''
+
     return f'''
     <section class="hero">
       <p class="eyebrow mono">{e(c['eyebrow'])}</p>
@@ -74,6 +86,7 @@ def home(c, locale):
     <section class="background" id="background"><div class="split">
       <h2 class="label">{e(c['background'])}</h2><div><p class="lead">{e(c['backgroundText'])}</p><ul class="experience">{experience}</ul></div>
     </div></section>
+    {faq_section}
     <section class="availability" id="availability"><div class="split">
       <h2 class="label">{e(c['availability'])}</h2><p class="body-copy">{e(c['availabilityText'])}</p>
     </div></section>

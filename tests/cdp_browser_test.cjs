@@ -241,6 +241,50 @@ async function run() {
     const homeUrl = await cdp.evaluate(`location.pathname + location.hash`);
     console.log('✓ Returned to home from case study:', homeUrl);
 
+    console.log('\n--- 4. Testing interactive collapsible FAQ ---');
+    await cdp.navigate(`${BASE}/en/`);
+    let faqState = await cdp.evaluate(`(() => {
+      const details = document.querySelector('.faq-item');
+      const question = details?.querySelector('.faq-question')?.innerText?.trim();
+      const answer = details?.querySelector('.faq-answer')?.textContent?.trim();
+      return {
+        exists: !!details,
+        isOpenInitially: details?.open || false,
+        question,
+        answer
+      };
+    })()`);
+
+    if (!faqState.exists) {
+      throw new Error('FAQ item not found on /en/');
+    }
+    if (faqState.isOpenInitially) {
+      throw new Error('FAQ question should start collapsed by default');
+    }
+    if (!faqState.question.includes('What agentic tools do you use?')) {
+      throw new Error(`Unexpected FAQ question: ${faqState.question}`);
+    }
+    if (!faqState.answer.includes('Antigravity, Claude Code, Codex, Grok Build, and OpenCode')) {
+      throw new Error(`Unexpected FAQ answer: ${faqState.answer}`);
+    }
+    console.log('✓ FAQ starts collapsed with expected question and answer content');
+
+    // Click to expand
+    await cdp.evaluate(`document.querySelector('.faq-question').click()`);
+    let isOpenAfterClick = await cdp.evaluate(`document.querySelector('.faq-item').open`);
+    if (!isOpenAfterClick) {
+      throw new Error('FAQ item failed to expand on click');
+    }
+    console.log('✓ FAQ expands on user click');
+
+    // Click again to collapse
+    await cdp.evaluate(`document.querySelector('.faq-question').click()`);
+    let isOpenAfterSecondClick = await cdp.evaluate(`document.querySelector('.faq-item').open`);
+    if (isOpenAfterSecondClick) {
+      throw new Error('FAQ item failed to collapse on second click');
+    }
+    console.log('✓ FAQ collapses cleanly on subsequent click');
+
     console.log('\n======================================');
     console.log('ALL BROWSER VALIDATION CHECKS PASSED!');
     console.log('======================================\n');
