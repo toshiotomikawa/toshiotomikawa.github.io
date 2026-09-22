@@ -113,6 +113,9 @@ async function run() {
 
     console.log('Connected to Chrome via CDP.');
 
+    const BASE = process.env.TARGET_URL || 'http://127.0.0.1:4173';
+    console.log(`Testing target: ${BASE}`);
+
     const widths = [360, 390, 768, 1440];
     const routes = [
       '/en/',
@@ -128,7 +131,7 @@ async function run() {
     for (const width of widths) {
       await cdp.setViewport(width, 900);
       for (const route of routes) {
-        await cdp.navigate(`http://127.0.0.1:4173${route}`);
+        await cdp.navigate(`${BASE}${route}`);
         const result = await cdp.evaluate(`({
           path: location.pathname,
           innerWidth: window.innerWidth,
@@ -149,7 +152,7 @@ async function run() {
 
     console.log('\n--- 2. Testing theme cycle and keyboard interactivity ---');
     await cdp.setViewport(1440, 900);
-    await cdp.navigate('http://127.0.0.1:4173/en/');
+    await cdp.navigate(`${BASE}/en/`);
 
     // Initial theme: system (resolves to light or dark)
     let themeState = await cdp.evaluate(`({
@@ -196,12 +199,12 @@ async function run() {
 
     console.log('\n--- 3. Testing case study cross-navigation ---');
     // Navigate from /en/work/mapa/ to Portuguese equivalent
-    await cdp.navigate('http://127.0.0.1:4173/en/work/mapa/');
+    await cdp.navigate(`${BASE}/en/work/mapa/`);
     const ptLink = await cdp.evaluate(`document.querySelector('a[data-locale="pt"]').getAttribute('href')`);
     if (ptLink !== '/pt/work/mapa/') {
       throw new Error(`Expected ptLink to be /pt/work/mapa/, got ${ptLink}`);
     }
-    await cdp.navigate(`http://127.0.0.1:4173${ptLink}`);
+    await cdp.navigate(`${BASE}${ptLink}`);
     const heading = await cdp.evaluate(`document.querySelector('h1').innerText`);
     if (!heading.includes('Transformando planilhas')) {
       throw new Error(`Expected Portuguese heading for MapaFinanceiro, got ${heading}`);

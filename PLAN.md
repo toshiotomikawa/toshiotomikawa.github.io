@@ -77,8 +77,12 @@ Deliverable: live portfolio URL, deployment verification, and maintenance handof
 Stop: first version complete. Further projects or features become separate work.
 
 ## Current checkpoint
-- Phase 1 drafted and verified on 2026-09-15. Phase 2 prototype completed on 2026-09-21. Phase 3 release candidate completed on 2026-09-21: full bilingual candidate with homepage, MGS case, MapaFinanceiro case, supporting Grok card, contact, resume, and 404 handling. Passed 12 automated checks, responsive validation in Chrome and Edge, and script-free fallback. See CHECKPOINT.md for full details. Stop for review; next continue authorizes Phase 4 publication.
-- Review packet: `C:\Users\Zen\Desktop\Coding\Portfolio-review\REVIEW.md`; English homepage and three case-study drafts in `CONTENT.en.md`; evidence/assets and hiring comparison in `EVIDENCE.md`; local source hashes in `LOCAL-SOURCE-HASHES.txt`. These remain outside the public repository and its backups.
-- Core cases: MGS operations and MapaFinanceiro with full dedicated static routes. Supporting case: Grok MCP Bridge architecture card. Headline: "Operations management, with practical AI." / "Gestão de operações com uso prático de IA."
-- Verified public Biosphere work link, live Mapa application, and Edge/Chrome browser rendering across 360, 390, 768, and 1440px.
-- Current artifact: static release candidate on `codex/working-prototype`, preview at http://127.0.0.1:4173/. GitHub Pages rechecked on 2026-09-21: legacy main/root; prototype branch is not the deployment source.
+- All four phases completed on 2026-09-21:
+  - Phase 1: Content and evidence drafted and audited.
+  - Phase 2: Bilingual working prototype delivered with approved Claude Design direction.
+  - Phase 3: Full release candidate delivered with MGS and MapaFinanceiro case studies, Grok card, contact/resume, and 404 handling.
+  - Phase 4: Published to GitHub Pages via GitHub Actions and verified live at https://toshiotomikawa.github.io/.
+- 12 automated checks pass; dual-engine CDP tests pass in Chrome and Edge across 360, 390, 768, and 1440px.
+- Verified live HTTP 200 responses and clean asset serving across all 10 production endpoints.
+- Full backup on G: hash-verified and Git integrity passed.
+- First version complete. Deliverables handed off.
