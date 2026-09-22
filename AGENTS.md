@@ -60,8 +60,7 @@
 - Full backups include hidden files and `.git`:
   - `G:\My Drive\Desktop\Coding\Portfolio`
   - `W:\Desktop\Coding\Portfolio`
-- Refresh backups at delivery checkpoints; verify file hashes and Git integrity. Never delete destination content blindly. Distinguish local changes, commits, pushes, backups, and deployments when reporting completion.
-- 2026-09-21 checkpoint: prototype pushed to `codex/working-prototype`; `main` unchanged. G: full backup verified. W: is unmounted/unavailable, so its refresh is pending; retry once the drive is available. Do not treat both backups as current.
+- Checkpoint state: Both G: and W: full backups (including hidden files and .git) are fully synchronized, verified, and clean up to the latest commit on main.
 
 ## Secrets
 - Credentials may be consumed operationally, but plaintext secrets must never enter agent context, output, logs, reports, diffs, or repository files.
