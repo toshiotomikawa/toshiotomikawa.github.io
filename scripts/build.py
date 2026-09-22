@@ -172,7 +172,7 @@ def document(c, locale, case_key=None, neutral=False, is_404=False):
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{e(title)}">
   <meta name="twitter:description" content="{e(description)}">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23d94e1f%22/></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23bc002d%22/></svg>">
   <script src="/assets/preferences.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&amp;family=DM+Mono:wght@400;500&amp;display=swap">
   <link rel="stylesheet" href="/assets/site.css">

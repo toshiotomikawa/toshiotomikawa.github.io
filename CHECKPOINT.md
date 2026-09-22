@@ -15,6 +15,7 @@ Branch: `main` (tracked at `origin/main`).
   - Custom 404 error page (`/404.html`) with bilingual return navigation.
   - Production `robots` meta tag (`index, follow` on content pages; `noindex` on 404).
   - Clean OpenGraph, Twitter card, canonical links, and inline SVG favicon.
+  - Theme styling: Pure white canvas (#ffffff) with Crimson Red accent (#bc002d) for markers, lines, and links.
   - GitHub Actions automated deployment workflow (`.github/workflows/deploy.yml`) using `actions/upload-pages-artifact@v3` and `actions/deploy-pages@v4`.
 
 ## Live Production Verification

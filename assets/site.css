@@ -3,13 +3,13 @@
   color-scheme: light;
   --bg: #ffffff; --surface: #e8e4de; --rule: #d7d2ca; --rule2: #cec8bf;
   --ink: #16181a; --ink2: #2c3033; --muted: #4e555c; --dim: #5f666e;
-  --node: #ada69c; --mark: #d94e1f; --accent: #b43913; --accent-hover: #97300d;
+  --node: #ada69c; --mark: #bc002d; --accent: #bc002d; --accent-hover: #9e0026;
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
   --bg: #0c0e10; --surface: #15181b; --rule: #23272b; --rule2: #2a2f34;
   --ink: #f2f0ec; --ink2: #e4e1dc; --muted: #aeb5bc; --dim: #868f99;
-  --node: #3a4149; --mark: #ff6a3d; --accent: #ff6a3d; --accent-hover: #ff8a64;
+  --node: #3a4149; --mark: #ff4d6d; --accent: #ff4d6d; --accent-hover: #ff758f;
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
