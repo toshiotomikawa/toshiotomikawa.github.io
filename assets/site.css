@@ -1,9 +1,9 @@
 /* Claude Design's approved typography, composition, and authored palettes. */
 :root {
   color-scheme: light;
-  --bg: #ffffff; --surface: #e8e4de; --rule: #d7d2ca; --rule2: #cec8bf;
+  --bg: #ffffff; --surface: #f8f9fa; --rule: #e9ecef; --rule2: #dee2e6;
   --ink: #16181a; --ink2: #2c3033; --muted: #4e555c; --dim: #5f666e;
-  --node: #ada69c; --mark: #bc002d; --accent: #bc002d; --accent-hover: #9e0026;
+  --node: #adb5bd; --mark: #bc002d; --accent: #bc002d; --accent-hover: #9e0026;
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
