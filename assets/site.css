@@ -17,11 +17,15 @@
   --node: #3a4149; --mark: #ff4d6d; --accent: #ff4d6d; --accent-hover: #ff758f;
 }
 * { box-sizing: border-box; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 [hidden] { display: none !important; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: Geist, ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 a { color: var(--accent); text-underline-offset: .25em; }
 a:hover { color: var(--accent-hover); }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+main:focus, section:focus { outline: none; }
 button { font: inherit; }
 p, h1, h2, h3, dl, dd { margin: 0; }
 .page { width: 100%; max-width: 1180px; margin-inline: auto; container-type: inline-size; }

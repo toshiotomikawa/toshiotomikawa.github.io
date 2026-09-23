@@ -285,6 +285,51 @@ async function run() {
     }
     console.log('✓ FAQ collapses cleanly on subsequent click');
 
+    console.log('\n--- 5. Testing in-page tab navigation and browser history behavior ---');
+    await cdp.navigate(`${BASE}/en/`);
+    const initialHist = await cdp.evaluate(`({
+      length: history.length,
+      canGoBack: window.navigation ? window.navigation.canGoBack : null
+    })`);
+    console.log('Initial page history state:', initialHist);
+
+    const sections = ['work', 'background', 'faq', 'availability', 'contact'];
+    for (const sec of sections) {
+      await cdp.evaluate(`document.querySelector('.sections a[href*="#${sec}"]').click()`);
+      await sleep(150);
+
+      const navState = await cdp.evaluate(`({
+        hash: location.hash,
+        length: history.length,
+        canGoBack: window.navigation ? window.navigation.canGoBack : null,
+        top: Math.round(document.getElementById('${sec}').getBoundingClientRect().top)
+      })`);
+
+      if (navState.hash !== `#${sec}`) {
+        throw new Error(`Expected hash #${sec}, got ${navState.hash}`);
+      }
+      if (navState.length !== initialHist.length) {
+        throw new Error(`History length expanded on tab #${sec} click: expected ${initialHist.length}, got ${navState.length}`);
+      }
+      if (initialHist.canGoBack === false && navState.canGoBack !== false) {
+        throw new Error(`Browser back button became enabled after clicking in-page tab #${sec}`);
+      }
+      console.log(`✓ Tab #${sec} updated URL without history expansion:`, navState);
+    }
+
+    // Click brand link to return to top
+    await cdp.evaluate(`document.querySelector('a.brand').click()`);
+    await sleep(150);
+    const brandState = await cdp.evaluate(`({
+      hash: location.hash,
+      length: history.length,
+      scrollY: window.scrollY
+    })`);
+    if (brandState.hash !== '' || brandState.scrollY !== 0 || brandState.length !== initialHist.length) {
+      throw new Error(`Brand click failed to return to top or expanded history: ${JSON.stringify(brandState)}`);
+    }
+    console.log('✓ Brand click returned to top without history expansion:', brandState);
+
     console.log('\n======================================');
     console.log('ALL BROWSER VALIDATION CHECKS PASSED!');
     console.log('======================================\n');

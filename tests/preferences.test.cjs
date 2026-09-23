@@ -15,16 +15,38 @@ function run(options = {}) {
   const root = {dataset: {entry: options.neutral ? 'neutral' : 'explicit'}, lang: options.lang || 'en'};
   const media = {matches: !!options.dark, addEventListener(_, fn) {this.change = fn;}};
   let ready;
-  const location = {hash: options.hash || '', replace(url) {this.redirect = url;}};
+  let clickHandler;
+  const history = {replaced: [], replaceState(state, title, url) {this.replaced.push({state, title, url});}};
+  const location = {
+    origin: 'https://example.com',
+    pathname: options.pathname || '/en/',
+    hash: options.hash || '',
+    search: '',
+    href: `https://example.com${options.pathname || '/en/'}${options.hash || ''}`,
+    replace(url) {this.redirect = url;}
+  };
+  const elementsById = {};
+  const doc = {
+    documentElement: root,
+    addEventListener(event, fn) {
+      if (event === 'DOMContentLoaded') ready = fn;
+      else if (event === 'click') clickHandler = fn;
+    },
+    querySelector() {return button;},
+    querySelectorAll() {return links;},
+    getElementById(id) {return elementsById[id] || null;}
+  };
   const context = {
-    document: {documentElement: root, addEventListener(_, fn) {ready = fn;}, querySelector() {return button;}, querySelectorAll() {return links;}},
+    document: doc,
     navigator: {language: options.browserLocale},
-    window: {location, ...(options.noDetection ? {} : {matchMedia() {return media;}})},
+    window: {location, history, ...(options.noDetection ? {} : {matchMedia() {return media;}})},
+    URL,
+    decodeURIComponent,
     localStorage: {getItem(key) {if (options.blockStorage) throw Error('blocked'); return data[key] ?? null;}, setItem(key, value) {if (options.blockStorage) throw Error('blocked'); writes.push([key, value]); data[key] = value;}}
   };
   vm.runInNewContext(source, context);
   ready();
-  return {root, button, icons, links, media, location, writes, data};
+  return {root, button, icons, links, media, location, history, writes, data, elementsById, click(event) {if (clickHandler) clickHandler(event);}};
 }
 
 test('System defaults, Light fallback, no implicit storage writes', () => {
@@ -91,4 +113,72 @@ test('manual language choice saves independently and preserves current section',
   assert.equal(s.links[1].hash, '#background');
   assert.equal(s.data['portfolio-theme'], 'dark');
   assert.equal(run({neutral:true,hash:'#work'}).location.redirect, '/en/#work');
+});
+
+test('in-page anchor clicks use replaceState and scroll to target without history expansion', () => {
+  const s = run({pathname: '/en/'});
+  let defaultPrevented = false;
+  let focused = false;
+  let tabindex = null;
+  let scrollCalled = false;
+
+  const target = {
+    setAttribute(k, v) { if (k === 'tabindex') tabindex = v; },
+    focus() { focused = true; },
+    scrollIntoView() { scrollCalled = true; }
+  };
+  s.elementsById['work'] = target;
+
+  const link = {
+    href: 'https://example.com/en/#work',
+    closest(selector) { return selector === 'a' ? this : null; },
+    classList: { contains() { return false; } }
+  };
+
+  s.click({
+    defaultPrevented: false,
+    button: 0,
+    target: link,
+    preventDefault() { defaultPrevented = true; }
+  });
+
+  assert.equal(defaultPrevented, true);
+  assert.equal(scrollCalled, true);
+  assert.equal(tabindex, '-1');
+  assert.equal(focused, true);
+  assert.equal(s.history.replaced.length, 1);
+  assert.equal(s.history.replaced[0].url, '#work');
+});
+
+test('cross-page links and modifier clicks bypass replaceState interception', () => {
+  const s = run({pathname: '/en/'});
+  let defaultPrevented = false;
+
+  const link = {
+    href: 'https://example.com/en/work/mgs/',
+    closest(selector) { return selector === 'a' ? this : null; }
+  };
+
+  s.click({
+    defaultPrevented: false,
+    button: 0,
+    target: link,
+    preventDefault() { defaultPrevented = true; }
+  });
+  assert.equal(defaultPrevented, false);
+  assert.equal(s.history.replaced.length, 0);
+
+  const anchorLink = {
+    href: 'https://example.com/en/#work',
+    closest(selector) { return selector === 'a' ? this : null; }
+  };
+  s.click({
+    defaultPrevented: false,
+    button: 0,
+    ctrlKey: true,
+    target: anchorLink,
+    preventDefault() { defaultPrevented = true; }
+  });
+  assert.equal(defaultPrevented, false);
+  assert.equal(s.history.replaced.length, 0);
 });

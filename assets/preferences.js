@@ -55,5 +55,45 @@
         write('portfolio-locale', link.dataset.locale);
       });
     });
+
+    // In-page section navigation: update address bar without adding browser history entries.
+    document.addEventListener('click', event => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+        return;
+      }
+      const link = event.target?.closest?.('a');
+      if (!link || !link.href) return;
+      try {
+        const url = new URL(link.href, window.location.href);
+        if (url.origin !== window.location.origin) return;
+
+        const norm = p => p.replace(/\/index\.html$/, '').replace(/\/$/, '') || '/';
+        if (norm(url.pathname) !== norm(window.location.pathname)) return;
+
+        if (url.hash) {
+          const id = decodeURIComponent(url.hash.slice(1));
+          const target = document.getElementById(id);
+          if (target) {
+            event.preventDefault();
+            if (window.history?.replaceState) {
+              window.history.replaceState(null, '', url.hash);
+            }
+            const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+            target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth' });
+            target.setAttribute('tabindex', '-1');
+            target.focus({ preventScroll: true });
+          }
+        } else if (link.classList.contains('brand') && window.location.hash) {
+          event.preventDefault();
+          if (window.history?.replaceState) {
+            window.history.replaceState(null, '', window.location.pathname + window.location.search);
+          }
+          const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+          window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+        }
+      } catch {
+        /* Fallback to default browser navigation if URL parsing fails. */
+      }
+    });
   });
 })();
