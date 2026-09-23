@@ -255,8 +255,8 @@ async function run() {
       };
     })()`);
 
-    if (faqState.count !== 2) {
-      throw new Error(`Expected 2 FAQ items on /en/, got ${faqState.count}`);
+    if (faqState.count !== 3) {
+      throw new Error(`Expected 3 FAQ items on /en/, got ${faqState.count}`);
     }
     if (faqState.items.some(i => i.open)) {
       throw new Error('All FAQ questions should start collapsed by default');
@@ -273,7 +273,13 @@ async function run() {
     if (!faqState.items[1].answer.includes('certified AI professional through Google')) {
       throw new Error(`Unexpected FAQ answer 2: ${faqState.items[1].answer}`);
     }
-    console.log('✓ Both FAQ items start collapsed with expected question and answer content');
+    if (!faqState.items[2].question.includes('Where did you learn English?')) {
+      throw new Error(`Unexpected FAQ question 3: ${faqState.items[2].question}`);
+    }
+    if (!faqState.items[2].answer.includes('CNA') || !faqState.items[2].answer.includes('C2 by EF SET')) {
+      throw new Error(`Unexpected FAQ answer 3: ${faqState.items[2].answer}`);
+    }
+    console.log('✓ All 3 FAQ items start collapsed with expected question and answer content');
 
     // Click item 1 to expand
     await cdp.evaluate(`document.querySelectorAll('.faq-question')[0].click()`);
@@ -283,13 +289,13 @@ async function run() {
     }
     console.log('✓ FAQ item 1 expands on user click');
 
-    // Click item 2 to expand
-    await cdp.evaluate(`document.querySelectorAll('.faq-question')[1].click()`);
-    let isItem2Open = await cdp.evaluate(`document.querySelectorAll('.faq-item')[1].open`);
-    if (!isItem2Open) {
-      throw new Error('FAQ item 2 failed to expand on click');
+    // Click item 3 to expand
+    await cdp.evaluate(`document.querySelectorAll('.faq-question')[2].click()`);
+    let isItem3Open = await cdp.evaluate(`document.querySelectorAll('.faq-item')[2].open`);
+    if (!isItem3Open) {
+      throw new Error('FAQ item 3 failed to expand on click');
     }
-    console.log('✓ FAQ item 2 expands on user click');
+    console.log('✓ FAQ item 3 expands on user click');
 
     // Click item 1 again to collapse
     await cdp.evaluate(`document.querySelectorAll('.faq-question')[0].click()`);

@@ -119,6 +119,10 @@
     {
       "q": "Where did you learn to use AI?",
       "a": "I'm a certified AI professional through Google's course, and I've also learned by myself since GPT-3.5."
+    },
+    {
+      "q": "Where did you learn English?",
+      "a": "I studied at CNA, having been certified as C2 by EF SET. Fluent since 2013."
     }
   ],
   "availability": "Availability",
