@@ -185,7 +185,11 @@ def document(c, locale, case_key=None, neutral=False, is_404=False):
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{e(title)}">
   <meta name="twitter:description" content="{e(description)}">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23bc002d%22/></svg>">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
   <script src="/assets/preferences.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap">
   <link rel="stylesheet" href="/assets/site.css">
@@ -216,6 +220,7 @@ def document(c, locale, case_key=None, neutral=False, is_404=False):
 def build():
     OUT.mkdir(exist_ok=True)
     shutil.copytree(ROOT / 'assets', OUT / 'assets', dirs_exist_ok=True)
+    shutil.copy2(ROOT / 'assets' / 'favicon.ico', OUT / 'favicon.ico')
 
     contents = {}
     for locale in ['en', 'pt']:
