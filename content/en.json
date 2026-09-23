@@ -115,6 +115,10 @@
     {
       "q": "What agentic tools do you use?",
       "a": "I have experience with Antigravity, Claude Code, Codex, Grok Build, and OpenCode."
+    },
+    {
+      "q": "Where did you learn to use AI?",
+      "a": "I'm a certified AI professional through Google's course, and I've also learned by myself since GPT-3.5."
     }
   ],
   "availability": "Availability",

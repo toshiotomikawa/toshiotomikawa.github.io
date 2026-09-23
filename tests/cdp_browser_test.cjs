@@ -244,46 +244,60 @@ async function run() {
     console.log('\n--- 4. Testing interactive collapsible FAQ ---');
     await cdp.navigate(`${BASE}/en/`);
     let faqState = await cdp.evaluate(`(() => {
-      const details = document.querySelector('.faq-item');
-      const question = details?.querySelector('.faq-question')?.innerText?.trim();
-      const answer = details?.querySelector('.faq-answer')?.textContent?.trim();
+      const items = Array.from(document.querySelectorAll('.faq-item')).map(item => ({
+        question: item.querySelector('.faq-question')?.innerText?.trim() || '',
+        answer: item.querySelector('.faq-answer')?.textContent?.trim() || '',
+        open: item.open || false
+      }));
       return {
-        exists: !!details,
-        isOpenInitially: details?.open || false,
-        question,
-        answer
+        count: items.length,
+        items
       };
     })()`);
 
-    if (!faqState.exists) {
-      throw new Error('FAQ item not found on /en/');
+    if (faqState.count !== 2) {
+      throw new Error(`Expected 2 FAQ items on /en/, got ${faqState.count}`);
     }
-    if (faqState.isOpenInitially) {
-      throw new Error('FAQ question should start collapsed by default');
+    if (faqState.items.some(i => i.open)) {
+      throw new Error('All FAQ questions should start collapsed by default');
     }
-    if (!faqState.question.includes('What agentic tools do you use?')) {
-      throw new Error(`Unexpected FAQ question: ${faqState.question}`);
+    if (!faqState.items[0].question.includes('What agentic tools do you use?')) {
+      throw new Error(`Unexpected FAQ question 1: ${faqState.items[0].question}`);
     }
-    if (!faqState.answer.includes('Antigravity, Claude Code, Codex, Grok Build, and OpenCode')) {
-      throw new Error(`Unexpected FAQ answer: ${faqState.answer}`);
+    if (!faqState.items[0].answer.includes('Antigravity, Claude Code, Codex, Grok Build, and OpenCode')) {
+      throw new Error(`Unexpected FAQ answer 1: ${faqState.items[0].answer}`);
     }
-    console.log('✓ FAQ starts collapsed with expected question and answer content');
+    if (!faqState.items[1].question.includes('Where did you learn to use AI?')) {
+      throw new Error(`Unexpected FAQ question 2: ${faqState.items[1].question}`);
+    }
+    if (!faqState.items[1].answer.includes('certified AI professional through Google')) {
+      throw new Error(`Unexpected FAQ answer 2: ${faqState.items[1].answer}`);
+    }
+    console.log('✓ Both FAQ items start collapsed with expected question and answer content');
 
-    // Click to expand
-    await cdp.evaluate(`document.querySelector('.faq-question').click()`);
-    let isOpenAfterClick = await cdp.evaluate(`document.querySelector('.faq-item').open`);
-    if (!isOpenAfterClick) {
-      throw new Error('FAQ item failed to expand on click');
+    // Click item 1 to expand
+    await cdp.evaluate(`document.querySelectorAll('.faq-question')[0].click()`);
+    let isItem1Open = await cdp.evaluate(`document.querySelectorAll('.faq-item')[0].open`);
+    if (!isItem1Open) {
+      throw new Error('FAQ item 1 failed to expand on click');
     }
-    console.log('✓ FAQ expands on user click');
+    console.log('✓ FAQ item 1 expands on user click');
 
-    // Click again to collapse
-    await cdp.evaluate(`document.querySelector('.faq-question').click()`);
-    let isOpenAfterSecondClick = await cdp.evaluate(`document.querySelector('.faq-item').open`);
-    if (isOpenAfterSecondClick) {
-      throw new Error('FAQ item failed to collapse on second click');
+    // Click item 2 to expand
+    await cdp.evaluate(`document.querySelectorAll('.faq-question')[1].click()`);
+    let isItem2Open = await cdp.evaluate(`document.querySelectorAll('.faq-item')[1].open`);
+    if (!isItem2Open) {
+      throw new Error('FAQ item 2 failed to expand on click');
     }
-    console.log('✓ FAQ collapses cleanly on subsequent click');
+    console.log('✓ FAQ item 2 expands on user click');
+
+    // Click item 1 again to collapse
+    await cdp.evaluate(`document.querySelectorAll('.faq-question')[0].click()`);
+    isItem1Open = await cdp.evaluate(`document.querySelectorAll('.faq-item')[0].open`);
+    if (isItem1Open) {
+      throw new Error('FAQ item 1 failed to collapse on second click');
+    }
+    console.log('✓ FAQ item 1 collapses cleanly on subsequent click');
 
     console.log('\n--- 5. Testing in-page tab navigation and browser history behavior ---');
     await cdp.navigate(`${BASE}/en/`);

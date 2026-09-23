@@ -115,6 +115,10 @@
     {
       "q": "Quais ferramentas de agentes você utiliza?",
       "a": "Tenho experiência com Antigravity, Claude Code, Codex, Grok Build e OpenCode."
+    },
+    {
+      "q": "Onde você aprendeu a usar IA?",
+      "a": "Sou profissional certificado em IA pelo curso do Google e também aprendi por conta própria desde o GPT-3.5."
     }
   ],
   "availability": "Disponibilidade",
