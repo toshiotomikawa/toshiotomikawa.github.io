@@ -82,7 +82,13 @@ Stop: first version complete. Further projects or features become separate work.
   - Phase 2: Bilingual working prototype delivered with approved Claude Design direction.
   - Phase 3: Full release candidate delivered with MGS and MapaFinanceiro case studies, Grok card, contact/resume, and 404 handling.
   - Phase 4: Published to GitHub Pages via GitHub Actions and verified live at https://toshiotomikawa.github.io/.
-- 12 automated checks pass; dual-engine CDP tests pass in Chrome and Edge across 360, 390, 768, and 1440px.
-- Verified live HTTP 200 responses and clean asset serving across all 10 production endpoints.
-- Full backup on G: hash-verified and Git integrity passed.
-- First version complete. Deliverables handed off.
+- Post-launch enhancements delivered on 2026-09-22 and 2026-09-23:
+  - Soft Pearl surface palette (#f8f9fa) and pure white canvas (#ffffff).
+  - Geist and Geist Mono font superfamily with strict 5-tier semantic scale.
+  - Mandatory Blader Humanizer and Guillaume Meyer Watermark Remover standards.
+  - Interactive collapsible FAQ section (agentic tools, AI background, English fluency).
+  - Tab navigation history fix using history.replaceState and smooth scroll.
+  - Custom letter-T crimson and white favicon suite across all resolutions.
+- 17 automated tests pass (8 Python static, 9 Node preference, text cleaner audit, and CDP browser audits).
+- Verified live HTTP 200 responses and clean asset serving across all production endpoints.
+- Full backups on both G: and W: synchronized, hash-verified, and Git integrity passed.

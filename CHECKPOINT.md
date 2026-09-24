@@ -40,6 +40,20 @@ Branch: `main` (tracked at `origin/main`).
   - 7 Node preference and locale tests (`tests/preferences.test.cjs`).
   - Google Chrome and Microsoft Edge dual-engine CDP tests.
 
+## Post-Launch Enhancements (2026-09-22 - 2026-09-23)
+
+- Surface and Palette: Refined featured card background to soft pearl (`#f8f9fa`) on pure white canvas (`#ffffff`), with crimson red accent (`#bc002d`) and ink (`#16181a`).
+- Unified Font Superfamily: Replaced fragmented font imports with Geist (sans-serif) and Geist Mono (monospace), served with system fallbacks.
+- Strict 5-Tier Typography Scale: Consolidated font sizing into a semantic scale (`--text-xs: 12px`, `--text-base: 15px`, `--text-lg: 18px`, `--text-2xl: clamp(24px, 3.2cqi, 32px)`, `--text-hero: clamp(36px, 6cqi, 72px)`).
+- Content Quality and Unicode Hygiene: Enforced standards from `blader/humanizer` and `guillaumemeyer/watermarks-remover` across all content via `scripts/clean_text.py` and `tests/static_test.py`.
+- Interactive Collapsible FAQ: Added accessible `<details>`/`<summary>` accordion on the homepage in English and Portuguese with crimson toggle indicators (`+` / `×`), covering:
+  1. Agentic tools experience (Antigravity, Claude Code, Codex, Grok Build, OpenCode)
+  2. AI background and Google certification
+  3. English fluency and EF SET C2 certification
+- In-Page Tab Navigation: Used `history.replaceState` and smooth scrolling for section tabs (`#work`, `#background`, `#qualifications`) in `assets/preferences.js`, preventing browser back-button history expansion in fresh tabs.
+- Custom Letter-T Favicon Suite: Processed `letter-t-.png` into crimson red (`#bc002d`) squircle with opaque white (`#ffffff`) "T" and transparent outer corners across 32x32, 192x192, apple-touch-icon, favicon.ico, and SVG.
+- Automated Test Suite: Passes completely across 8 static tests, 9 Node preference tests, text watermark audit, and CDP browser audits.
+
 ## Rollback Procedure
 
 - To roll back:
@@ -50,4 +64,4 @@ Branch: `main` (tracked at `origin/main`).
 ## Backups
 
 - `G:\My Drive\Desktop\Coding\Portfolio`: Full backup hash-verified; Git integrity passed.
-- `W:\Desktop\Coding\Portfolio`: Drive unmounted; backup pending remount.
+- `W:\Desktop\Coding\Portfolio`: Full backup synchronized, hash-verified, and Git integrity passed.
