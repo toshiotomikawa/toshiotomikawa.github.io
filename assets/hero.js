@@ -9,7 +9,7 @@
     try { reduced = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch { /* Full motion. */ }
     let cells = [], cols = 1, lit = [];
     const fill = () => {
-      cols = Math.max(1, Math.floor((box.clientWidth + 6) / SIZE));
+      cols = Math.max(1, Math.floor((box.clientWidth - 6) / SIZE));
       const rows = Math.ceil(box.clientHeight / SIZE);
       if (cells.length !== cols * rows) {
         const frag = document.createDocumentFragment();
@@ -19,15 +19,19 @@
     };
     const at = (x, y) => {
       const r = box.getBoundingClientRect();
-      return [Math.floor((x - r.left) / (r.width / cols)), Math.floor((y - r.top - 6) / SIZE)];
+      return [Math.floor((x - r.left - 6) / ((r.width - 6) / cols)), Math.floor((y - r.top - 6) / SIZE)];
     };
     fill();
 
-    let frame = 0, px = 0, py = 0;
+    let frame = 0, px = 0, py = 0, inside = false;
+    const clear = () => { lit.forEach(c => c.classList.remove('lit', 'near')); lit = []; };
     const light = () => {
       frame = 0;
-      lit.forEach(c => c.classList.remove('lit', 'near'));
-      lit = [];
+      clear();
+      // A frame queued just before the pointer left must not relight a tile.
+      if (!inside) return;
+      const hr = hero.getBoundingClientRect();
+      if (py < hr.top || py > hr.bottom) return;
       const [col, row] = at(px, py);
       for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
         const c = col + dx;
@@ -39,10 +43,14 @@
     };
     hero.addEventListener('pointermove', e => {
       if (e.pointerType === 'touch') return;
-      px = e.clientX; py = e.clientY;
+      inside = true; px = e.clientX; py = e.clientY;
       if (!frame) frame = requestAnimationFrame(light);
     }, { passive: true });
-    hero.addEventListener('pointerleave', () => { lit.forEach(c => c.classList.remove('lit', 'near')); lit = []; });
+    const leave = () => { inside = false; cancelAnimationFrame(frame); frame = 0; clear(); };
+    hero.addEventListener('pointerleave', leave);
+    window.addEventListener('blur', leave);
+    // Scrolling moves the tiles under a still pointer, so follow it.
+    addEventListener('scroll', () => { if (inside && !frame) frame = requestAnimationFrame(light); }, { passive: true });
 
     // A click sends a ring of light outward from the tile under it.
     if (!reduced) hero.addEventListener('click', e => {
@@ -51,9 +59,9 @@
       const wave = [];
       cells.forEach((cell, i) => {
         const d = Math.hypot(i % cols - col, Math.floor(i / cols) - row);
-        if (d > 9) return;
+        if (d > 4.5) return;
         cell.classList.remove('wave');
-        cell.style.setProperty('--delay', `${(d * .055).toFixed(3)}s`);
+        cell.style.setProperty('--delay', `${(d * .07).toFixed(3)}s`);
         wave.push(cell);
       });
       void box.offsetWidth; // Restart the animation on tiles still rippling.
