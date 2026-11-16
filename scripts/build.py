@@ -80,6 +80,7 @@ def home(c, locale):
 
     return f'''
     <section class="hero">
+      <pre class="globe" aria-hidden="true"></pre>
       <p class="eyebrow mono rise">{e(c['eyebrow'])}</p>
       <h1 class="rise" style="--d:.12s">{e(c['title'])}</h1>
       <div class="hero-bottom rise" style="--d:.28s"><p class="intro">{e(c['intro'])}</p>{pairs(c['meta'], 'hero-meta mono')}</div>
@@ -201,6 +202,7 @@ def document(c, locale, case_key=None, neutral=False, is_404=False):
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <script src="/assets/preferences.js"></script>
+  {'<script src="/assets/globe.js" defer></script>' if not (is_case or is_404) else ''}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap">

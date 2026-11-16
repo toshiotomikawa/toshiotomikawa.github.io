@@ -177,7 +177,10 @@ section[id] { scroll-margin-top: 72px; }
 html.is-scrolled .header { background: var(--glass); box-shadow: var(--shadow); border-bottom-color: transparent; -webkit-backdrop-filter: blur(16px) saturate(1.4); backdrop-filter: blur(16px) saturate(1.4); }
 .progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 30; background: var(--accent); transform-origin: 0 50%; transform: scaleX(var(--progress, 0)); pointer-events: none; }
 .hero { position: relative; isolation: isolate; }
-.hero::before { content: ""; position: absolute; z-index: -1; inset: 0 0 auto auto; width: min(560px, 70%); aspect-ratio: 1; background: radial-gradient(circle, var(--glow), transparent 68%); pointer-events: none; }
+/* ASCII Earth: drawn by globe.js, hidden until it renders. */
+.globe { position: absolute; z-index: -1; top: clamp(20px, 3.4cqi, 44px); right: clamp(18px, 4cqi, 54px); width: min(390px, 30cqi); margin: 0; font: inherit; font-variant-ligatures: none; font-size: var(--text-sm); line-height: 1; color: var(--node); white-space: pre; overflow: hidden; pointer-events: none; user-select: none; opacity: 0; transition: opacity 1.4s var(--ease); }
+.globe b { font-weight: 400; color: var(--muted); }
+.globe.is-ready { opacity: 1; }
 .brand .node, .feature-grid .node { transition: transform .6s var(--ease); }
 .brand:hover .node { transform: rotate(45deg); }
 .featured { position: relative; overflow: hidden; transition: box-shadow .5s var(--ease), background-color .4s; }
@@ -202,20 +205,22 @@ html.motion :is(.split, .case-split)[data-reveal] { opacity: 1; transform: none;
 html.motion :is(.split, .case-split)[data-reveal] > * { opacity: 0; transform: translateY(var(--rise)); transition: opacity .9s var(--ease), transform .9s var(--ease); }
 html.motion :is(.split, .case-split)[data-reveal] > :nth-child(2) { transition-delay: .14s; }
 html.motion :is(.split, .case-split)[data-reveal].is-in > * { opacity: 1; transform: none; }
-/* Scroll-linked hero: the content lags and fades while the glow drifts. */
+/* Scroll-linked hero: the content lags and fades while the globe drifts. */
 html.motion .hero { opacity: calc(1 - var(--hero, 0) * .7); }
 html.motion .hero > * { translate: 0 calc(var(--hero, 0) * 70px); }
-html.motion .hero::before { translate: 0 calc(var(--hero, 0) * 160px); }
+html.motion .hero > .globe { translate: 0 calc(var(--hero, 0) * 140px); }
 html.motion [data-tilt].is-in { transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: opacity .9s var(--ease), transform .25s ease-out, box-shadow .5s var(--ease); }
 html.motion .steps li { border-top-color: transparent; background: linear-gradient(var(--rule2), var(--rule2)) 0 0 / 0 1px no-repeat; transition: opacity .9s var(--ease) var(--d, 0s), transform .9s var(--ease) var(--d, 0s), background-size 1s var(--ease) var(--d, 0s); }
 html.motion .steps li.is-in { background-size: 100% 1px; }
 @media (max-width: 700px) { html { --rise: 20px; } }
 @container (max-width: 700px) {
   .header { position: static; }
+  .globe { position: static; width: min(100%, 260px); margin: 0 auto clamp(28px, 8cqi, 44px); }
+  html.motion .hero > .globe { translate: none; }
   html.motion .steps li { background: none; border-left-color: var(--rule2); }
 }
 @media (prefers-reduced-motion: reduce) {
   html.motion [data-reveal], html.motion .rise, html.motion :is(.split, .case-split)[data-reveal] > *, html.motion .hero { opacity: 1; transform: none; }
-  html.motion .hero > *, html.motion .hero::before { translate: none; }
+  html.motion .hero > * { translate: none; }
   .progress { display: none; }
 }
