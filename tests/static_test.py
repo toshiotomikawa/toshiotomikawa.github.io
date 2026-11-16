@@ -88,8 +88,8 @@ class StaticPrototype(unittest.TestCase):
             pt_case = (DIST / 'pt/work' / case / 'index.html').read_text(encoding='utf-8')
             self.assertIn(f'href="/pt/work/{case}/"', en_case)
             self.assertIn(f'href="/en/work/{case}/"', pt_case)
-            self.assertIn(f'hreflang="pt-BR" href="/pt/work/{case}/"', en_case)
-            self.assertIn(f'hreflang="en" href="/en/work/{case}/"', pt_case)
+            self.assertIn(f'hreflang="pt-BR" href="https://toshiotomikawa.github.io/pt/work/{case}/"', en_case)
+            self.assertIn(f'hreflang="en" href="https://toshiotomikawa.github.io/en/work/{case}/"', pt_case)
 
     def test_meta_and_accessibility(self):
         for path in (DIST / 'en/index.html', DIST / 'pt/index.html', DIST / 'en/work/mapa/index.html'):
