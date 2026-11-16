@@ -38,6 +38,8 @@ class StaticPrototype(unittest.TestCase):
             'https://mapadabella.vercel.app/',
             'https://tomiesl.com.br/',
             'https://github.com/toshiotomikawa',
+            'https://www.instagram.com/toshiotomikawa/',
+            'https://x.com/toshiotomikawa',
             'mailto:toshiotomikawa@gmail.com',
         )
         for path in paths:

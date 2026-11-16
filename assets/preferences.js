@@ -104,15 +104,24 @@
   // Scroll reveals, count-ups, card tilt, glass header and reading progress.
   function setupMotion() {
     const bar = document.querySelector('.progress');
-    const onScroll = () => {
-      root.classList.toggle('is-scrolled', window.scrollY > 8);
+    const hero = document.querySelector('.hero');
+    let pending = false;
+    const update = () => {
+      pending = false;
+      const y = window.scrollY;
+      root.classList.toggle('is-scrolled', y > 8);
+      root.classList.toggle('show-top', y > window.innerHeight * .6);
       if (bar) {
         const max = root.scrollHeight - window.innerHeight;
-        bar.style.setProperty('--progress', max > 0 ? Math.min(1, window.scrollY / max).toFixed(4) : '0');
+        bar.style.setProperty('--progress', max > 0 ? Math.min(1, y / max).toFixed(4) : '0');
       }
+      if (hero) hero.style.setProperty('--hero', Math.min(1, y / Math.max(1, hero.offsetHeight)).toFixed(4));
     };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+    // One update per frame keeps scroll-linked effects smooth on slow devices.
+    window.addEventListener('scroll', () => {
+      if (!pending) { pending = true; requestAnimationFrame(update); }
+    }, { passive: true });
     if (!root.classList.contains('motion')) return;
 
     const countUp = el => {

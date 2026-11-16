@@ -8,6 +8,20 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dist"
 BASE_URL = "https://toshiotomikawa.github.io"
 
+# Line icons share one 16px grid; brand marks are filled.
+ICONS = {
+    'globe': '<svg aria-hidden="true" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.4"/><ellipse cx="8" cy="8" rx="2.8" ry="6.4"/><path d="M1.6 8h12.8"/></svg>',
+    'up': '<svg aria-hidden="true" viewBox="0 0 16 16"><path d="M8 13.4V2.8M3.4 7.4 8 2.8l4.6 4.6"/></svg>',
+    'instagram': '<svg aria-hidden="true" viewBox="0 0 16 16"><rect x="1.8" y="1.8" width="12.4" height="12.4" rx="3.6"/><circle cx="8" cy="8" r="2.9"/><circle class="dot" cx="11.7" cy="4.3" r=".5"/></svg>',
+    'github': '<svg class="mark" aria-hidden="true" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>',
+    'x': '<svg class="mark" aria-hidden="true" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
+}
+SOCIALS = [
+    ('github', 'GitHub', 'https://github.com/toshiotomikawa'),
+    ('instagram', 'Instagram', 'https://www.instagram.com/toshiotomikawa/'),
+    ('x', 'X', 'https://x.com/toshiotomikawa'),
+]
+
 
 def e(value):
     return escape(str(value), quote=True)
@@ -145,7 +159,11 @@ def document(c, locale, case_key=None, neutral=False, is_404=False):
         description = c['intro'][:155]
 
     nav = ''.join(f'<a href="/{locale}/#{anchor}">{e(label)}</a>' for anchor, label in c['nav'])
-    languages = ''.join(f'<a data-locale="{key}" href="/{key}/{suffix}" lang="{lang}" hreflang="{lang}" {"aria-current=\"page\"" if key == locale else ""}>{key.upper()}</a>' for key, lang in [('en', 'en'), ('pt', 'pt-BR')])
+    # One icon button that switches to the other language, styled like the theme button.
+    other, other_lang, other_name = ('en', 'en', 'English') if locale == 'pt' else ('pt', 'pt-BR', 'Português')
+    language = f'<a class="icon-button" data-locale="{other}" href="/{other}/{suffix}" lang="{other_lang}" hreflang="{other_lang}" aria-label="{other_name}" title="{other_name}">{ICONS["globe"]}</a>'
+    socials = ''.join(f'<a class="icon-button" href="{url}" rel="noopener noreferrer" target="_blank" aria-label="{name} @toshiotomikawa" title="{name} @toshiotomikawa">{ICONS[key]}</a>' for key, name, url in SOCIALS)
+    top_label = 'Voltar ao topo' if locale == 'pt' else 'Back to top'
 
     page_url = f"{BASE_URL}/{locale}/{suffix}"
     og_locale = "pt_BR" if locale == "pt" else "en_US"
@@ -183,7 +201,9 @@ def document(c, locale, case_key=None, neutral=False, is_404=False):
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <script src="/assets/preferences.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/site.css">
   <link rel="alternate" hreflang="en" href="/en/{suffix}">
   <link rel="alternate" hreflang="pt-BR" href="/pt/{suffix}">
@@ -191,19 +211,20 @@ def document(c, locale, case_key=None, neutral=False, is_404=False):
 <body>
 <div class="progress" aria-hidden="true"></div>
 <a class="skip-link" href="#main">{e(c['skip'])}</a>
-<div class="page">
+<div class="page" id="top" tabindex="-1">
   <header class="header">
     <a class="brand" href="/{locale}/"><span class="node" aria-hidden="true"></span>Yuri Toshio Tomikawa</a>
     <div class="header-controls"><nav class="sections mono" aria-label="{e(c['navLabel'])}">{nav}</nav>
-    <div class="preferences"><nav class="languages mono" aria-label="{e(c['languageLabel'])}">{languages}</nav>
-    <button class="theme-toggle" type="button" hidden aria-label="{e(c['themeLabel'])}" title="{e(c['themeLabel'])}">
+    <div class="preferences"><nav class="languages" aria-label="{e(c['languageLabel'])}">{language}</nav>
+    <button class="icon-button theme-toggle" type="button" hidden aria-label="{e(c['themeLabel'])}" title="{e(c['themeLabel'])}">
       <svg data-icon="system" aria-hidden="true" viewBox="0 0 16 16"><rect x="1.6" y="2.4" width="12.8" height="8.6"/><path d="M5.6 13.6h4.8"/></svg>
       <svg data-icon="light" aria-hidden="true" viewBox="0 0 16 16" hidden><circle cx="8" cy="8" r="3.1"/><path d="M8 1v1.7M8 13.3V15M1 8h1.7M13.3 8H15M3.05 3.05l1.2 1.2M11.75 11.75l1.2 1.2M12.95 3.05l-1.2 1.2M4.25 11.75l-1.2 1.2"/></svg>
       <svg data-icon="dark" aria-hidden="true" viewBox="0 0 16 16" hidden><path d="M13.2 9.9A5.8 5.8 0 0 1 6.1 2.8a5.8 5.8 0 1 0 7.1 7.1z"/></svg>
     </button></div></div>
   </header>
   <main id="main" tabindex="-1">{body_content}</main>
-  <footer>Yuri Toshio Tomikawa</footer>
+  <footer><span>Yuri Toshio Tomikawa</span><nav class="socials" aria-label="{e(c['socialLabel'])}">{socials}</nav></footer>
+  <a class="icon-button to-top" href="#top" aria-label="{top_label}" title="{top_label}">{ICONS["up"]}</a>
 </div>
 </body>
 </html>
