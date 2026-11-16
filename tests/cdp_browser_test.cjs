@@ -146,6 +146,8 @@ async function run() {
       '/pt/',
       '/en/work/mgs/',
       '/pt/work/mgs/',
+      '/en/work/tomi/',
+      '/pt/work/tomi/',
       '/en/work/mapa/',
       '/pt/work/mapa/',
       '/404.html'
@@ -171,7 +173,7 @@ async function run() {
           throw new Error(`Expected exactly 1 h1 on route ${route}, found ${result.h1Count}`);
         }
       }
-      console.log(`✓ All 7 routes fit cleanly without horizontal overflow at ${width}px`);
+      console.log(`✓ All 9 routes fit cleanly without horizontal overflow at ${width}px`);
     }
 
     console.log('\n--- 2. Testing theme cycle and keyboard interactivity ---');

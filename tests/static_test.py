@@ -32,10 +32,11 @@ class Page(HTMLParser):
 
 class StaticPrototype(unittest.TestCase):
     def test_routes_links_and_semantics(self):
-        paths = [DIST / 'index.html', DIST / '404.html'] + [DIST / l / p for l in ('en', 'pt') for p in ('index.html', 'work/mgs/index.html', 'work/mapa/index.html')]
+        paths = [DIST / 'index.html', DIST / '404.html'] + [DIST / l / p for l in ('en', 'pt') for p in ('index.html', 'work/mgs/index.html', 'work/tomi/index.html', 'work/mapa/index.html')]
         allowed_external_prefixes = (
             'https://www.youtube.com/watch?v=sYcOqTKv7B0',
             'https://mapadabella.vercel.app/',
+            'https://tomiesl.com.br/',
             'https://github.com/toshiotomikawa',
             'mailto:toshiotomikawa@gmail.com',
         )
@@ -80,7 +81,7 @@ class StaticPrototype(unittest.TestCase):
                     self.assertGreaterEqual((b + .05) / (a + .05), 4.5, f'{name} on {bg}')
 
     def test_language_cross_linking(self):
-        for case in ('mgs', 'mapa'):
+        for case in ('mgs', 'tomi', 'mapa'):
             en_case = (DIST / 'en/work' / case / 'index.html').read_text(encoding='utf-8')
             pt_case = (DIST / 'pt/work' / case / 'index.html').read_text(encoding='utf-8')
             self.assertIn(f'href="/pt/work/{case}/"', en_case)

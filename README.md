@@ -10,7 +10,7 @@ The repository publishes from `main` via GitHub Actions (`.github/workflows/depl
 
 Post-launch updates:
 - Pure white canvas (#ffffff), soft pearl card surface (#f8f9fa), crimson red accent (#bc002d), and ink (#16181a).
-- Geist and Geist Mono font superfamily with a strict 5-tier semantic scale.
+- Geist and Geist Mono font superfamily with four sizes only, the smallest at 15px.
 - Mandatory Blader Humanizer and Guillaume Meyer Watermark Remover standards.
 - Interactive collapsible FAQ section (agentic tools, AI background, English fluency).
 - Tab navigation history fix using history.replaceState and smooth scrolling.
@@ -27,12 +27,12 @@ python scripts/preview.py
 ```
 
 Open http://127.0.0.1:4173/. Explicit routes: `/en/`, `/pt/`,
-`/en/work/mgs/`, `/pt/work/mgs/`, `/en/work/mapa/`, `/pt/work/mapa/`. Stop the preview with Ctrl+C.
+`/en/work/mgs/`, `/pt/work/mgs/`, `/en/work/tomi/`, `/pt/work/tomi/`, `/en/work/mapa/`, `/pt/work/mapa/`. Stop the preview with Ctrl+C.
 
 ## Structure
 
 - `content/`: matching EN/PT copy in clean JSON format.
-- `assets/site.css`: shared responsive styles, Geist superfamily, 5-tier typography scale, and themes.
+- `assets/site.css`: shared responsive styles, Geist superfamily, four-size type scale, and themes.
 - `assets/preferences.js`: theme cycling, locale switching, and tab navigation history enhancement.
 - `scripts/build.py`: dependency-free static renderer. Generated `dist/` is deployed to GitHub Pages.
 - `scripts/clean_text.py`: Unicode watermark and invisible character cleaner.

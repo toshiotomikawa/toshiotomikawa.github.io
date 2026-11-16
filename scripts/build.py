@@ -26,21 +26,14 @@ def arrow(label, href, back=False, external=False):
 
 
 def home(c, locale):
-    mgs = c['cases']['mgs']
-    mapa = c['cases']['mapa']
     sup = c['supporting']
 
-    # Case 01: MGS
-    mgs_card = f'''<article class="featured" data-reveal data-tilt><div class="feature-grid">
-        <div><span class="node" aria-hidden="true"></span><p class="mono dim">01 / 2021-2025</p><p class="studio">Michael Ghelfi Studios</p><p class="skills mono">{'<br>'.join(map(e, mgs['skills']))}</p></div>
-        <div><h3>{e(mgs['title'])}</h3><p class="feature-text">{e(mgs['summary'])}</p>{arrow(c['read'], f'/{locale}/work/mgs/')}</div>
-      </div></article>'''
-
-    # Case 02: Mapa da Bella
-    mapa_card = f'''<article class="featured" data-reveal data-tilt style="--d:.08s"><div class="feature-grid">
-        <div><span class="node" aria-hidden="true"></span><p class="mono dim">02 / 2026</p><p class="studio">Mapa da Bella</p><p class="skills mono">{'<br>'.join(map(e, mapa['skills']))}</p></div>
-        <div><h3>{e(mapa['title'])}</h3><p class="feature-text">{e(mapa['summary'])}</p>{arrow(c['read'], f'/{locale}/work/mapa/')}</div>
-      </div></article>'''
+    # Featured cases, in display order: key, period, name.
+    featured = [('mgs', '2021-2025', 'Michael Ghelfi Studios'), ('tomi', '2026', 'Tomi ESL'), ('mapa', '2026', 'Mapa da Bella')]
+    case_cards = ''.join(f'''<article class="featured" data-reveal data-tilt style="--d:{i * .08:.2f}s"><div class="feature-grid">
+        <div><span class="node" aria-hidden="true"></span><p class="mono dim">{i + 1:02} / {period}</p><p class="studio">{e(name)}</p><p class="skills mono">{'<br>'.join(map(e, c['cases'][key]['skills']))}</p></div>
+        <div><h3>{e(c['cases'][key]['title'])}</h3><p class="feature-text">{e(c['cases'][key]['summary'])}</p>{arrow(c['read'], f'/{locale}/work/{key}/')}</div>
+      </div></article>''' for i, (key, period, name) in enumerate(featured))
 
     # Supporting Case: Grok MCP Bridge
     points = ''.join(f'<li>{e(pt)}</li>' for pt in sup['points'])
@@ -78,9 +71,8 @@ def home(c, locale):
       <div class="hero-bottom rise" style="--d:.28s"><p class="intro">{e(c['intro'])}</p>{pairs(c['meta'], 'hero-meta mono')}</div>
     </section>
     <section class="work" id="work">
-      <div class="section-heading mono" data-reveal><h2>{e(c['selected'])}</h2><span data-count="3" data-count-pad="2">03</span></div>
-      {mgs_card}
-      {mapa_card}
+      <div class="section-heading mono" data-reveal><h2>{e(c['selected'])}</h2><span data-count="4" data-count-pad="2">04</span></div>
+      {case_cards}
       {grok_card}
     </section>
     <section class="background" id="background"><div class="split" data-reveal>
@@ -235,8 +227,8 @@ def build():
         home_path.mkdir(parents=True, exist_ok=True)
         (home_path / 'index.html').write_text(document(c, locale), encoding='utf-8')
 
-        # Case studies: mgs and mapa
-        for case_key in ['mgs', 'mapa']:
+        # Case studies
+        for case_key in ['mgs', 'tomi', 'mapa']:
             case_path = OUT / locale / 'work' / case_key
             case_path.mkdir(parents=True, exist_ok=True)
             (case_path / 'index.html').write_text(document(c, locale, case_key=case_key), encoding='utf-8')
@@ -248,7 +240,7 @@ def build():
     (OUT / '404.html').write_text(document(contents['en'], 'en', is_404=True), encoding='utf-8')
 
     (OUT / '.nojekyll').touch()
-    print('Built homepage, MGS case, Mapa da Bella case, and 404 in EN/PT with neutral entry.')
+    print('Built homepage, MGS, Tomi ESL and Mapa da Bella cases, and 404 in EN/PT with neutral entry.')
 
 
 if __name__ == '__main__':

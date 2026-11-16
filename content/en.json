@@ -56,8 +56,43 @@
       "also": "I adapted the studio's commissioned black-and-white mark with a metallic-gold treatment for featured releases. The original mark was designed by another creator.",
       "back": "back to work"
     },
+    "tomi": {
+      "eyebrow": "Case 02 / Tomi ESL",
+      "title": "Setting up and running a one-person English school",
+      "summary": "Tomi ESL: my own online English school for Brazilian teens and young adults. I set up the business, payments, website, and course materials, directing coding agents for the build work.",
+      "meta": [
+        ["role", "Founder and teacher"],
+        ["period", "Oct 2026 - present"],
+        ["business", "one-to-one online English lessons"],
+        ["stack", "Cloudflare, Stripe, Resend, Umami"]
+      ],
+      "skills": ["business setup", "pricing and payments", "web operations", "course materials"],
+      "labels": ["01 context", "02 responsibility", "03 decisions", "04 launch sequence", "05 boundaries"],
+      "context": "In October 2026 I started Tomi ESL, an independent school offering one-to-one English lessons over Google Meet, alongside my teaching job. With no team behind it, every operational piece had to work on its own: registration, pricing, payments, the website, email, and the lesson materials.",
+      "items": [
+        ["business", "Registered the company as an MEI and opened a business bank account for payouts."],
+        ["payments", "Set up Stripe payment links, with card and Pix, for single lessons and monthly hour plans, with the rescheduling policy written into each plan."],
+        ["web", "Launched tomiesl.com.br on Cloudflare Pages, with its own domain, business email signed by that domain, and privacy-friendly analytics."],
+        ["materials", "Directed coding agents to build two 8-unit course handouts from fixed source texts, with automated checks on every build."]
+      ],
+      "decisions": "Set lesson prices and monthly plans from market research, chose hosting, payment, and email providers by cost and terms of use, and decided the brand, the site structure, and the launch order.",
+      "sampleTitle": "From idea to taking payments",
+      "steps": [
+        "Researched the market and set lesson prices",
+        "Published teacher profiles on tutoring platforms",
+        "Launched the website",
+        "Registered the business and opened payments",
+        "Moved to its own domain with business email and analytics"
+      ],
+      "credit": "Teaching, pricing, and brand decisions are mine. Coding agents did most of the build work under my direction and review.",
+      "reach": "The school opened in November 2026. Student and revenue figures are not public.",
+      "linkUrl": "https://tomiesl.com.br/",
+      "linkLabel": "visit tomiesl.com.br",
+      "also": "Tomi ESL runs alongside my teaching job and stays small and focused on purpose. The site and materials are in Portuguese, for Brazilian students.",
+      "back": "back to work"
+    },
     "mapa": {
-      "eyebrow": "Case 02 / Financial Simulator",
+      "eyebrow": "Case 03 / Financial Simulator",
       "title": "Turning client-facing spreadsheets into an interactive explanation",
       "summary": "Mapa da Bella: an interactive web simulator built with coding agents, used by a consórcio sales team to replace confusing spreadsheets.",
       "meta": [
@@ -93,7 +128,7 @@
     }
   },
   "supporting": {
-    "eyebrow": "03 / integration",
+    "eyebrow": "04 / integration",
     "title": "Connecting AI tools with clear controls",
     "summary": "Grok MCP Bridge: a personal local integration connecting ChatGPT Chat to Grok Build, with task tracking and separately reviewed changes.",
     "points": [
