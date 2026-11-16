@@ -80,6 +80,7 @@ def home(c, locale):
 
     return f'''
     <section class="hero">
+      <div class="tiles" aria-hidden="true"></div>
       <pre class="globe" aria-hidden="true"></pre>
       <p class="eyebrow mono rise">{e(c['eyebrow'])}</p>
       <h1 class="rise" style="--d:.12s">{e(c['title'])}</h1>
@@ -205,7 +206,7 @@ def document(c, locale, case_key=None, neutral=False, is_404=False):
   {'<script src="/assets/globe.js" defer></script>' if not (is_case or is_404) else ''}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&amp;family=Outfit:wght@400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/site.css">
   <link rel="alternate" hreflang="en" href="/en/{suffix}">
   <link rel="alternate" hreflang="pt-BR" href="/pt/{suffix}">

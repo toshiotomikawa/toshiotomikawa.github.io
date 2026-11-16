@@ -25,7 +25,7 @@
   html { scroll-behavior: smooth; }
 }
 [hidden] { display: none !important; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: "JetBrains Mono", ui-monospace, monospace; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Outfit", ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 a { color: var(--accent); text-underline-offset: .25em; }
 a:hover { color: var(--accent-hover); }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
@@ -178,9 +178,14 @@ html.is-scrolled .header { background: var(--glass); box-shadow: var(--shadow); 
 .progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 30; background: var(--accent); transform-origin: 0 50%; transform: scaleX(var(--progress, 0)); pointer-events: none; }
 .hero { position: relative; isolation: isolate; }
 /* ASCII Earth: drawn by globe.js, hidden until it renders. */
-.globe { position: absolute; z-index: -1; top: clamp(20px, 3.4cqi, 44px); right: clamp(18px, 4cqi, 54px); width: min(390px, 30cqi); margin: 0; font: inherit; font-variant-ligatures: none; font-size: var(--text-sm); line-height: 1; color: var(--node); white-space: pre; overflow: hidden; pointer-events: none; user-select: none; opacity: 0; transition: opacity 1.4s var(--ease); }
+.globe { position: absolute; z-index: -1; top: clamp(20px, 3.4cqi, 44px); right: clamp(18px, 4cqi, 54px); width: min(390px, 30cqi); margin: 0; font-family: "JetBrains Mono", ui-monospace, monospace; font-weight: 400; font-variant-ligatures: none; font-size: var(--text-sm); line-height: 1; color: var(--node); white-space: pre; overflow: hidden; pointer-events: none; user-select: none; opacity: 0; transition: opacity 1.4s var(--ease); }
 .globe b { font-weight: 400; color: var(--muted); }
 .globe.is-ready { opacity: 1; }
+/* Cursor-lit tiles behind the hero; each lit tile fades back on its own. */
+.tiles { position: absolute; z-index: -2; inset: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(52px, 1fr)); grid-auto-rows: 52px; gap: 6px; padding: 6px; overflow: hidden; -webkit-mask-image: linear-gradient(#000 45%, transparent 96%); mask-image: linear-gradient(#000 45%, transparent 96%); }
+.tiles i { border: 1px solid var(--rule); border-radius: 8px; background: var(--surface); transition: background-color 1.6s var(--ease), border-color 1.6s var(--ease), box-shadow 1.6s var(--ease); }
+.tiles i.lit { transition-duration: .14s; background: color-mix(in srgb, var(--accent) 9%, var(--surface)); border-color: color-mix(in srgb, var(--accent) 34%, var(--rule)); box-shadow: 0 0 22px -6px color-mix(in srgb, var(--accent) 45%, transparent); }
+.tiles i.near { transition-duration: .3s; background: color-mix(in srgb, var(--accent) 4%, var(--surface)); border-color: color-mix(in srgb, var(--accent) 16%, var(--rule)); }
 .brand .node, .feature-grid .node { transition: transform .6s var(--ease); }
 .brand:hover .node { transform: rotate(45deg); }
 .featured { position: relative; overflow: hidden; transition: box-shadow .5s var(--ease), background-color .4s; }

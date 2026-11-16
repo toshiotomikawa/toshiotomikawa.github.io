@@ -1,4 +1,4 @@
-/* Slowly spinning ASCII Earth for the hero. Land map: Natural Earth 1:110m land (public domain), 2-degree grid. */
+/* Hero effects: cursor-lit tiles and a slowly spinning ASCII Earth. Land map: Natural Earth 1:110m land (public domain), 2-degree grid. */
 (() => {
   'use strict';
   const LAND = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf4AP/AAAAAAAAAAAAAAAAAAAAAAAAX/z///+AAAAAAAABAAAAAAAAAAAAAYd8P///wAA+AAAAAA8AAAAAAAAAAAwAnw////4AAIAAAAAAGAAAAAAAAAAADivwAf//wAAAAADAAf/wAHYAAAAAADoi3sAP//gAAAAAMAD///sAAAAgBgACfwz/AD/+gAAAwAEHf///+/8gBAP/7/nJdjwD/+AAAH/AA7f///////f4P//////h8H/gAAAf/6//f////////Mf/////9H4D8AeAA+ev///////////AP/////4A0B4AAAD5/////////////Af3////gHgA4AAAH5///////////LwAHgH///gHkAAAAAH4/////////+CIAABAB///4D+AAAAGCx/////////4A8AAIAAf///n/gAAAOCD/////////wA4AAAAAf///n/wAAAbP///////////AgAAAAAP/////wAAADf//////////9AAAAAAAF////0YAAAB///////////9AAAAAAAD////8EAAAB///////////5AAAAAAAD////2AAAAB/f5fP//////wAAAAAAAD////gAAAAfxnwPP//////jAAAAAAAD////AAAAAPCb3/n/////+CAAAAAAAD///8AAAAAfALf/n////+ECAAAAAAAB///8AAAAAGHQP/n/////mMAAAAAAAA///8AAAAAH+Ai///////E8AAAAAAAAf//wAAAAAP/AA///////BgAAAAAAAAP//gAAAAAf/73///////gAAAAAAAAAD/AQAAAAAf////f/////gAAAAAAAAAF+AQAAAAB///+/n/////AAAAAAAAAAC+AAAAAAB///+f0H////AAAAAAAAAAAeAwAAAAD////f/B///8gAAAAAAAAAAeGEAAAAH////v+B/z/AAAAAAAAAAAAPMAgAAAD////n+A/B+gAAAAAAAAAAAD8AAAAAD////n4AeB/AgAAAAAAAAAAAPAAAAAH////3gAcAfAgAAAAAAAAAAADAAAAAD////6AAcAfggAAAAAAAAAAABDwAAAD////8wAMATAIAAAAAAAAAAAAr/AAAB/////gAKASAAAAAAAAAAAAAAH/gAAA/////gACAAAIAAAAAAAAAAAAH/8AAAaH///AAAAsGAAAAAAAAAAAAAH/+AAAAB//+AAAAUOAAAAAAAAAAAAAP/+AAAAB//8AAAAYegAAAAAAAAAAAAP//gAAAD//4AAAAMeBgAAAAAAAAAAAP//8AAAB//wAAAAGdiuAAAAAAAAAAAf///AAAA//wAAAACAQHgAAAAAAAAAAP///gAAA//wAAAABwAHwgAAAAAAAAAH///AAAA//wAAAAACIDQIAAAAAAAAAH//+AAAAf/wAAAAAAAAAAAAAAAAAAAD//+AAAA//wgAAAAABxAAAAAAAAAAAD//+AAAA//wgAAAAAPxgBAAAAAAAAAA//8AAAA//jgAAAAAf5gAAAAAAAAAAAf/8AAAA//DgAAAAAf/gAAAAAAAAAAAf/8AAAAf/DAAAAAD//4CAAAAAAAAAAf/wAAAAf/DAAAAAH//4AAAAAAAAAAAf/AAAAAf+CAAAAAH//8AAAAAAAAAAAf/AAAAAP8AAAAAAH//+AAAAAAAAAAA/+AAAAAP8AAAAAAH//+AAAAAAAAAAA/+AAAAAH4AAAAAAD//+AAAAAAAAAAA/8AAAAAHwAAAAAADwf8AAAAAAAAAAA/gAAAAAAAAAAAAACAH4AIAAAAAAAAB/wAAAAAAAAAAAAAAAD4AEAAAAAAAAB+AAAAAAAAAAAAAAAAAAAGAAAAAAAAB6AAAAAAAAAAAAAAAAAwAMAAAAAAAAA8AAAAAAAAAAAAAAAAAQAYAAAAAAAAB4AAAAAAAAAAAAAAAAAAAwAAAAAAAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAADwAAAAAAAAAACAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAeAAIP+f/gAAAAAAAAAAAMAAAAAAABP/+H//////AAAAAAAAAAA+AAAAAf////8////////AAAAAAAOEAPAAAB///////////////gAAAP//T//8AAAH//////////////+AAAH/////4AAAH///////////////8AAE//////4ABw////////////////8AAAD//////gCA////////////////wAAAf/////////////////////////+A/4A///////////////////////////////////////////////////////////////////////////////////////';
@@ -79,7 +79,52 @@
     addEventListener('resize', () => { cancelAnimationFrame(resize); resize = requestAnimationFrame(() => { measure(); draw(spinAt(performance.now())); }); });
   }
 
-  const boot = () => { const pre = document.querySelector('.globe'); if (pre) try { start(pre); } catch { pre.remove(); } };
+  // Tiles light up under the cursor and fade back slowly, leaving a soft trail.
+  function tiles(box) {
+    const hero = box.parentElement;
+    let cells = [], cols = 1, lit = [];
+    const fill = () => {
+      const size = 58; // Tile plus gap.
+      cols = Math.max(1, Math.floor((box.clientWidth - 6) / size));
+      const rows = Math.ceil(box.clientHeight / size);
+      if (cells.length !== cols * rows) {
+        box.textContent = '';
+        cells = Array.from({ length: cols * rows }, () => box.appendChild(document.createElement('i')));
+      }
+    };
+    fill();
+    let frame = 0, px = 0, py = 0;
+    const light = () => {
+      frame = 0;
+      lit.forEach(c => c.classList.remove('lit', 'near'));
+      lit = [];
+      const r = box.getBoundingClientRect();
+      const w = (r.width - 6) / cols;
+      const col = Math.floor((px - r.left - 3) / w), row = Math.floor((py - r.top - 3) / 58);
+      for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+        const c = col + dx, rr = row + dy;
+        if (c < 0 || c >= cols) continue;
+        const cell = cells[rr * cols + c];
+        if (!cell) continue;
+        cell.classList.add(dx || dy ? 'near' : 'lit');
+        lit.push(cell);
+      }
+    };
+    hero.addEventListener('pointermove', e => {
+      if (e.pointerType === 'touch') return;
+      px = e.clientX; py = e.clientY;
+      if (!frame) frame = requestAnimationFrame(light);
+    }, { passive: true });
+    hero.addEventListener('pointerleave', () => { lit.forEach(c => c.classList.remove('lit', 'near')); lit = []; });
+    let resize = 0;
+    addEventListener('resize', () => { cancelAnimationFrame(resize); resize = requestAnimationFrame(fill); });
+  }
+
+  const boot = () => {
+    const box = document.querySelector('.tiles');
+    if (box) try { tiles(box); } catch { box.remove(); }
+    const pre = document.querySelector('.globe'); if (pre) try { start(pre); } catch { pre.remove(); }
+  };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
