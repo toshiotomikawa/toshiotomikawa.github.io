@@ -1,0 +1,25 @@
+# Local credentials and environment configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+*.log
+__pycache__/
+*.pyc
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+
+# Local agent and planning notes, never published
+AGENTS.md
+PLAN.md
+CHECKPOINT.md

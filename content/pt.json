@@ -1,0 +1,142 @@
+{
+  "lang": "pt-BR",
+  "title": "Gestão de operações com uso prático de IA.",
+  "eyebrow": "Gestão de operações · remoto, elegível na América Latina",
+  "intro": "Coordeno equipes e rotinas diárias para manter as entregas em dia, e construo ferramentas internas orientando agentes de programação.",
+  "nav": [
+    ["work", "trabalhos"],
+    ["background", "trajetória"],
+    ["faq", "faq"],
+    ["availability", "disponibilidade"],
+    ["contact", "contato"]
+  ],
+  "navLabel": "Seções",
+  "languageLabel": "Idioma",
+  "skip": "Pular para o conteúdo",
+  "meta": [
+    ["local", "Brasil (UTC-3)"],
+    ["idiomas", "inglês fluente / português nativo"],
+    ["buscando", "gestão de operações remota"]
+  ],
+  "selected": "Trabalhos selecionados",
+  "read": "ler o estudo de caso",
+  "cases": {
+    "mgs": {
+      "eyebrow": "Caso 01 / Michael Ghelfi Studios",
+      "title": "Manter a produção recorrente em movimento em um estúdio remoto",
+      "summary": "Quatro anos coordenando a revisão e a publicação em um estúdio internacional, com três lançamentos semanais e o Patreon.",
+      "meta": [
+        ["cargo", "Studio Manager"],
+        ["período", "ago 2021 - dez 2025"],
+        ["estúdio", "música e paisagens sonoras"],
+        ["idioma", "inglês, time internacional"]
+      ],
+      "skills": ["revisão editorial", "padrões de qualidade", "publicação de vídeos", "operação do site"],
+      "labels": ["01 contexto", "02 responsabilidades", "03 decisões", "04 lançamento", "05 também"],
+      "context": "A Michael Ghelfi Studios produz áudio para RPG com uma equipe remota internacional. Como Studio Manager, conduzi as operações de rotina cobrindo revisão editorial, produção de vídeo, calendário de publicação e manutenção do site, com três lançamentos semanais e entregas no Patreon.",
+      "items": [
+        ["redação", "Revisei roteiros, dei feedback editorial e mantive a consistência dos textos da equipe de redatores."],
+        ["vídeo", "Editei e publiquei os lançamentos em vídeo do estúdio no YouTube e pacotes do Patreon."],
+        ["site", "Administrei o site em WordPress, plugins e a manutenção de mu-plugins customizados."],
+        ["ferramentas", "Organizei automações de publicação, esteiras de agendamento e avisos nas redes do estúdio."]
+      ],
+      "decisions": "Defini temas editoriais, cronograma de publicação, testes A/B de miniaturas, listas temáticas de áudio e conceitos de imagens geradas por IA.",
+      "sampleTitle": "Biosphere: vídeo do álbum completo",
+      "steps": [
+        "Planejei o conceito visual de forma independente",
+        "Gerei as ilustrações com ferramentas de IA",
+        "Editei e corrigi as cores da miniatura (thumbnail)",
+        "Montei o vídeo do álbum completo a partir das faixas do compositor",
+        "Agendei e publiquei o lançamento final"
+      ],
+      "credit": "Música composta por Filip Melvan.",
+      "reach": "O lançamento alcançou 936.714 visualizações no YouTube (verificado em setembro de 2026), somando a música, a embalagem visual e a distribuição do estúdio.",
+      "linkUrl": "https://www.youtube.com/watch?v=sYcOqTKv7B0",
+      "linkLabel": "assistir a Biosphere no YouTube",
+      "also": "Apliquei um acabamento dourado metálico ao logotipo do estúdio em lançamentos especiais. A marca original foi desenhada por outro profissional.",
+      "back": "voltar aos trabalhos"
+    },
+    "mapa": {
+      "eyebrow": "Caso 02 / Simulador Financeiro",
+      "title": "Transformando planilhas de clientes em uma explicação interativa",
+      "summary": "Mapa da Bella: simulador web interativo construído com agentes de código, usado por uma equipe de consórcio para substituir planilhas complexas.",
+      "meta": [
+        ["produto", "Mapa da Bella"],
+        ["função", "Criação de produto e fluxo com IA"],
+        ["contexto", "consultas comerciais de consórcio"],
+        ["tecnologia", "web estática, estado reativo"]
+      ],
+      "skills": ["design de produto", "direção de agentes", "comunicação com cliente", "modelagem reativa"],
+      "labels": ["01 contexto", "02 contribuição", "03 mudança no fluxo", "04 estrutura da simulação", "05 limites"],
+      "context": "A equipe comercial de consórcio usava planilhas densas durante as ligações de vendas. Os clientes tinham dificuldade para acompanhar os números na hora, e simular prazos ou entradas diferentes exigia recálculos manuais demorados.",
+      "items": [
+        ["entradas", "Controles diretos para renda mensal, valor do imóvel, entrada disponível e prazo desejado."],
+        ["projeções", "Compara a valorização imobiliária estimada (7% ao ano) com o rendimento de investimentos (6,2% ao ano) em até 30 anos."],
+        ["consórcio", "Simula quatro caminhos: sorteio comum, lance fixo (44 parcelas), limitado (88 parcelas) e lance livre."],
+        ["comparativo", "Comparação lado a lado entre poupança direta, financiamento bancário e parcelas de consórcio."]
+      ],
+      "decisions": "Desenhado para dar agilidade à conversa de vendas: mudar o prazo recalcula na hora o valor mensal e o resumo do cenário.",
+      "sampleTitle": "Fluxo interativo da simulação",
+      "steps": [
+        "Recebe a renda, o valor do imóvel desejado e o capital inicial",
+        "Mostra o aumento dos preços dos imóveis superando a poupança tradicional",
+        "Calcula a reserva mensal necessária para prazos de 3 ou 5 anos",
+        "Compara lances com recursos próprios e lances embutidos de até 50% da carta",
+        "Apresenta um comparativo direto com juros e prazos do financiamento bancário"
+      ],
+      "credit": "Criado para o uso diário de uma equipe de vendas de consórcio.",
+      "reach": "Hospedado na Vercel como aplicação cliente, permitindo que a equipe simule valores ao vivo nas chamadas sem depender de servidor.",
+      "linkUrl": "https://mapadabella.vercel.app/",
+      "linkLabel": "explorar o aplicativo Mapa da Bella",
+      "also": "Os números seguem as premissas preenchidas na tela. O simulador serve de apoio ao diálogo comercial e não constitui aprovação de crédito, garantia de contemplação nem consultoria financeira regulada.",
+      "back": "voltar aos trabalhos"
+    }
+  },
+  "supporting": {
+    "eyebrow": "03 / integração",
+    "title": "Conectar ferramentas de IA com controles claros",
+    "summary": "Grok MCP Bridge: integração local e pessoal que conecta o ChatGPT Chat ao Grok Build, com acompanhamento de tarefas e mudanças revisadas separadamente.",
+    "points": [
+      "Separa a geração de código das alterações no projeto, mantendo cada etapa em uma fila de revisão própria.",
+      "Usa identificadores estáveis para acompanhar tarefas de várias etapas entre sessões de terminal.",
+      "Exige conferência manual dos diffs do git e dos testes antes de aplicar qualquer alteração."
+    ],
+    "status": "Projeto pessoal rodando localmente no Windows 11 para testar fluxos controlados com agentes de código."
+  },
+  "background": "Trajetória",
+  "backgroundText": "Quatro anos gerenciando operações, qualidade editorial e calendário de publicação em estúdio remoto internacional, além de aulas de inglês e criação de ferramentas com agentes de código.",
+  "experience": [
+    ["ago 2021 - dez 2025", "Studio Manager", "Michael Ghelfi Studios · remoto (inglês)"],
+    ["mai 2026 - presente", "Professor de inglês (ESL)", "Aliança América Idiomas · remoto"],
+    ["set 2025 - presente", "Moderador oficial de comunidade", "Epic Games · Discord Brasil & Portugal"]
+  ],
+  "faq": "Perguntas frequentes",
+  "faqItems": [
+    {
+      "q": "Quais ferramentas de agentes você utiliza?",
+      "a": "Tenho experiência com Antigravity, Claude Code, Codex, Grok Build e OpenCode."
+    },
+    {
+      "q": "Onde você aprendeu a usar IA?",
+      "a": "Sou profissional certificado em IA pelo curso do Google e também aprendi por conta própria desde o GPT-3.5."
+    },
+    {
+      "q": "Onde você aprendeu inglês?",
+      "a": "Estudei no CNA, com certificação C2 pelo EF SET. Fluente desde 2013."
+    }
+  ],
+  "availability": "Disponibilidade",
+  "availabilityText": "Disponível para posições de gestão de operações em equipes remotas internacionais. Residente no Brasil (UTC-3), com inglês fluente e português nativo.",
+  "contact": "Contato",
+  "contactText": "Quer conversar sobre posições em operações ou fluxos práticos com IA? Entre em contato por e-mail:",
+  "email": "toshiotomikawa@gmail.com",
+  "emailLabel": "Enviar e-mail",
+  "githubUrl": "https://github.com/toshiotomikawa",
+  "githubLabel": "Perfil no GitHub",
+  "resumeTitle": "Currículo e Qualificações",
+  "resumeSummary": "Gestão de operações · Coordenação de equipes · Fluxos com agentes de código · Padronização de processos · WordPress e Operações Web · Bilíngue EN/PT.",
+  "resumeLinks": [
+    ["Solicitar / Visualizar CV (PT)", "mailto:toshiotomikawa@gmail.com?subject=Contato%20Portfolio%20-%20Curriculo"]
+  ],
+  "themeLabel": "Tema: sistema. Mudar para claro."
+}
