@@ -51,7 +51,7 @@
         "Scheduled and published the final release"
       ],
       "credit": "Music composed by Filip Melvan.",
-      "reach": "The release reached 936,714 views on YouTube (verified September 2026), reflecting the combined impact of the music, visual packaging, and studio distribution.",
+      "reach": "The release reached 936,714 views on YouTube (verified September 2026).",
       "linkUrl": "https://www.youtube.com/watch?v=sYcOqTKv7B0",
       "linkLabel": "watch Biosphere on YouTube",
       "also": "I adapted the studio's commissioned black-and-white mark with a metallic-gold treatment for featured releases. The original mark was designed by another creator.",
@@ -118,10 +118,10 @@
         "Shows how property price inflation outpaces standard bank savings",
         "Calculates the monthly savings needed for a 3-year versus 5-year target",
         "Compares cash bids against embedded bids using up to 50% of the credit line",
-        "Presents a clear comparison against standard mortgage interest and total term costs"
+        "Compares the result with bank mortgage interest and total term cost"
       ],
       "credit": "Built for daily use by a consórcio sales team.",
-      "reach": "Hosted on Vercel as a client-side app, letting sales reps test numbers live during calls without server maintenance.",
+      "reach": "It runs in the browser on Vercel, so reps can test numbers during a call and there is no server to maintain.",
       "linkUrl": "https://mapadabella.vercel.app/",
       "linkLabel": "explore Mapa da Bella live application",
       "also": "All numbers reflect user-entered assumptions. The tool supports sales conversations and does not provide credit approval, guarantees, or regulated financial advice.",
@@ -133,7 +133,7 @@
     "title": "Connecting AI tools with clear controls",
     "summary": "Grok MCP Bridge: a personal local integration connecting ChatGPT Chat to Grok Build, with task tracking and separately reviewed changes.",
     "points": [
-      "Separates code generation from project changes, keeping each step in a distinct review queue.",
+      "Keeps code generation and project changes apart, each in its own review queue.",
       "Uses persistent task IDs to track multi-step work across terminal sessions.",
       "Requires manual inspection of git diffs and test results before applying any edits."
     ],
@@ -158,21 +158,21 @@
     },
     {
       "q": "Where did you learn English?",
-      "a": "I studied at CNA, having been certified as C2 by EF SET. Fluent since 2013."
+      "a": "I studied at CNA and hold a C2 certificate from EF SET. I've been fluent since 2013."
     }
   ],
   "availability": "Availability",
   "availabilityText": "Available for remote operations management roles with international teams. Based in Brazil (UTC-3), fluent in English and native in Portuguese.",
   "contact": "Contact",
-  "contactText": "Interested in discussing an operations role or practical AI workflows? Reach out by email:",
+  "contactText": "For an operations role or a question about AI workflows, email me:",
   "email": "toshiotomikawa@gmail.com",
   "emailLabel": "Send an email",
   "githubUrl": "https://github.com/toshiotomikawa",
   "githubLabel": "GitHub profile",
-  "resumeTitle": "Resume & Qualifications",
-  "resumeSummary": "Operations management · Team coordination · AI coding agent workflows · Process standardization · WordPress & Web Operations · Bilingual EN/PT.",
+  "resumeTitle": "Resume and qualifications",
+  "resumeSummary": "Operations management · team coordination · AI coding agent workflows · process standardization · WordPress and web operations · bilingual EN/PT.",
   "resumeLinks": [
-    ["Download / View CV (EN)", "mailto:toshiotomikawa@gmail.com?subject=Portfolio%20Inquiry%20-%20Resume%20Request"]
+    ["Request the CV (EN)", "mailto:toshiotomikawa@gmail.com?subject=Portfolio%20Inquiry%20-%20Resume%20Request"]
   ],
   "themeLabel": "Theme: system. Switch to light."
 }
