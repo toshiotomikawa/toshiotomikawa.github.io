@@ -39,6 +39,7 @@ class StaticPrototype(unittest.TestCase):
             'https://tomiesl.com.br/',
             'https://github.com/toshiotomikawa',
             'https://www.instagram.com/toshiotomikawa/',
+            'https://www.linkedin.com/in/toshiotomikawa/',
             'https://x.com/toshiotomikawa',
             'mailto:toshiotomikawa@gmail.com',
         )

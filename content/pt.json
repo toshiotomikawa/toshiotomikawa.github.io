@@ -1,8 +1,8 @@
 {
   "lang": "pt-BR",
-  "title": "Gestão de operações com uso prático de IA.",
-  "eyebrow": "Gestão de operações · remoto, elegível na América Latina",
-  "intro": "Coordeno equipes e rotinas diárias para manter as entregas em dia, e construo ferramentas internas orientando agentes de programação.",
+  "title": "Treinamento de IA e ensino de inglês.",
+  "eyebrow": "Treinamento e avaliação de IA · ensino de inglês · remoto",
+  "intro": "Dou aulas de inglês como segunda língua (ESL) e uso modelos de IA todos os dias há anos, no trabalho e nos meus próprios projetos.",
   "nav": [
     ["work", "trabalhos"],
     ["background", "trajetória"],
@@ -17,7 +17,7 @@
   "meta": [
     ["local", "Brasil (UTC-3)"],
     ["idiomas", "inglês fluente / português nativo"],
-    ["buscando", "gestão de operações remota"]
+    ["buscando", "treinamento de IA e ensino de inglês, remoto"]
   ],
   "selected": "Trabalhos selecionados",
   "read": "ler o estudo de caso",
@@ -150,7 +150,7 @@
   "faqItems": [
     {
       "q": "Quais ferramentas de agentes você utiliza?",
-      "a": "Tenho experiência com Antigravity, Claude Code, Codex, Grok Build e OpenCode."
+      "a": "Tenho ampla experiência com Antigravity e Claude Code, e familiaridade com Codex, Cursor, Grok Build e OpenCode."
     },
     {
       "q": "Onde você aprendeu a usar IA?",
@@ -162,15 +162,15 @@
     }
   ],
   "availability": "Disponibilidade",
-  "availabilityText": "Disponível para posições de gestão de operações em equipes remotas internacionais. Residente no Brasil (UTC-3), com inglês fluente e português nativo.",
+  "availabilityText": "Disponível para trabalho remoto em treinamento e avaliação de IA e em ensino de inglês. Residente no Brasil (UTC-3), com inglês fluente e português nativo.",
   "contact": "Contato",
-  "contactText": "Para falar de uma vaga em operações ou de fluxos com IA, mande um e-mail:",
+  "contactText": "Para falar de treinamento de IA, aulas de inglês ou fluxos com IA, mande um e-mail:",
   "email": "toshiotomikawa@gmail.com",
   "emailLabel": "Enviar e-mail",
   "githubUrl": "https://github.com/toshiotomikawa",
   "githubLabel": "Perfil no GitHub",
   "resumeTitle": "Currículo e qualificações",
-  "resumeSummary": "Gestão de operações · coordenação de equipes · fluxos com agentes de código · padronização de processos · WordPress e operação web · bilíngue EN/PT.",
+  "resumeSummary": "Treinamento e avaliação de IA · ensino de inglês (ESL) · fluxos com agentes de código · gestão de operações · bilíngue EN/PT.",
   "resumeLinks": [
     ["Solicitar o CV (PT)", "mailto:toshiotomikawa@gmail.com?subject=Contato%20Portfolio%20-%20Curriculo"]
   ],

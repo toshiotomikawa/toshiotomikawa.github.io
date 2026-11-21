@@ -1,8 +1,8 @@
 {
   "lang": "en",
-  "title": "Operations management, with practical AI.",
-  "eyebrow": "Operations management · remote, LATAM-eligible",
-  "intro": "I coordinate teams and daily operations to keep work moving, and I build internal tools by directing coding agents.",
+  "title": "AI training and English teaching.",
+  "eyebrow": "AI training and evaluation · English teaching · remote",
+  "intro": "I teach English as a Second Language (ESL), and I have used AI models every day for years, at work and on my own projects.",
   "nav": [
     ["work", "work"],
     ["background", "background"],
@@ -17,7 +17,7 @@
   "meta": [
     ["based", "Brazil (UTC-3)"],
     ["languages", "EN fluent / PT native"],
-    ["seeking", "remote operations management"]
+    ["seeking", "remote AI training and English teaching"]
   ],
   "selected": "Selected work",
   "read": "read the case",
@@ -150,7 +150,7 @@
   "faqItems": [
     {
       "q": "What agentic tools do you use?",
-      "a": "I have experience with Antigravity, Claude Code, Codex, Grok Build, and OpenCode."
+      "a": "I have ample experience with Antigravity and Claude Code, and familiarity with Codex, Cursor, Grok Build, and OpenCode."
     },
     {
       "q": "Where did you learn to use AI?",
@@ -162,15 +162,15 @@
     }
   ],
   "availability": "Availability",
-  "availabilityText": "Available for remote operations management roles with international teams. Based in Brazil (UTC-3), fluent in English and native in Portuguese.",
+  "availabilityText": "Available for remote work in AI training and evaluation, and in English teaching. Based in Brazil (UTC-3), fluent in English and native in Portuguese.",
   "contact": "Contact",
-  "contactText": "For an operations role or a question about AI workflows, email me:",
+  "contactText": "For AI training, English teaching, or a question about AI workflows, email me:",
   "email": "toshiotomikawa@gmail.com",
   "emailLabel": "Send an email",
   "githubUrl": "https://github.com/toshiotomikawa",
   "githubLabel": "GitHub profile",
   "resumeTitle": "Resume and qualifications",
-  "resumeSummary": "Operations management · team coordination · AI coding agent workflows · process standardization · WordPress and web operations · bilingual EN/PT.",
+  "resumeSummary": "AI training and evaluation · English teaching (ESL) · AI coding agent workflows · operations management · bilingual EN/PT.",
   "resumeLinks": [
     ["Request the CV (EN)", "mailto:toshiotomikawa@gmail.com?subject=Portfolio%20Inquiry%20-%20Resume%20Request"]
   ],
